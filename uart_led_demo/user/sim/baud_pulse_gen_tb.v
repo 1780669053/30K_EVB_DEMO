@@ -11,15 +11,15 @@ module baud_pulse_gen_tb;
 
     baud_pulse_gen
     #(
-        .CLK_FREQ       ( CLK_FREQ    ),
-        .BAUD_RATE      ( 115200      )
+        .CLK_FREQ       (CLK_FREQ),
+        .BAUD_RATE      (115200)
     )
         u_baud_pulse_gen
     (
-        .clk        	( clk         ),
-        .rst_n      	( rst_n       ),
-        .en         	( en          ),
-        .baud_pulse 	( baud_pulse  )
+        .clk        	(clk),
+        .rst_n      	(rst_n),
+        .en         	(en),
+        .baud_pulse 	(baud_pulse)
     );
 
     initial clk = 0;
