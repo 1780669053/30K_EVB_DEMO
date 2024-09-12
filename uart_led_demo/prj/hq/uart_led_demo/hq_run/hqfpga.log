@@ -360,3 +360,25 @@ ERROR(SFE-E-93): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_led_demo\prj\hq\ua
 ERROR(DSGN005): 前面流程中发生错误，请搜索ERROR字样信息并复查.
 FLAG:TOPJSON:DONE
 FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/prj/hq/uart_led_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/prj/hq/uart_led_demo/uart_led_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_led_demo\prj\hq\uart_led_demo\..\..\..\user\src\baud_pulse_gen.v.
+ERROR(SFE-E-93): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_led_demo\prj\hq\uart_led_demo\..\..\..\user\src\baud_pulse_gen.v(25), 浮点数据用于不适宜的上下文.
+ERROR(SFE-E-93): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_led_demo\prj\hq\uart_led_demo\..\..\..\user\src\baud_pulse_gen.v(36), 浮点数据用于不适宜的上下文.
+    rtl.elaborate -top baud_pulse_gen -json uart_led_demo
+ERROR(DSGN005): 前面流程中发生错误，请搜索ERROR字样信息并复查.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> exit
+Info: 程序结束于 Thu Sep 12 17:12:38 2024.
+Info: 最大内存占用 166.3 M.
+Info: 总运行时间 2308 秒.
