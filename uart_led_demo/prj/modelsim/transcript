@@ -1,0 +1,196 @@
+# Reading C:/modeltech64_2019.2/tcl/vsim/pref.tcl
+# //  ModelSim SE-64 2019.2 Apr 17 2019
+# //
+# //  Copyright 1991-2019 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# OpenFile C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/prj/modelsim/uart_led_demo.mpf
+# Loading project uart_led_demo
+# Compile of baud_pulse_gen.v was successful.
+vsim -L XiST -Lf XiST work.baud_pulse_gen_tb -voptargs=+acc
+# vsim -L XiST -Lf XiST work.baud_pulse_gen_tb -voptargs="+acc" 
+# Start time: 17:20:50 on Sep 12,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.baud_pulse_gen_tb(fast)
+# Loading work.baud_pulse_gen(fast)
+add wave -position insertpoint  \
+sim:/baud_pulse_gen_tb/CLK_FREQ \
+sim:/baud_pulse_gen_tb/CYCLE \
+sim:/baud_pulse_gen_tb/clk \
+sim:/baud_pulse_gen_tb/rst_n \
+sim:/baud_pulse_gen_tb/en \
+sim:/baud_pulse_gen_tb/baud_pulse
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.baud_pulse_gen_tb(fast)
+# Loading work.baud_pulse_gen(fast)
+run -all
+# ** Note: $stop    : C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v(41)
+#    Time: 1000020 ns  Iteration: 0  Instance: /baud_pulse_gen_tb
+# Break in Module baud_pulse_gen_tb at C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v line 41
+add wave -position insertpoint  \
+sim:/baud_pulse_gen_tb/u_baud_pulse_gen/CLK_FREQ \
+sim:/baud_pulse_gen_tb/u_baud_pulse_gen/BAUD_RATE \
+sim:/baud_pulse_gen_tb/u_baud_pulse_gen/CYCLE_PER_BAUD \
+sim:/baud_pulse_gen_tb/u_baud_pulse_gen/clk \
+sim:/baud_pulse_gen_tb/u_baud_pulse_gen/rst_n \
+sim:/baud_pulse_gen_tb/u_baud_pulse_gen/en \
+sim:/baud_pulse_gen_tb/u_baud_pulse_gen/baud_pulse \
+sim:/baud_pulse_gen_tb/u_baud_pulse_gen/cnt
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.baud_pulse_gen_tb(fast)
+# Loading work.baud_pulse_gen(fast)
+run -all
+# ** Note: $stop    : C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v(41)
+#    Time: 1000020 ns  Iteration: 0  Instance: /baud_pulse_gen_tb
+# Break in Module baud_pulse_gen_tb at C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v line 41
+# Compile of baud_pulse_gen.v was successful.
+# Compile of baud_pulse_gen_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.baud_pulse_gen_tb(fast)
+# Loading work.baud_pulse_gen(fast)
+run -all
+# ** Note: $stop    : C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v(41)
+#    Time: 1000020 ns  Iteration: 0  Instance: /baud_pulse_gen_tb
+# Break in Module baud_pulse_gen_tb at C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v line 41
+run -continue
+# Compile of baud_pulse_gen.v was successful.
+# Compile of baud_pulse_gen_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.baud_pulse_gen_tb(fast)
+# Loading work.baud_pulse_gen(fast)
+run -all
+# pulse @ 8700000
+# pulse @ 17380000
+# pulse @ 26060000
+# pulse @ 34740000
+# pulse @ 43420000
+# pulse @ 52100000
+# pulse @ 60780000
+# pulse @ 69460000
+# pulse @ 78140000
+# pulse @ 86820000
+# pulse @ 95500000
+# pulse @ 104180000
+# pulse @ 112860000
+# pulse @ 121540000
+# pulse @ 130220000
+# pulse @ 138900000
+# pulse @ 147580000
+# pulse @ 156260000
+# pulse @ 164940000
+# pulse @ 173620000
+# pulse @ 182300000
+# pulse @ 190980000
+# pulse @ 199660000
+# pulse @ 208340000
+# pulse @ 217020000
+# pulse @ 225700000
+# pulse @ 234380000
+# pulse @ 243060000
+# pulse @ 251740000
+# pulse @ 260420000
+# pulse @ 269100000
+# pulse @ 277780000
+# pulse @ 286460000
+# pulse @ 295140000
+# pulse @ 303820000
+# pulse @ 312500000
+# pulse @ 321180000
+# pulse @ 329860000
+# pulse @ 338540000
+# pulse @ 347220000
+# pulse @ 355900000
+# pulse @ 364580000
+# pulse @ 373260000
+# pulse @ 381940000
+# pulse @ 390620000
+# pulse @ 399300000
+# pulse @ 407980000
+# pulse @ 416660000
+# pulse @ 425340000
+# pulse @ 434020000
+# pulse @ 442700000
+# pulse @ 451380000
+# pulse @ 460060000
+# pulse @ 468740000
+# pulse @ 477420000
+# pulse @ 486100000
+# pulse @ 494780000
+# pulse @ 503460000
+# pulse @ 512140000
+# pulse @ 520820000
+# pulse @ 529500000
+# pulse @ 538180000
+# pulse @ 546860000
+# pulse @ 555540000
+# pulse @ 564220000
+# pulse @ 572900000
+# pulse @ 581580000
+# pulse @ 590260000
+# pulse @ 598940000
+# pulse @ 607620000
+# pulse @ 616300000
+# pulse @ 624980000
+# pulse @ 633660000
+# pulse @ 642340000
+# pulse @ 651020000
+# pulse @ 659700000
+# pulse @ 668380000
+# pulse @ 677060000
+# pulse @ 685740000
+# pulse @ 694420000
+# pulse @ 703100000
+# pulse @ 711780000
+# pulse @ 720460000
+# pulse @ 729140000
+# pulse @ 737820000
+# pulse @ 746500000
+# pulse @ 755180000
+# pulse @ 763860000
+# pulse @ 772540000
+# pulse @ 781220000
+# pulse @ 789900000
+# pulse @ 798580000
+# pulse @ 807260000
+# pulse @ 815940000
+# pulse @ 824620000
+# pulse @ 833300000
+# pulse @ 841980000
+# pulse @ 850660000
+# pulse @ 859340000
+# pulse @ 868020000
+# pulse @ 876700000
+# pulse @ 885380000
+# pulse @ 894060000
+# pulse @ 902740000
+# pulse @ 911420000
+# pulse @ 920100000
+# pulse @ 928780000
+# pulse @ 937460000
+# pulse @ 946140000
+# pulse @ 954820000
+# pulse @ 963500000
+# pulse @ 972180000
+# pulse @ 980860000
+# pulse @ 989540000
+# pulse @ 998220000
+# ** Note: $stop    : C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v(41)
+#    Time: 1000020 ns  Iteration: 0  Instance: /baud_pulse_gen_tb
+# Break in Module baud_pulse_gen_tb at C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v line 41

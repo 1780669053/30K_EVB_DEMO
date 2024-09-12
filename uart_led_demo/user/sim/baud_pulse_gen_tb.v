@@ -6,7 +6,7 @@ module baud_pulse_gen_tb;
     reg     en;
     wire    baud_pulse;
 
-    localparam CLK_FREQ = 25e6;
+    localparam CLK_FREQ = 25 * 1000000;
     localparam CYCLE = 1e9 / CLK_FREQ;
 
     baud_pulse_gen

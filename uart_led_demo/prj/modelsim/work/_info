@@ -10,23 +10,23 @@ z2
 cModel Technology
 dC:/hqws/D_MEMORYs/prj/simulation
 T_opt
-!s110 1726131322
-V50DPm_=F8U_MKNoblIk[_3
+!s110 1726133275
+VVT@jSM_[KP^Cf=JK2LR6W0
 04 17 4 work baud_pulse_gen_tb fast 0
-=1-c4d0e30420bd-66e2ac7a-2f9-480
+=5-c4d0e30420bd-66e2b41b-55-2490
 o-quiet -auto_acc_if_foreign -work work -L XiST -Lf XiST +acc
 Z0 tCvgOpt 0
 n@_opt
 OL;O;2019.2;69
 vbaud_pulse_gen
-Z1 !s110 1726131286
+Z1 !s110 1726133271
 !i10b 1
-!s100 W[0Y]oT;alaBHUDfGfXb>0
-!s11b a?H;`oJ7bRMl6YimfPWUo1
-IJA1Z`C;iH]2>RRhCH@^CT0
+!s100 :D=>cBo^DGnn2DmaKXGhl0
+!s11b JBYcX<;;=an6Qj[Zbnoj10
+IC?Xdk`:U?AIlMPQ3DWR4^0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 dC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/prj/modelsim
-w1726130606
+w1726133266
 8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/baud_pulse_gen.v
 FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/baud_pulse_gen.v
 L0 1
@@ -34,7 +34,7 @@ Z4 OL;L;2019.2;69
 r1
 !s85 0
 31
-Z5 !s108 1726131286.000000
+Z5 !s108 1726133271.000000
 !s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/baud_pulse_gen.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/baud_pulse_gen.v|
 !i113 0
@@ -43,12 +43,12 @@ R0
 vbaud_pulse_gen_tb
 R1
 !i10b 1
-!s100 P=b=TZSH``?UDM9L1Sh7S0
-!s11b ZW1:bi>43DS0ioi4g4:6Z2
-IK=HiCXo30K7CBb@o<aBeI1
+!s100 8l9CP1VgDK1G<jUPNK5PN2
+!s11b 3SIz<^;CTG66LVhoSiQ?20
+IZ0noC4[1W=heH@MjPa@z_0
 R2
 R3
-w1726131275
+w1726133153
 8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v
 FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v
 L0 2
