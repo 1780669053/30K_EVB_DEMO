@@ -1,0 +1,2 @@
+ERROR(SFE-E-93): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_led_demo\prj\hq\uart_led_demo\..\..\..\user\src\baud_pulse_gen.v(25), 浮点数据用于不适宜的上下文.
+ERROR(SFE-E-93): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_led_demo\prj\hq\uart_led_demo\..\..\..\user\src\baud_pulse_gen.v(36), 浮点数据用于不适宜的上下文.

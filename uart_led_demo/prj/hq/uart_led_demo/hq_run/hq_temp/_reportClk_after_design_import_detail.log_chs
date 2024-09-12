@@ -1,0 +1,770 @@
+
+#########################################################################
+#
+# 最大时钟频率(FMAX)报告
+#
+#########################################################################
+#
+# 注意: FMAX 的计算仅针对在同一时钟域内的寄存器到寄存器路径，
+# 多周期路径、跨时钟域路径(包括主时钟及其生成时钟之间的路径)都将
+# 被忽略。对于一个时钟及其反向时钟之间的路径， FMAX的计算通过按
+# 频宽比(duty cycle)等比例扩展路径延迟得到。例如，假设有一
+# 条路径的起点由时钟上升沿驱动而终点由同一时钟的下降沿驱动，
+# 如果该时钟的频宽比为50，则计算FMAX时，路径延迟将乘以2(即
+# 除以50%)。
+#
+
+
+# ***********************************************************************
+# 时钟         : clk
+# 最小时钟周期 : 2945 ps
+# ***********************************************************************
+
+********************
+* 路径 1
+********************
+起点     : cnt_reg[1]/Q  [激发时钟: clk, 上升沿1]
+终点     : cnt_reg[14]/D [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================
+|          节点          |      单元      | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+============================================================================================
+| CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
+| clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
+| clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
+| --                     |       --       |   -- |      --       | --   | --        | --   |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |    0 |      net      |      | cnt[1]    |      |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |  261 |     cell      |      | cnt/_n_1  | 2    |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_1  |      |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_3  | 2    |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_3  |      |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_5  | 2    |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_5  |      |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_7  | 2    |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_7  |      |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_9  | 2    |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_9  |      |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_11 | 2    |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_11 |      |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_13 | 2    |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_13 |      |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_15 | 2    |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_15 |      |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_17 | 2    |
+| cnt/bitAdd_10/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_17 |      |
+| cnt/bitAdd_10/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_19 | 2    |
+| cnt/bitAdd_11/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_19 |      |
+| cnt/bitAdd_11/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_21 | 2    |
+| cnt/bitAdd_12/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_21 |      |
+| cnt/bitAdd_12/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_23 | 2    |
+| cnt/bitAdd_13/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_23 |      |
+| cnt/bitAdd_13/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_25 | 2    |
+| cnt/bitAdd_14/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_25 |      |
+| cnt/bitAdd_14/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[14]  | 1    |
+| _i_39/_i_19/I2         |    xsLUTSA3    |    0 |      net      |      | n_23[14]  |      |
+| _i_39/_i_19/O          |    xsLUTSA3    |   81 |     cell      |      | n_19      | 1    |
+| cnt_reg[14]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_19      |      |
+============================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 2968       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 2621 
+        总的连线延迟 = 0 
+        逻辑级数     = 15 
+
+[数据捕获路径]
+===============================================================================
+|     节点      |      单元      | 延迟 |     类型      | 位置 | 连线  | 扇出 |
+===============================================================================
+| CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
+| clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
+| clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| cnt_reg[14]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
+===============================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2968       + -23        - 0          - 0          
+       = 2945
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 2
+********************
+起点     : cnt_reg[1]/Q  [激发时钟: clk, 上升沿1]
+终点     : cnt_reg[15]/D [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================
+|          节点          |      单元      | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+============================================================================================
+| CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
+| clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
+| clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
+| --                     |       --       |   -- |      --       | --   | --        | --   |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |    0 |      net      |      | cnt[1]    |      |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |  261 |     cell      |      | cnt/_n_1  | 2    |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_1  |      |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_3  | 2    |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_3  |      |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_5  | 2    |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_5  |      |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_7  | 2    |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_7  |      |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_9  | 2    |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_9  |      |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_11 | 2    |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_11 |      |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_13 | 2    |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_13 |      |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_15 | 2    |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_15 |      |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_17 | 2    |
+| cnt/bitAdd_10/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_17 |      |
+| cnt/bitAdd_10/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_19 | 2    |
+| cnt/bitAdd_11/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_19 |      |
+| cnt/bitAdd_11/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_21 | 2    |
+| cnt/bitAdd_12/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_21 |      |
+| cnt/bitAdd_12/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_23 | 2    |
+| cnt/bitAdd_13/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_23 |      |
+| cnt/bitAdd_13/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_25 | 2    |
+| cnt/bitAdd_14/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_25 |      |
+| cnt/bitAdd_14/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_27 | 1    |
+| _i_39/_i_20/I3         |    xsLUTSA4    |    0 |      net      |      | cnt/_n_27 |      |
+| _i_39/_i_20/O          |    xsLUTSA4    |   81 |     cell      |      | n_20      | 1    |
+| cnt_reg[15]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_20      |      |
+============================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 2873       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 2526 
+        总的连线延迟 = 0 
+        逻辑级数     = 15 
+
+[数据捕获路径]
+===============================================================================
+|     节点      |      单元      | 延迟 |     类型      | 位置 | 连线  | 扇出 |
+===============================================================================
+| CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
+| clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
+| clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| cnt_reg[15]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
+===============================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2873       + -23        - 0          - 0          
+       = 2850
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 3
+********************
+起点     : cnt_reg[1]/Q  [激发时钟: clk, 上升沿1]
+终点     : cnt_reg[13]/D [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================
+|          节点          |      单元      | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+============================================================================================
+| CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
+| clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
+| clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
+| --                     |       --       |   -- |      --       | --   | --        | --   |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |    0 |      net      |      | cnt[1]    |      |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |  261 |     cell      |      | cnt/_n_1  | 2    |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_1  |      |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_3  | 2    |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_3  |      |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_5  | 2    |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_5  |      |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_7  | 2    |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_7  |      |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_9  | 2    |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_9  |      |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_11 | 2    |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_11 |      |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_13 | 2    |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_13 |      |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_15 | 2    |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_15 |      |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_17 | 2    |
+| cnt/bitAdd_10/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_17 |      |
+| cnt/bitAdd_10/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_19 | 2    |
+| cnt/bitAdd_11/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_19 |      |
+| cnt/bitAdd_11/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_21 | 2    |
+| cnt/bitAdd_12/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_21 |      |
+| cnt/bitAdd_12/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_23 | 2    |
+| cnt/bitAdd_13/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_23 |      |
+| cnt/bitAdd_13/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[13]  | 1    |
+| _i_39/_i_18/I2         |    xsLUTSA3    |    0 |      net      |      | n_23[13]  |      |
+| _i_39/_i_18/O          |    xsLUTSA3    |   81 |     cell      |      | n_18      | 1    |
+| cnt_reg[13]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_18      |      |
+============================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 2800       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 2453 
+        总的连线延迟 = 0 
+        逻辑级数     = 14 
+
+[数据捕获路径]
+===============================================================================
+|     节点      |      单元      | 延迟 |     类型      | 位置 | 连线  | 扇出 |
+===============================================================================
+| CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
+| clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
+| clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| cnt_reg[13]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
+===============================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2800       + -23        - 0          - 0          
+       = 2777
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 4
+********************
+起点     : cnt_reg[1]/Q  [激发时钟: clk, 上升沿1]
+终点     : cnt_reg[12]/D [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================
+|          节点          |      单元      | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+============================================================================================
+| CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
+| clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
+| clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
+| --                     |       --       |   -- |      --       | --   | --        | --   |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |    0 |      net      |      | cnt[1]    |      |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |  261 |     cell      |      | cnt/_n_1  | 2    |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_1  |      |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_3  | 2    |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_3  |      |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_5  | 2    |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_5  |      |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_7  | 2    |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_7  |      |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_9  | 2    |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_9  |      |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_11 | 2    |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_11 |      |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_13 | 2    |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_13 |      |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_15 | 2    |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_15 |      |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_17 | 2    |
+| cnt/bitAdd_10/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_17 |      |
+| cnt/bitAdd_10/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_19 | 2    |
+| cnt/bitAdd_11/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_19 |      |
+| cnt/bitAdd_11/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_21 | 2    |
+| cnt/bitAdd_12/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_21 |      |
+| cnt/bitAdd_12/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[12]  | 1    |
+| _i_39/_i_17/I2         |    xsLUTSA3    |    0 |      net      |      | n_23[12]  |      |
+| _i_39/_i_17/O          |    xsLUTSA3    |   81 |     cell      |      | n_17      | 1    |
+| cnt_reg[12]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_17      |      |
+============================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 2632       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 2285 
+        总的连线延迟 = 0 
+        逻辑级数     = 13 
+
+[数据捕获路径]
+===============================================================================
+|     节点      |      单元      | 延迟 |     类型      | 位置 | 连线  | 扇出 |
+===============================================================================
+| CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
+| clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
+| clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| cnt_reg[12]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
+===============================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2632       + -23        - 0          - 0          
+       = 2609
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 5
+********************
+起点     : cnt_reg[1]/Q  [激发时钟: clk, 上升沿1]
+终点     : cnt_reg[11]/D [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================
+|          节点          |      单元      | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+============================================================================================
+| CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
+| clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
+| clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
+| --                     |       --       |   -- |      --       | --   | --        | --   |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |    0 |      net      |      | cnt[1]    |      |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |  261 |     cell      |      | cnt/_n_1  | 2    |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_1  |      |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_3  | 2    |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_3  |      |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_5  | 2    |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_5  |      |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_7  | 2    |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_7  |      |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_9  | 2    |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_9  |      |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_11 | 2    |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_11 |      |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_13 | 2    |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_13 |      |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_15 | 2    |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_15 |      |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_17 | 2    |
+| cnt/bitAdd_10/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_17 |      |
+| cnt/bitAdd_10/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_19 | 2    |
+| cnt/bitAdd_11/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_19 |      |
+| cnt/bitAdd_11/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[11]  | 1    |
+| _i_39/_i_16/I2         |    xsLUTSA3    |    0 |      net      |      | n_23[11]  |      |
+| _i_39/_i_16/O          |    xsLUTSA3    |   81 |     cell      |      | n_16      | 1    |
+| cnt_reg[11]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_16      |      |
+============================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 2464       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 2117 
+        总的连线延迟 = 0 
+        逻辑级数     = 12 
+
+[数据捕获路径]
+===============================================================================
+|     节点      |      单元      | 延迟 |     类型      | 位置 | 连线  | 扇出 |
+===============================================================================
+| CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
+| clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
+| clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| cnt_reg[11]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
+===============================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2464       + -23        - 0          - 0          
+       = 2441
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 6
+********************
+起点     : cnt_reg[1]/Q  [激发时钟: clk, 上升沿1]
+终点     : cnt_reg[10]/D [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================
+|          节点          |      单元      | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+============================================================================================
+| CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
+| clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
+| clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
+| --                     |       --       |   -- |      --       | --   | --        | --   |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |    0 |      net      |      | cnt[1]    |      |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |  261 |     cell      |      | cnt/_n_1  | 2    |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_1  |      |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_3  | 2    |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_3  |      |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_5  | 2    |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_5  |      |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_7  | 2    |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_7  |      |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_9  | 2    |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_9  |      |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_11 | 2    |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_11 |      |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_13 | 2    |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_13 |      |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_15 | 2    |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_15 |      |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_17 | 2    |
+| cnt/bitAdd_10/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_17 |      |
+| cnt/bitAdd_10/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[10]  | 1    |
+| _i_39/_i_15/I2         |    xsLUTSA3    |    0 |      net      |      | n_23[10]  |      |
+| _i_39/_i_15/O          |    xsLUTSA3    |   81 |     cell      |      | n_15      | 1    |
+| cnt_reg[10]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_15      |      |
+============================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 2296       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 1949 
+        总的连线延迟 = 0 
+        逻辑级数     = 11 
+
+[数据捕获路径]
+===============================================================================
+|     节点      |      单元      | 延迟 |     类型      | 位置 | 连线  | 扇出 |
+===============================================================================
+| CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
+| clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
+| clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| cnt_reg[10]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
+===============================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2296       + -23        - 0          - 0          
+       = 2273
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 7
+********************
+起点     : cnt_reg[1]/Q [激发时钟: clk, 上升沿1]
+终点     : cnt_reg[9]/D [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+===========================================================================================
+|         节点          |      单元      | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+===========================================================================================
+| CLOCK'clk             |      N/A       |    0 |               |      | N/A       |      |
+| clk                   | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
+| clk_pad/I             |     xsIOBI     |    0 |      net      |      | clk       |      |
+| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| cnt_reg[1]/C          |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
+| --                    |       --       |   -- |      --       | --   | --        | --   |
+| cnt_reg[1]/Q          |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
+| cnt/bitAdd_1/muxcy/S  |    xsMUXCY     |    0 |      net      |      | cnt[1]    |      |
+| cnt/bitAdd_1/muxcy/O  |    xsMUXCY     |  261 |     cell      |      | cnt/_n_1  | 2    |
+| cnt/bitAdd_2/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_1  |      |
+| cnt/bitAdd_2/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_3  | 2    |
+| cnt/bitAdd_3/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_3  |      |
+| cnt/bitAdd_3/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_5  | 2    |
+| cnt/bitAdd_4/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_5  |      |
+| cnt/bitAdd_4/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_7  | 2    |
+| cnt/bitAdd_5/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_7  |      |
+| cnt/bitAdd_5/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_9  | 2    |
+| cnt/bitAdd_6/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_9  |      |
+| cnt/bitAdd_6/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_11 | 2    |
+| cnt/bitAdd_7/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_11 |      |
+| cnt/bitAdd_7/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_13 | 2    |
+| cnt/bitAdd_8/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_13 |      |
+| cnt/bitAdd_8/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_15 | 2    |
+| cnt/bitAdd_9/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_15 |      |
+| cnt/bitAdd_9/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[9]   | 1    |
+| _i_39/_i_14/I2        |    xsLUTSA3    |    0 |      net      |      | n_23[9]   |      |
+| _i_39/_i_14/O         |    xsLUTSA3    |   81 |     cell      |      | n_14      | 1    |
+| cnt_reg[9]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_14      |      |
+===========================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 2128       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 1781 
+        总的连线延迟 = 0 
+        逻辑级数     = 10 
+
+[数据捕获路径]
+==============================================================================
+|     节点     |      单元      | 延迟 |     类型      | 位置 | 连线  | 扇出 |
+==============================================================================
+| CLOCK'clk    |      N/A       |    0 |               |      | N/A   |      |
+| clk          | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
+| clk_pad/I    |     xsIOBI     |    0 |      net      |      | clk   |      |
+| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| cnt_reg[9]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
+==============================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2128       + -23        - 0          - 0          
+       = 2105
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 8
+********************
+起点     : cnt_reg[1]/Q [激发时钟: clk, 上升沿1]
+终点     : cnt_reg[8]/D [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+===========================================================================================
+|         节点          |      单元      | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+===========================================================================================
+| CLOCK'clk             |      N/A       |    0 |               |      | N/A       |      |
+| clk                   | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
+| clk_pad/I             |     xsIOBI     |    0 |      net      |      | clk       |      |
+| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| cnt_reg[1]/C          |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
+| --                    |       --       |   -- |      --       | --   | --        | --   |
+| cnt_reg[1]/Q          |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
+| cnt/bitAdd_1/muxcy/S  |    xsMUXCY     |    0 |      net      |      | cnt[1]    |      |
+| cnt/bitAdd_1/muxcy/O  |    xsMUXCY     |  261 |     cell      |      | cnt/_n_1  | 2    |
+| cnt/bitAdd_2/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_1  |      |
+| cnt/bitAdd_2/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_3  | 2    |
+| cnt/bitAdd_3/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_3  |      |
+| cnt/bitAdd_3/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_5  | 2    |
+| cnt/bitAdd_4/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_5  |      |
+| cnt/bitAdd_4/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_7  | 2    |
+| cnt/bitAdd_5/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_7  |      |
+| cnt/bitAdd_5/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_9  | 2    |
+| cnt/bitAdd_6/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_9  |      |
+| cnt/bitAdd_6/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_11 | 2    |
+| cnt/bitAdd_7/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_11 |      |
+| cnt/bitAdd_7/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_13 | 2    |
+| cnt/bitAdd_8/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_13 |      |
+| cnt/bitAdd_8/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[8]   | 1    |
+| _i_39/_i_13/I2        |    xsLUTSA3    |    0 |      net      |      | n_23[8]   |      |
+| _i_39/_i_13/O         |    xsLUTSA3    |   81 |     cell      |      | n_13      | 1    |
+| cnt_reg[8]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_13      |      |
+===========================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 1960       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 1613 
+        总的连线延迟 = 0 
+        逻辑级数     = 9 
+
+[数据捕获路径]
+==============================================================================
+|     节点     |      单元      | 延迟 |     类型      | 位置 | 连线  | 扇出 |
+==============================================================================
+| CLOCK'clk    |      N/A       |    0 |               |      | N/A   |      |
+| clk          | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
+| clk_pad/I    |     xsIOBI     |    0 |      net      |      | clk   |      |
+| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| cnt_reg[8]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
+==============================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 1960       + -23        - 0          - 0          
+       = 1937
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 9
+********************
+起点     : cnt_reg[1]/Q [激发时钟: clk, 上升沿1]
+终点     : cnt_reg[7]/D [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+===========================================================================================
+|         节点          |      单元      | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+===========================================================================================
+| CLOCK'clk             |      N/A       |    0 |               |      | N/A       |      |
+| clk                   | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
+| clk_pad/I             |     xsIOBI     |    0 |      net      |      | clk       |      |
+| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| cnt_reg[1]/C          |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
+| --                    |       --       |   -- |      --       | --   | --        | --   |
+| cnt_reg[1]/Q          |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
+| cnt/bitAdd_1/muxcy/S  |    xsMUXCY     |    0 |      net      |      | cnt[1]    |      |
+| cnt/bitAdd_1/muxcy/O  |    xsMUXCY     |  261 |     cell      |      | cnt/_n_1  | 2    |
+| cnt/bitAdd_2/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_1  |      |
+| cnt/bitAdd_2/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_3  | 2    |
+| cnt/bitAdd_3/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_3  |      |
+| cnt/bitAdd_3/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_5  | 2    |
+| cnt/bitAdd_4/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_5  |      |
+| cnt/bitAdd_4/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_7  | 2    |
+| cnt/bitAdd_5/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_7  |      |
+| cnt/bitAdd_5/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_9  | 2    |
+| cnt/bitAdd_6/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_9  |      |
+| cnt/bitAdd_6/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_11 | 2    |
+| cnt/bitAdd_7/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_11 |      |
+| cnt/bitAdd_7/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[7]   | 1    |
+| _i_39/_i_12/I2        |    xsLUTSA3    |    0 |      net      |      | n_23[7]   |      |
+| _i_39/_i_12/O         |    xsLUTSA3    |   81 |     cell      |      | n_12      | 1    |
+| cnt_reg[7]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_12      |      |
+===========================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 1792       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 1445 
+        总的连线延迟 = 0 
+        逻辑级数     = 8 
+
+[数据捕获路径]
+==============================================================================
+|     节点     |      单元      | 延迟 |     类型      | 位置 | 连线  | 扇出 |
+==============================================================================
+| CLOCK'clk    |      N/A       |    0 |               |      | N/A   |      |
+| clk          | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
+| clk_pad/I    |     xsIOBI     |    0 |      net      |      | clk   |      |
+| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| cnt_reg[7]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
+==============================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 1792       + -23        - 0          - 0          
+       = 1769
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 10
+********************
+起点     : cnt_reg[1]/Q [激发时钟: clk, 上升沿1]
+终点     : cnt_reg[6]/D [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+==========================================================================================
+|         节点          |      单元      | 延迟 |     类型      | 位置 |   连线   | 扇出 |
+==========================================================================================
+| CLOCK'clk             |      N/A       |    0 |               |      | N/A      |      |
+| clk                   | baud_pulse_gen |    0 | clock_latency |      | clk      | 1    |
+| clk_pad/I             |     xsIOBI     |    0 |      net      |      | clk      |      |
+| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c    | 17   |
+| cnt_reg[1]/C          |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c    |      |
+| --                    |       --       |   -- |      --       | --   | --       | --   |
+| cnt_reg[1]/Q          |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]   | 4    |
+| cnt/bitAdd_1/muxcy/S  |    xsMUXCY     |    0 |      net      |      | cnt[1]   |      |
+| cnt/bitAdd_1/muxcy/O  |    xsMUXCY     |  261 |     cell      |      | cnt/_n_1 | 2    |
+| cnt/bitAdd_2/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_1 |      |
+| cnt/bitAdd_2/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_3 | 2    |
+| cnt/bitAdd_3/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_3 |      |
+| cnt/bitAdd_3/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_5 | 2    |
+| cnt/bitAdd_4/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_5 |      |
+| cnt/bitAdd_4/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_7 | 2    |
+| cnt/bitAdd_5/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_7 |      |
+| cnt/bitAdd_5/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_9 | 2    |
+| cnt/bitAdd_6/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_9 |      |
+| cnt/bitAdd_6/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[6]  | 1    |
+| _i_39/_i_11/I2        |    xsLUTSA3    |    0 |      net      |      | n_23[6]  |      |
+| _i_39/_i_11/O         |    xsLUTSA3    |   81 |     cell      |      | n_11     | 1    |
+| cnt_reg[6]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_11     |      |
+==========================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 1624       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 1277 
+        总的连线延迟 = 0 
+        逻辑级数     = 7 
+
+[数据捕获路径]
+==============================================================================
+|     节点     |      单元      | 延迟 |     类型      | 位置 | 连线  | 扇出 |
+==============================================================================
+| CLOCK'clk    |      N/A       |    0 |               |      | N/A   |      |
+| clk          | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
+| clk_pad/I    |     xsIOBI     |    0 |      net      |      | clk   |      |
+| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| cnt_reg[6]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
+==============================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 1624       + -23        - 0          - 0          
+       = 1601
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+#########################################################################
+# 时钟频率总结
+#########################################################################
+最慢时钟     : clk
+最小时钟周期 : 2945 ps
+最大时钟频率 : 339.6 MHz
+#########################################################################
+clk : 339.6 Mhz
+
+

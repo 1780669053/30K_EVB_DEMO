@@ -1,0 +1,67 @@
+
+######################oOOOo###########oOOOo##########################
+#  HqFpga(TM) Release V3.0.5 (Summer 2024) Build FT091024
+#  [Netlist Report]
+#####################################################################
+Date   : Thu Sep 12 16:39:44 2024
+
+Library U_SYN
++--------------+-------+
+| Cell Name    | Count |
++--------------+-------+
+| xsXORCY      |    14 |
+| xsMUXCY      |    14 |
+| xsIOBI       |     3 |
+| xsIOBO       |     1 |
+| xsDFFSA_K1C1 |    17 |
+| xsLUTSA3     |    15 |
+| xsLUTSA4     |     1 |
+| xsINVSA      |     1 |
+| xsLUTSA6     |     3 |
++--------------+-------+
+| Sum          |    69 |
++--------------+-------+
+
+Library work
++----------------+-------+
+| Cell Name      | Count |
++----------------+-------+
+| baud_pulse_gen |     1 |
++----------------+-------+
+| Sum            |     1 |
++----------------+-------+
+
+##########oOOOo###########oOOOo##############
+#  HqFpga(TM) Release V3.0.5 (Summer 2024) Build FT091024
+#  [Resource Utilization Report]
+#############################################
+Date   : Thu Sep 12 16:39:44 2024
+Device : SA5Z-30-D1-8U213C
+
+** Device Utilization Summary  ** 
++-----------------------------+------+-----------+----------+
+| Resource Type               | Used | Available | Ratio(%) |
++-----------------------------+------+-----------+----------+
+| PIO                         |    4 |       175 |      2 % |
+| LUT                         |   19 |     20416 |      1 % |
+| FF/LATCH                    |   17 |     40832 |      1 % |
+| ----                        | ---- |      ---- |     ---- |
+| IO-Register                 |    0 |       700 |      0 % |
+| BLOCK-RAM(9K-Based)         |    0 |       138 |      0 % |
+|  +- RAMB18K                 |    0 |        -- |       -- |
+|  +- RAMB9K                  |    0 |        -- |       -- |
+| DSP-PRADD                   |    0 |        46 |      0 % |
+|  +- PRADD9 (half DSP-PRADD) |    0 |        -- |       -- |
+|  +- PRADD18                 |    0 |        -- |       -- |
+| DSP-MULTIPLIER              |    0 |        46 |      0 % |
+|  +- MULT9 (half DSP-MULT)   |    0 |        -- |       -- |
+|  +- MULT18                  |    0 |        -- |       -- |
+| DSP-ALU                     |    0 |        23 |      0 % |
+|  +- ALU24 (half DSP-ALU)    |    0 |        -- |       -- |
+|  +- ALU54                   |    0 |        -- |       -- |
+| PLL                         |    0 |         2 |      0 % |
+| DQS                         |    0 |         2 |      0 % |
+| DDRDLL                      |    0 |         5 |      0 % |
+| EFB                         |    0 |         1 |      0 % |
+| DDRCTRL                     |    0 |         1 |      0 % |
++-----------------------------+------+-----------+----------+

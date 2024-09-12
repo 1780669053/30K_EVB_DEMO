@@ -1,0 +1,770 @@
+
+############################################################################
+#
+# FMAX Report
+#
+############################################################################
+#
+# NOTE: FMAX is only computed for register-to-register paths within SAME
+# clock domain. Multi-cycle paths, cross-clock-domain paths, including paths
+# between master and generated clocks, are ignored. For paths between a clock
+# and its inversion, FMAX is computed by scaling the path delay based on
+# clock duty cycle. For example, for a path with start point driven by a
+# rising clock edge and  with end  point driven by the the same  clock's
+# falling edge, if the clock duty cycle is 50%, the path delay is multi-
+# plied by 2 (divided by 50%) so as to compute FMAX.
+#
+
+# **************************************************************************
+# Clock          : clk
+# Minimum period : 2945 ps
+# **************************************************************************
+
+********************
+* Path 1
+********************
+From  : cnt_reg[1]/Q  [launch  clock : clk, rising edge 1]
+To    : cnt_reg[14]/D [capture clock : clk, rising edge 2] 
+
+[Data Launch Path]
+===========================================================================================
+|          NODE          |      CELL      | DELAY |     TYPE      | LOC |    NET    | FO# |
+===========================================================================================
+| CLOCK'clk              |      N/A       |     0 |               |     | N/A       |     |
+| clk                    | baud_pulse_gen |     0 | clock_latency |     | clk       | 1   |
+| clk_pad/I              |     xsIOBI     |     0 |      net      |     | clk       |     |
+| clk_pad/O              |     xsIOBI     |   990 |     cell      |     | clk_c     | 17  |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c     |     |
+| --                     |       --       |    -- |      --       | --  | --        | --  |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |   347 |  rising_edge  |     | cnt[1]    | 4   |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |     0 |      net      |     | cnt[1]    |     |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |   261 |     cell      |     | cnt/_n_1  | 2   |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_1  |     |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_3  | 2   |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_3  |     |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_5  | 2   |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_5  |     |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_7  | 2   |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_7  |     |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_9  | 2   |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_9  |     |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_11 | 2   |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_11 |     |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_13 | 2   |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_13 |     |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_15 | 2   |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_15 |     |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_17 | 2   |
+| cnt/bitAdd_10/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_17 |     |
+| cnt/bitAdd_10/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_19 | 2   |
+| cnt/bitAdd_11/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_19 |     |
+| cnt/bitAdd_11/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_21 | 2   |
+| cnt/bitAdd_12/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_21 |     |
+| cnt/bitAdd_12/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_23 | 2   |
+| cnt/bitAdd_13/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_23 |     |
+| cnt/bitAdd_13/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_25 | 2   |
+| cnt/bitAdd_14/xorcy/CI |    xsXORCY     |     0 |      net      |     | cnt/_n_25 |     |
+| cnt/bitAdd_14/xorcy/O  |    xsXORCY     |   263 |     cell      |     | n_23[14]  | 1   |
+| _i_39/_i_19/I2         |    xsLUTSA3    |     0 |      net      |     | n_23[14]  |     |
+| _i_39/_i_19/O          |    xsLUTSA3    |    81 |     cell      |     | n_19      | 1   |
+| cnt_reg[14]/D          |  xsDFFSA_K1C1  |     0 |      net      |     | n_19      |     |
+===========================================================================================
+Clock Path Delay     = 990       
+Data Path Delay      = 2968       (Tdatp)
+    clock-to-q Delay = 347
+    total cell delay = 2621
+    total wire delay = 0
+    logic Level      = 15
+
+[Data Capture Path]
+==============================================================================
+|     NODE      |      CELL      | DELAY |     TYPE      | LOC |  NET  | FO# |
+==============================================================================
+| CLOCK'clk     |      N/A       |     0 |               |     | N/A   |     |
+| clk           | baud_pulse_gen |     0 | clock_latency |     | clk   | 1   |
+| clk_pad/I     |     xsIOBI     |     0 |      net      |     | clk   |     |
+| clk_pad/O     |     xsIOBI     |   990 |     cell      |     | clk_c | 17  |
+| cnt_reg[14]/C |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c |     |
+==============================================================================
+
+Clock Path Delay     = 990       
+      Clock Skew     = 0 (Tcksw)
+
+[Delay Calculation]
+======================================================================
+Total Delay = Tdatap     + Tsu        - Tckpm      - Tcksw
+            = 2968       + -23        - 0          - 0          
+            = 2945
+======================================================================
+Tdatp -- Data Path delay 
+Tsu   -- Library setup time 
+Tckpm -- Clock Pessimism 
+
+
+********************
+* Path 2
+********************
+From  : cnt_reg[1]/Q  [launch  clock : clk, rising edge 1]
+To    : cnt_reg[15]/D [capture clock : clk, rising edge 2] 
+
+[Data Launch Path]
+===========================================================================================
+|          NODE          |      CELL      | DELAY |     TYPE      | LOC |    NET    | FO# |
+===========================================================================================
+| CLOCK'clk              |      N/A       |     0 |               |     | N/A       |     |
+| clk                    | baud_pulse_gen |     0 | clock_latency |     | clk       | 1   |
+| clk_pad/I              |     xsIOBI     |     0 |      net      |     | clk       |     |
+| clk_pad/O              |     xsIOBI     |   990 |     cell      |     | clk_c     | 17  |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c     |     |
+| --                     |       --       |    -- |      --       | --  | --        | --  |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |   347 |  rising_edge  |     | cnt[1]    | 4   |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |     0 |      net      |     | cnt[1]    |     |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |   261 |     cell      |     | cnt/_n_1  | 2   |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_1  |     |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_3  | 2   |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_3  |     |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_5  | 2   |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_5  |     |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_7  | 2   |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_7  |     |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_9  | 2   |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_9  |     |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_11 | 2   |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_11 |     |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_13 | 2   |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_13 |     |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_15 | 2   |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_15 |     |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_17 | 2   |
+| cnt/bitAdd_10/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_17 |     |
+| cnt/bitAdd_10/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_19 | 2   |
+| cnt/bitAdd_11/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_19 |     |
+| cnt/bitAdd_11/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_21 | 2   |
+| cnt/bitAdd_12/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_21 |     |
+| cnt/bitAdd_12/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_23 | 2   |
+| cnt/bitAdd_13/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_23 |     |
+| cnt/bitAdd_13/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_25 | 2   |
+| cnt/bitAdd_14/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_25 |     |
+| cnt/bitAdd_14/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_27 | 1   |
+| _i_39/_i_20/I3         |    xsLUTSA4    |     0 |      net      |     | cnt/_n_27 |     |
+| _i_39/_i_20/O          |    xsLUTSA4    |    81 |     cell      |     | n_20      | 1   |
+| cnt_reg[15]/D          |  xsDFFSA_K1C1  |     0 |      net      |     | n_20      |     |
+===========================================================================================
+Clock Path Delay     = 990       
+Data Path Delay      = 2873       (Tdatp)
+    clock-to-q Delay = 347
+    total cell delay = 2526
+    total wire delay = 0
+    logic Level      = 15
+
+[Data Capture Path]
+==============================================================================
+|     NODE      |      CELL      | DELAY |     TYPE      | LOC |  NET  | FO# |
+==============================================================================
+| CLOCK'clk     |      N/A       |     0 |               |     | N/A   |     |
+| clk           | baud_pulse_gen |     0 | clock_latency |     | clk   | 1   |
+| clk_pad/I     |     xsIOBI     |     0 |      net      |     | clk   |     |
+| clk_pad/O     |     xsIOBI     |   990 |     cell      |     | clk_c | 17  |
+| cnt_reg[15]/C |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c |     |
+==============================================================================
+
+Clock Path Delay     = 990       
+      Clock Skew     = 0 (Tcksw)
+
+[Delay Calculation]
+======================================================================
+Total Delay = Tdatap     + Tsu        - Tckpm      - Tcksw
+            = 2873       + -23        - 0          - 0          
+            = 2850
+======================================================================
+Tdatp -- Data Path delay 
+Tsu   -- Library setup time 
+Tckpm -- Clock Pessimism 
+
+
+********************
+* Path 3
+********************
+From  : cnt_reg[1]/Q  [launch  clock : clk, rising edge 1]
+To    : cnt_reg[13]/D [capture clock : clk, rising edge 2] 
+
+[Data Launch Path]
+===========================================================================================
+|          NODE          |      CELL      | DELAY |     TYPE      | LOC |    NET    | FO# |
+===========================================================================================
+| CLOCK'clk              |      N/A       |     0 |               |     | N/A       |     |
+| clk                    | baud_pulse_gen |     0 | clock_latency |     | clk       | 1   |
+| clk_pad/I              |     xsIOBI     |     0 |      net      |     | clk       |     |
+| clk_pad/O              |     xsIOBI     |   990 |     cell      |     | clk_c     | 17  |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c     |     |
+| --                     |       --       |    -- |      --       | --  | --        | --  |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |   347 |  rising_edge  |     | cnt[1]    | 4   |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |     0 |      net      |     | cnt[1]    |     |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |   261 |     cell      |     | cnt/_n_1  | 2   |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_1  |     |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_3  | 2   |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_3  |     |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_5  | 2   |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_5  |     |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_7  | 2   |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_7  |     |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_9  | 2   |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_9  |     |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_11 | 2   |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_11 |     |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_13 | 2   |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_13 |     |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_15 | 2   |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_15 |     |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_17 | 2   |
+| cnt/bitAdd_10/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_17 |     |
+| cnt/bitAdd_10/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_19 | 2   |
+| cnt/bitAdd_11/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_19 |     |
+| cnt/bitAdd_11/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_21 | 2   |
+| cnt/bitAdd_12/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_21 |     |
+| cnt/bitAdd_12/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_23 | 2   |
+| cnt/bitAdd_13/xorcy/CI |    xsXORCY     |     0 |      net      |     | cnt/_n_23 |     |
+| cnt/bitAdd_13/xorcy/O  |    xsXORCY     |   263 |     cell      |     | n_23[13]  | 1   |
+| _i_39/_i_18/I2         |    xsLUTSA3    |     0 |      net      |     | n_23[13]  |     |
+| _i_39/_i_18/O          |    xsLUTSA3    |    81 |     cell      |     | n_18      | 1   |
+| cnt_reg[13]/D          |  xsDFFSA_K1C1  |     0 |      net      |     | n_18      |     |
+===========================================================================================
+Clock Path Delay     = 990       
+Data Path Delay      = 2800       (Tdatp)
+    clock-to-q Delay = 347
+    total cell delay = 2453
+    total wire delay = 0
+    logic Level      = 14
+
+[Data Capture Path]
+==============================================================================
+|     NODE      |      CELL      | DELAY |     TYPE      | LOC |  NET  | FO# |
+==============================================================================
+| CLOCK'clk     |      N/A       |     0 |               |     | N/A   |     |
+| clk           | baud_pulse_gen |     0 | clock_latency |     | clk   | 1   |
+| clk_pad/I     |     xsIOBI     |     0 |      net      |     | clk   |     |
+| clk_pad/O     |     xsIOBI     |   990 |     cell      |     | clk_c | 17  |
+| cnt_reg[13]/C |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c |     |
+==============================================================================
+
+Clock Path Delay     = 990       
+      Clock Skew     = 0 (Tcksw)
+
+[Delay Calculation]
+======================================================================
+Total Delay = Tdatap     + Tsu        - Tckpm      - Tcksw
+            = 2800       + -23        - 0          - 0          
+            = 2777
+======================================================================
+Tdatp -- Data Path delay 
+Tsu   -- Library setup time 
+Tckpm -- Clock Pessimism 
+
+
+********************
+* Path 4
+********************
+From  : cnt_reg[1]/Q  [launch  clock : clk, rising edge 1]
+To    : cnt_reg[12]/D [capture clock : clk, rising edge 2] 
+
+[Data Launch Path]
+===========================================================================================
+|          NODE          |      CELL      | DELAY |     TYPE      | LOC |    NET    | FO# |
+===========================================================================================
+| CLOCK'clk              |      N/A       |     0 |               |     | N/A       |     |
+| clk                    | baud_pulse_gen |     0 | clock_latency |     | clk       | 1   |
+| clk_pad/I              |     xsIOBI     |     0 |      net      |     | clk       |     |
+| clk_pad/O              |     xsIOBI     |   990 |     cell      |     | clk_c     | 17  |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c     |     |
+| --                     |       --       |    -- |      --       | --  | --        | --  |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |   347 |  rising_edge  |     | cnt[1]    | 4   |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |     0 |      net      |     | cnt[1]    |     |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |   261 |     cell      |     | cnt/_n_1  | 2   |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_1  |     |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_3  | 2   |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_3  |     |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_5  | 2   |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_5  |     |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_7  | 2   |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_7  |     |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_9  | 2   |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_9  |     |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_11 | 2   |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_11 |     |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_13 | 2   |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_13 |     |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_15 | 2   |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_15 |     |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_17 | 2   |
+| cnt/bitAdd_10/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_17 |     |
+| cnt/bitAdd_10/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_19 | 2   |
+| cnt/bitAdd_11/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_19 |     |
+| cnt/bitAdd_11/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_21 | 2   |
+| cnt/bitAdd_12/xorcy/CI |    xsXORCY     |     0 |      net      |     | cnt/_n_21 |     |
+| cnt/bitAdd_12/xorcy/O  |    xsXORCY     |   263 |     cell      |     | n_23[12]  | 1   |
+| _i_39/_i_17/I2         |    xsLUTSA3    |     0 |      net      |     | n_23[12]  |     |
+| _i_39/_i_17/O          |    xsLUTSA3    |    81 |     cell      |     | n_17      | 1   |
+| cnt_reg[12]/D          |  xsDFFSA_K1C1  |     0 |      net      |     | n_17      |     |
+===========================================================================================
+Clock Path Delay     = 990       
+Data Path Delay      = 2632       (Tdatp)
+    clock-to-q Delay = 347
+    total cell delay = 2285
+    total wire delay = 0
+    logic Level      = 13
+
+[Data Capture Path]
+==============================================================================
+|     NODE      |      CELL      | DELAY |     TYPE      | LOC |  NET  | FO# |
+==============================================================================
+| CLOCK'clk     |      N/A       |     0 |               |     | N/A   |     |
+| clk           | baud_pulse_gen |     0 | clock_latency |     | clk   | 1   |
+| clk_pad/I     |     xsIOBI     |     0 |      net      |     | clk   |     |
+| clk_pad/O     |     xsIOBI     |   990 |     cell      |     | clk_c | 17  |
+| cnt_reg[12]/C |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c |     |
+==============================================================================
+
+Clock Path Delay     = 990       
+      Clock Skew     = 0 (Tcksw)
+
+[Delay Calculation]
+======================================================================
+Total Delay = Tdatap     + Tsu        - Tckpm      - Tcksw
+            = 2632       + -23        - 0          - 0          
+            = 2609
+======================================================================
+Tdatp -- Data Path delay 
+Tsu   -- Library setup time 
+Tckpm -- Clock Pessimism 
+
+
+********************
+* Path 5
+********************
+From  : cnt_reg[1]/Q  [launch  clock : clk, rising edge 1]
+To    : cnt_reg[11]/D [capture clock : clk, rising edge 2] 
+
+[Data Launch Path]
+===========================================================================================
+|          NODE          |      CELL      | DELAY |     TYPE      | LOC |    NET    | FO# |
+===========================================================================================
+| CLOCK'clk              |      N/A       |     0 |               |     | N/A       |     |
+| clk                    | baud_pulse_gen |     0 | clock_latency |     | clk       | 1   |
+| clk_pad/I              |     xsIOBI     |     0 |      net      |     | clk       |     |
+| clk_pad/O              |     xsIOBI     |   990 |     cell      |     | clk_c     | 17  |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c     |     |
+| --                     |       --       |    -- |      --       | --  | --        | --  |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |   347 |  rising_edge  |     | cnt[1]    | 4   |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |     0 |      net      |     | cnt[1]    |     |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |   261 |     cell      |     | cnt/_n_1  | 2   |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_1  |     |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_3  | 2   |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_3  |     |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_5  | 2   |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_5  |     |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_7  | 2   |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_7  |     |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_9  | 2   |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_9  |     |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_11 | 2   |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_11 |     |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_13 | 2   |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_13 |     |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_15 | 2   |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_15 |     |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_17 | 2   |
+| cnt/bitAdd_10/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_17 |     |
+| cnt/bitAdd_10/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_19 | 2   |
+| cnt/bitAdd_11/xorcy/CI |    xsXORCY     |     0 |      net      |     | cnt/_n_19 |     |
+| cnt/bitAdd_11/xorcy/O  |    xsXORCY     |   263 |     cell      |     | n_23[11]  | 1   |
+| _i_39/_i_16/I2         |    xsLUTSA3    |     0 |      net      |     | n_23[11]  |     |
+| _i_39/_i_16/O          |    xsLUTSA3    |    81 |     cell      |     | n_16      | 1   |
+| cnt_reg[11]/D          |  xsDFFSA_K1C1  |     0 |      net      |     | n_16      |     |
+===========================================================================================
+Clock Path Delay     = 990       
+Data Path Delay      = 2464       (Tdatp)
+    clock-to-q Delay = 347
+    total cell delay = 2117
+    total wire delay = 0
+    logic Level      = 12
+
+[Data Capture Path]
+==============================================================================
+|     NODE      |      CELL      | DELAY |     TYPE      | LOC |  NET  | FO# |
+==============================================================================
+| CLOCK'clk     |      N/A       |     0 |               |     | N/A   |     |
+| clk           | baud_pulse_gen |     0 | clock_latency |     | clk   | 1   |
+| clk_pad/I     |     xsIOBI     |     0 |      net      |     | clk   |     |
+| clk_pad/O     |     xsIOBI     |   990 |     cell      |     | clk_c | 17  |
+| cnt_reg[11]/C |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c |     |
+==============================================================================
+
+Clock Path Delay     = 990       
+      Clock Skew     = 0 (Tcksw)
+
+[Delay Calculation]
+======================================================================
+Total Delay = Tdatap     + Tsu        - Tckpm      - Tcksw
+            = 2464       + -23        - 0          - 0          
+            = 2441
+======================================================================
+Tdatp -- Data Path delay 
+Tsu   -- Library setup time 
+Tckpm -- Clock Pessimism 
+
+
+********************
+* Path 6
+********************
+From  : cnt_reg[1]/Q  [launch  clock : clk, rising edge 1]
+To    : cnt_reg[10]/D [capture clock : clk, rising edge 2] 
+
+[Data Launch Path]
+===========================================================================================
+|          NODE          |      CELL      | DELAY |     TYPE      | LOC |    NET    | FO# |
+===========================================================================================
+| CLOCK'clk              |      N/A       |     0 |               |     | N/A       |     |
+| clk                    | baud_pulse_gen |     0 | clock_latency |     | clk       | 1   |
+| clk_pad/I              |     xsIOBI     |     0 |      net      |     | clk       |     |
+| clk_pad/O              |     xsIOBI     |   990 |     cell      |     | clk_c     | 17  |
+| cnt_reg[1]/C           |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c     |     |
+| --                     |       --       |    -- |      --       | --  | --        | --  |
+| cnt_reg[1]/Q           |  xsDFFSA_K1C1  |   347 |  rising_edge  |     | cnt[1]    | 4   |
+| cnt/bitAdd_1/muxcy/S   |    xsMUXCY     |     0 |      net      |     | cnt[1]    |     |
+| cnt/bitAdd_1/muxcy/O   |    xsMUXCY     |   261 |     cell      |     | cnt/_n_1  | 2   |
+| cnt/bitAdd_2/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_1  |     |
+| cnt/bitAdd_2/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_3  | 2   |
+| cnt/bitAdd_3/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_3  |     |
+| cnt/bitAdd_3/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_5  | 2   |
+| cnt/bitAdd_4/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_5  |     |
+| cnt/bitAdd_4/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_7  | 2   |
+| cnt/bitAdd_5/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_7  |     |
+| cnt/bitAdd_5/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_9  | 2   |
+| cnt/bitAdd_6/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_9  |     |
+| cnt/bitAdd_6/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_11 | 2   |
+| cnt/bitAdd_7/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_11 |     |
+| cnt/bitAdd_7/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_13 | 2   |
+| cnt/bitAdd_8/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_13 |     |
+| cnt/bitAdd_8/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_15 | 2   |
+| cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |     0 |      net      |     | cnt/_n_15 |     |
+| cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |   168 |     cell      |     | cnt/_n_17 | 2   |
+| cnt/bitAdd_10/xorcy/CI |    xsXORCY     |     0 |      net      |     | cnt/_n_17 |     |
+| cnt/bitAdd_10/xorcy/O  |    xsXORCY     |   263 |     cell      |     | n_23[10]  | 1   |
+| _i_39/_i_15/I2         |    xsLUTSA3    |     0 |      net      |     | n_23[10]  |     |
+| _i_39/_i_15/O          |    xsLUTSA3    |    81 |     cell      |     | n_15      | 1   |
+| cnt_reg[10]/D          |  xsDFFSA_K1C1  |     0 |      net      |     | n_15      |     |
+===========================================================================================
+Clock Path Delay     = 990       
+Data Path Delay      = 2296       (Tdatp)
+    clock-to-q Delay = 347
+    total cell delay = 1949
+    total wire delay = 0
+    logic Level      = 11
+
+[Data Capture Path]
+==============================================================================
+|     NODE      |      CELL      | DELAY |     TYPE      | LOC |  NET  | FO# |
+==============================================================================
+| CLOCK'clk     |      N/A       |     0 |               |     | N/A   |     |
+| clk           | baud_pulse_gen |     0 | clock_latency |     | clk   | 1   |
+| clk_pad/I     |     xsIOBI     |     0 |      net      |     | clk   |     |
+| clk_pad/O     |     xsIOBI     |   990 |     cell      |     | clk_c | 17  |
+| cnt_reg[10]/C |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c |     |
+==============================================================================
+
+Clock Path Delay     = 990       
+      Clock Skew     = 0 (Tcksw)
+
+[Delay Calculation]
+======================================================================
+Total Delay = Tdatap     + Tsu        - Tckpm      - Tcksw
+            = 2296       + -23        - 0          - 0          
+            = 2273
+======================================================================
+Tdatp -- Data Path delay 
+Tsu   -- Library setup time 
+Tckpm -- Clock Pessimism 
+
+
+********************
+* Path 7
+********************
+From  : cnt_reg[1]/Q [launch  clock : clk, rising edge 1]
+To    : cnt_reg[9]/D [capture clock : clk, rising edge 2] 
+
+[Data Launch Path]
+==========================================================================================
+|         NODE          |      CELL      | DELAY |     TYPE      | LOC |    NET    | FO# |
+==========================================================================================
+| CLOCK'clk             |      N/A       |     0 |               |     | N/A       |     |
+| clk                   | baud_pulse_gen |     0 | clock_latency |     | clk       | 1   |
+| clk_pad/I             |     xsIOBI     |     0 |      net      |     | clk       |     |
+| clk_pad/O             |     xsIOBI     |   990 |     cell      |     | clk_c     | 17  |
+| cnt_reg[1]/C          |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c     |     |
+| --                    |       --       |    -- |      --       | --  | --        | --  |
+| cnt_reg[1]/Q          |  xsDFFSA_K1C1  |   347 |  rising_edge  |     | cnt[1]    | 4   |
+| cnt/bitAdd_1/muxcy/S  |    xsMUXCY     |     0 |      net      |     | cnt[1]    |     |
+| cnt/bitAdd_1/muxcy/O  |    xsMUXCY     |   261 |     cell      |     | cnt/_n_1  | 2   |
+| cnt/bitAdd_2/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_1  |     |
+| cnt/bitAdd_2/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_3  | 2   |
+| cnt/bitAdd_3/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_3  |     |
+| cnt/bitAdd_3/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_5  | 2   |
+| cnt/bitAdd_4/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_5  |     |
+| cnt/bitAdd_4/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_7  | 2   |
+| cnt/bitAdd_5/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_7  |     |
+| cnt/bitAdd_5/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_9  | 2   |
+| cnt/bitAdd_6/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_9  |     |
+| cnt/bitAdd_6/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_11 | 2   |
+| cnt/bitAdd_7/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_11 |     |
+| cnt/bitAdd_7/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_13 | 2   |
+| cnt/bitAdd_8/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_13 |     |
+| cnt/bitAdd_8/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_15 | 2   |
+| cnt/bitAdd_9/xorcy/CI |    xsXORCY     |     0 |      net      |     | cnt/_n_15 |     |
+| cnt/bitAdd_9/xorcy/O  |    xsXORCY     |   263 |     cell      |     | n_23[9]   | 1   |
+| _i_39/_i_14/I2        |    xsLUTSA3    |     0 |      net      |     | n_23[9]   |     |
+| _i_39/_i_14/O         |    xsLUTSA3    |    81 |     cell      |     | n_14      | 1   |
+| cnt_reg[9]/D          |  xsDFFSA_K1C1  |     0 |      net      |     | n_14      |     |
+==========================================================================================
+Clock Path Delay     = 990       
+Data Path Delay      = 2128       (Tdatp)
+    clock-to-q Delay = 347
+    total cell delay = 1781
+    total wire delay = 0
+    logic Level      = 10
+
+[Data Capture Path]
+=============================================================================
+|     NODE     |      CELL      | DELAY |     TYPE      | LOC |  NET  | FO# |
+=============================================================================
+| CLOCK'clk    |      N/A       |     0 |               |     | N/A   |     |
+| clk          | baud_pulse_gen |     0 | clock_latency |     | clk   | 1   |
+| clk_pad/I    |     xsIOBI     |     0 |      net      |     | clk   |     |
+| clk_pad/O    |     xsIOBI     |   990 |     cell      |     | clk_c | 17  |
+| cnt_reg[9]/C |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c |     |
+=============================================================================
+
+Clock Path Delay     = 990       
+      Clock Skew     = 0 (Tcksw)
+
+[Delay Calculation]
+======================================================================
+Total Delay = Tdatap     + Tsu        - Tckpm      - Tcksw
+            = 2128       + -23        - 0          - 0          
+            = 2105
+======================================================================
+Tdatp -- Data Path delay 
+Tsu   -- Library setup time 
+Tckpm -- Clock Pessimism 
+
+
+********************
+* Path 8
+********************
+From  : cnt_reg[1]/Q [launch  clock : clk, rising edge 1]
+To    : cnt_reg[8]/D [capture clock : clk, rising edge 2] 
+
+[Data Launch Path]
+==========================================================================================
+|         NODE          |      CELL      | DELAY |     TYPE      | LOC |    NET    | FO# |
+==========================================================================================
+| CLOCK'clk             |      N/A       |     0 |               |     | N/A       |     |
+| clk                   | baud_pulse_gen |     0 | clock_latency |     | clk       | 1   |
+| clk_pad/I             |     xsIOBI     |     0 |      net      |     | clk       |     |
+| clk_pad/O             |     xsIOBI     |   990 |     cell      |     | clk_c     | 17  |
+| cnt_reg[1]/C          |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c     |     |
+| --                    |       --       |    -- |      --       | --  | --        | --  |
+| cnt_reg[1]/Q          |  xsDFFSA_K1C1  |   347 |  rising_edge  |     | cnt[1]    | 4   |
+| cnt/bitAdd_1/muxcy/S  |    xsMUXCY     |     0 |      net      |     | cnt[1]    |     |
+| cnt/bitAdd_1/muxcy/O  |    xsMUXCY     |   261 |     cell      |     | cnt/_n_1  | 2   |
+| cnt/bitAdd_2/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_1  |     |
+| cnt/bitAdd_2/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_3  | 2   |
+| cnt/bitAdd_3/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_3  |     |
+| cnt/bitAdd_3/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_5  | 2   |
+| cnt/bitAdd_4/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_5  |     |
+| cnt/bitAdd_4/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_7  | 2   |
+| cnt/bitAdd_5/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_7  |     |
+| cnt/bitAdd_5/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_9  | 2   |
+| cnt/bitAdd_6/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_9  |     |
+| cnt/bitAdd_6/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_11 | 2   |
+| cnt/bitAdd_7/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_11 |     |
+| cnt/bitAdd_7/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_13 | 2   |
+| cnt/bitAdd_8/xorcy/CI |    xsXORCY     |     0 |      net      |     | cnt/_n_13 |     |
+| cnt/bitAdd_8/xorcy/O  |    xsXORCY     |   263 |     cell      |     | n_23[8]   | 1   |
+| _i_39/_i_13/I2        |    xsLUTSA3    |     0 |      net      |     | n_23[8]   |     |
+| _i_39/_i_13/O         |    xsLUTSA3    |    81 |     cell      |     | n_13      | 1   |
+| cnt_reg[8]/D          |  xsDFFSA_K1C1  |     0 |      net      |     | n_13      |     |
+==========================================================================================
+Clock Path Delay     = 990       
+Data Path Delay      = 1960       (Tdatp)
+    clock-to-q Delay = 347
+    total cell delay = 1613
+    total wire delay = 0
+    logic Level      = 9
+
+[Data Capture Path]
+=============================================================================
+|     NODE     |      CELL      | DELAY |     TYPE      | LOC |  NET  | FO# |
+=============================================================================
+| CLOCK'clk    |      N/A       |     0 |               |     | N/A   |     |
+| clk          | baud_pulse_gen |     0 | clock_latency |     | clk   | 1   |
+| clk_pad/I    |     xsIOBI     |     0 |      net      |     | clk   |     |
+| clk_pad/O    |     xsIOBI     |   990 |     cell      |     | clk_c | 17  |
+| cnt_reg[8]/C |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c |     |
+=============================================================================
+
+Clock Path Delay     = 990       
+      Clock Skew     = 0 (Tcksw)
+
+[Delay Calculation]
+======================================================================
+Total Delay = Tdatap     + Tsu        - Tckpm      - Tcksw
+            = 1960       + -23        - 0          - 0          
+            = 1937
+======================================================================
+Tdatp -- Data Path delay 
+Tsu   -- Library setup time 
+Tckpm -- Clock Pessimism 
+
+
+********************
+* Path 9
+********************
+From  : cnt_reg[1]/Q [launch  clock : clk, rising edge 1]
+To    : cnt_reg[7]/D [capture clock : clk, rising edge 2] 
+
+[Data Launch Path]
+==========================================================================================
+|         NODE          |      CELL      | DELAY |     TYPE      | LOC |    NET    | FO# |
+==========================================================================================
+| CLOCK'clk             |      N/A       |     0 |               |     | N/A       |     |
+| clk                   | baud_pulse_gen |     0 | clock_latency |     | clk       | 1   |
+| clk_pad/I             |     xsIOBI     |     0 |      net      |     | clk       |     |
+| clk_pad/O             |     xsIOBI     |   990 |     cell      |     | clk_c     | 17  |
+| cnt_reg[1]/C          |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c     |     |
+| --                    |       --       |    -- |      --       | --  | --        | --  |
+| cnt_reg[1]/Q          |  xsDFFSA_K1C1  |   347 |  rising_edge  |     | cnt[1]    | 4   |
+| cnt/bitAdd_1/muxcy/S  |    xsMUXCY     |     0 |      net      |     | cnt[1]    |     |
+| cnt/bitAdd_1/muxcy/O  |    xsMUXCY     |   261 |     cell      |     | cnt/_n_1  | 2   |
+| cnt/bitAdd_2/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_1  |     |
+| cnt/bitAdd_2/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_3  | 2   |
+| cnt/bitAdd_3/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_3  |     |
+| cnt/bitAdd_3/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_5  | 2   |
+| cnt/bitAdd_4/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_5  |     |
+| cnt/bitAdd_4/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_7  | 2   |
+| cnt/bitAdd_5/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_7  |     |
+| cnt/bitAdd_5/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_9  | 2   |
+| cnt/bitAdd_6/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_9  |     |
+| cnt/bitAdd_6/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_11 | 2   |
+| cnt/bitAdd_7/xorcy/CI |    xsXORCY     |     0 |      net      |     | cnt/_n_11 |     |
+| cnt/bitAdd_7/xorcy/O  |    xsXORCY     |   263 |     cell      |     | n_23[7]   | 1   |
+| _i_39/_i_12/I2        |    xsLUTSA3    |     0 |      net      |     | n_23[7]   |     |
+| _i_39/_i_12/O         |    xsLUTSA3    |    81 |     cell      |     | n_12      | 1   |
+| cnt_reg[7]/D          |  xsDFFSA_K1C1  |     0 |      net      |     | n_12      |     |
+==========================================================================================
+Clock Path Delay     = 990       
+Data Path Delay      = 1792       (Tdatp)
+    clock-to-q Delay = 347
+    total cell delay = 1445
+    total wire delay = 0
+    logic Level      = 8
+
+[Data Capture Path]
+=============================================================================
+|     NODE     |      CELL      | DELAY |     TYPE      | LOC |  NET  | FO# |
+=============================================================================
+| CLOCK'clk    |      N/A       |     0 |               |     | N/A   |     |
+| clk          | baud_pulse_gen |     0 | clock_latency |     | clk   | 1   |
+| clk_pad/I    |     xsIOBI     |     0 |      net      |     | clk   |     |
+| clk_pad/O    |     xsIOBI     |   990 |     cell      |     | clk_c | 17  |
+| cnt_reg[7]/C |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c |     |
+=============================================================================
+
+Clock Path Delay     = 990       
+      Clock Skew     = 0 (Tcksw)
+
+[Delay Calculation]
+======================================================================
+Total Delay = Tdatap     + Tsu        - Tckpm      - Tcksw
+            = 1792       + -23        - 0          - 0          
+            = 1769
+======================================================================
+Tdatp -- Data Path delay 
+Tsu   -- Library setup time 
+Tckpm -- Clock Pessimism 
+
+
+********************
+* Path 10
+********************
+From  : cnt_reg[1]/Q [launch  clock : clk, rising edge 1]
+To    : cnt_reg[6]/D [capture clock : clk, rising edge 2] 
+
+[Data Launch Path]
+=========================================================================================
+|         NODE          |      CELL      | DELAY |     TYPE      | LOC |   NET    | FO# |
+=========================================================================================
+| CLOCK'clk             |      N/A       |     0 |               |     | N/A      |     |
+| clk                   | baud_pulse_gen |     0 | clock_latency |     | clk      | 1   |
+| clk_pad/I             |     xsIOBI     |     0 |      net      |     | clk      |     |
+| clk_pad/O             |     xsIOBI     |   990 |     cell      |     | clk_c    | 17  |
+| cnt_reg[1]/C          |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c    |     |
+| --                    |       --       |    -- |      --       | --  | --       | --  |
+| cnt_reg[1]/Q          |  xsDFFSA_K1C1  |   347 |  rising_edge  |     | cnt[1]   | 4   |
+| cnt/bitAdd_1/muxcy/S  |    xsMUXCY     |     0 |      net      |     | cnt[1]   |     |
+| cnt/bitAdd_1/muxcy/O  |    xsMUXCY     |   261 |     cell      |     | cnt/_n_1 | 2   |
+| cnt/bitAdd_2/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_1 |     |
+| cnt/bitAdd_2/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_3 | 2   |
+| cnt/bitAdd_3/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_3 |     |
+| cnt/bitAdd_3/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_5 | 2   |
+| cnt/bitAdd_4/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_5 |     |
+| cnt/bitAdd_4/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_7 | 2   |
+| cnt/bitAdd_5/muxcy/CI |    xsMUXCY     |     0 |      net      |     | cnt/_n_7 |     |
+| cnt/bitAdd_5/muxcy/O  |    xsMUXCY     |   168 |     cell      |     | cnt/_n_9 | 2   |
+| cnt/bitAdd_6/xorcy/CI |    xsXORCY     |     0 |      net      |     | cnt/_n_9 |     |
+| cnt/bitAdd_6/xorcy/O  |    xsXORCY     |   263 |     cell      |     | n_23[6]  | 1   |
+| _i_39/_i_11/I2        |    xsLUTSA3    |     0 |      net      |     | n_23[6]  |     |
+| _i_39/_i_11/O         |    xsLUTSA3    |    81 |     cell      |     | n_11     | 1   |
+| cnt_reg[6]/D          |  xsDFFSA_K1C1  |     0 |      net      |     | n_11     |     |
+=========================================================================================
+Clock Path Delay     = 990       
+Data Path Delay      = 1624       (Tdatp)
+    clock-to-q Delay = 347
+    total cell delay = 1277
+    total wire delay = 0
+    logic Level      = 7
+
+[Data Capture Path]
+=============================================================================
+|     NODE     |      CELL      | DELAY |     TYPE      | LOC |  NET  | FO# |
+=============================================================================
+| CLOCK'clk    |      N/A       |     0 |               |     | N/A   |     |
+| clk          | baud_pulse_gen |     0 | clock_latency |     | clk   | 1   |
+| clk_pad/I    |     xsIOBI     |     0 |      net      |     | clk   |     |
+| clk_pad/O    |     xsIOBI     |   990 |     cell      |     | clk_c | 17  |
+| cnt_reg[6]/C |  xsDFFSA_K1C1  |     0 |      net      |     | clk_c |     |
+=============================================================================
+
+Clock Path Delay     = 990       
+      Clock Skew     = 0 (Tcksw)
+
+[Delay Calculation]
+======================================================================
+Total Delay = Tdatap     + Tsu        - Tckpm      - Tcksw
+            = 1624       + -23        - 0          - 0          
+            = 1601
+======================================================================
+Tdatp -- Data Path delay 
+Tsu   -- Library setup time 
+Tckpm -- Clock Pessimism 
+
+
+############################################################################
+# FMAX Summary
+############################################################################
+Slowest clock     : clk
+Minimum period    : 2945 ps
+Maximum frequency : 339.6 MHz
+############################################################################
+clk : 339.6 Mhz
+
+

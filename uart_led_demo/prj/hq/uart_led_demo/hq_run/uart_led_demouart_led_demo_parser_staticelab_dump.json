@@ -1,0 +1,207 @@
+{
+"modules": [
+{
+"module": {
+"name": "baud_pulse_gen",
+"file": "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/baud_pulse_gen.v",
+"level": "1",
+"first_line": "1",
+"last_line": "43",
+"inst_mod": [
+]
+},
+"always": [
+{
+"start_line": "21",
+"end_line": "31"
+},
+{
+"start_line": "33",
+"end_line": "40"
+}
+],
+"params": [
+{
+"name": " CLK_FREQ",
+"value": "25000000.000000"
+},
+{
+"name": " BAUD_RATE",
+"value": "32'Sb00000000000000011100001000000000"
+},
+{
+"name": " CYCLE_PER_BAUD",
+"value": "217.013889"
+}
+],
+"params_override": [
+],
+"signals": [
+{
+"type": "Port",
+"name": "clk",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "7",
+"col_num": "17"
+},
+{
+"row_num": "7",
+"col_num": "17"
+},
+{
+"row_num": "21",
+"col_num": "21"
+},
+{
+"row_num": "33",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "rst_n",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "8",
+"col_num": "17"
+},
+{
+"row_num": "8",
+"col_num": "17"
+},
+{
+"row_num": "21",
+"col_num": "36"
+},
+{
+"row_num": "22",
+"col_num": "13"
+},
+{
+"row_num": "33",
+"col_num": "36"
+},
+{
+"row_num": "34",
+"col_num": "13"
+}
+]
+},
+{
+"type": "Port",
+"name": "en",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "9",
+"col_num": "17"
+},
+{
+"row_num": "9",
+"col_num": "17"
+},
+{
+"row_num": "24",
+"col_num": "17"
+}
+]
+},
+{
+"type": "Port",
+"name": "baud_pulse",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "10",
+"col_num": "17"
+},
+{
+"row_num": "10",
+"col_num": "17"
+},
+{
+"row_num": "35",
+"col_num": "13"
+},
+{
+"row_num": "37",
+"col_num": "13"
+},
+{
+"row_num": "39",
+"col_num": "13"
+}
+]
+},
+{
+"type": "Reg",
+"name": "cnt",
+"range": [
+{
+"start": "15",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "19",
+"col_num": "17"
+},
+{
+"row_num": "23",
+"col_num": "13"
+},
+{
+"row_num": "25",
+"col_num": "16"
+},
+{
+"row_num": "26",
+"col_num": "17"
+},
+{
+"row_num": "28",
+"col_num": "17"
+},
+{
+"row_num": "28",
+"col_num": "24"
+},
+{
+"row_num": "30",
+"col_num": "13"
+},
+{
+"row_num": "36",
+"col_num": "17"
+}
+]
+}
+]
+}
+]
+}
