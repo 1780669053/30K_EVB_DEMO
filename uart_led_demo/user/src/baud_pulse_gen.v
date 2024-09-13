@@ -22,7 +22,7 @@ module baud_pulse_gen
         if(!rst_n)
             cnt <= 16'd0;
         else if(en) 
-            if(cnt == CYCLE_PER_BAUD-1)
+            if(baud_pulse)
                 cnt <= 16'd0;
             else
                 cnt <= cnt + 1'b1;
@@ -30,6 +30,6 @@ module baud_pulse_gen
             cnt <= 16'd0;
     end
 
-    assign baud_pulse = (en && cnt == 16'd1);
-    
+    assign baud_pulse = (cnt == CYCLE_PER_BAUD-1);
+
 endmodule
