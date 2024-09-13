@@ -17,14 +17,12 @@ module baud_pulse_gen
     localparam  CYCLE_PER_BAUD = CLK_FREQ / BAUD_RATE;
 
     reg [15:0]  cnt;
-    
-    assign baud_pulse = (cnt == CYCLE_PER_BAUD-1);
 
     always@(posedge clk or negedge rst_n)begin
         if(!rst_n)
             cnt <= 16'd0;
         else if(en) 
-            if(baud_pulse)
+            if(cnt == CYCLE_PER_BAUD-1)
                 cnt <= 16'd0;
             else
                 cnt <= cnt + 1'b1;
@@ -32,4 +30,6 @@ module baud_pulse_gen
             cnt <= 16'd0;
     end
 
+    assign baud_pulse = (en && cnt == 16'd1);
+    
 endmodule

@@ -8,13 +8,16 @@ module uart_tx(
     output reg          tx
 );
 
-    localparam S_IDLE   = 1'b00;
-    localparam S_START  = 1'b01;
-    localparam S_DATA   = 1'b11;
-    localparam S_STOP   = 1'b10;
+    localparam S_IDLE   = 2'b00;
+    localparam S_START  = 2'b01;
+    localparam S_DATA   = 2'b11;
+    localparam S_STOP   = 2'b10;
 
     reg     [1:0]   curr_state, next_state;
     reg     [2:0]   data_baud_cnt;
+    wire            tx_done;
+    reg     [7:0]   byte_in_reg;
+
 
     /*
         req-busy设计
@@ -36,7 +39,7 @@ module uart_tx(
 
     always@(*)case(curr_state)
         S_IDLE:
-            if(valid && baud_pulse)
+            if(baud_pulse)
                 next_state = S_START;
             else
                 next_state = S_IDLE;
@@ -72,11 +75,35 @@ module uart_tx(
 
     always@(posedge clk or negedge rst_n)begin
         if(!rst_n)
-            data_baud_cnt <= 3'd0;
-        else if(curr_state == S_DATA && baud_pulse)
+            data_baud_cnt <= 3'd7;
+        else if(next_state == S_DATA && baud_pulse)
             data_baud_cnt <= data_baud_cnt + 1'b1;
         else
             data_baud_cnt <= data_baud_cnt;
+    end
+
+    always@(posedge clk or negedge rst_n)begin
+        if(!rst_n)
+            byte_in_reg <= 8'd0;
+        else if(req)
+            byte_in_reg <= byte_in;
+        else if(next_state == S_DATA && baud_pulse)
+            byte_in_reg <= byte_in_reg << 1;
+        else
+            byte_in_reg <= byte_in_reg;
+    end
+
+    always@(posedge clk or negedge rst_n)begin
+        if(!rst_n)
+            tx <= 1'b1;
+        else if(next_state == S_START && baud_pulse)
+            tx <= 1'b0;
+        else if(next_state == S_DATA && baud_pulse)
+            tx <= byte_in_reg[7];
+        else if(next_state == S_STOP && baud_pulse)
+            tx <= 1'b1;
+        else
+            tx <= tx;
     end
 
 endmodule

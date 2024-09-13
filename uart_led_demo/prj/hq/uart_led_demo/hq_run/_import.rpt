@@ -3,23 +3,24 @@
 #  HqFpga(TM) Release V3.0.5 (Summer 2024) Build FT091024
 #  [Netlist Report]
 #####################################################################
-Date   : Thu Sep 12 16:39:44 2024
+Date   : Fri Sep 13 14:14:45 2024
 
 Library U_SYN
 +--------------+-------+
 | Cell Name    | Count |
 +--------------+-------+
 | xsXORCY      |    14 |
-| xsMUXCY      |    14 |
+| xsMUXCY      |    16 |
 | xsIOBI       |     3 |
 | xsIOBO       |     1 |
-| xsDFFSA_K1C1 |    17 |
-| xsLUTSA3     |    15 |
-| xsLUTSA4     |     1 |
+| xsDFFSA_K1C1 |    16 |
+| xsLUTSA4     |    17 |
+| xsLUTSA3     |     2 |
 | xsINVSA      |     1 |
-| xsLUTSA6     |     3 |
+| xsLUTSA5     |     2 |
+| xsLUTSA6     |     1 |
 +--------------+-------+
-| Sum          |    69 |
+| Sum          |    73 |
 +--------------+-------+
 
 Library work
@@ -35,7 +36,7 @@ Library work
 #  HqFpga(TM) Release V3.0.5 (Summer 2024) Build FT091024
 #  [Resource Utilization Report]
 #############################################
-Date   : Thu Sep 12 16:39:44 2024
+Date   : Fri Sep 13 14:14:45 2024
 Device : SA5Z-30-D1-8U213C
 
 ** Device Utilization Summary  ** 
@@ -43,8 +44,8 @@ Device : SA5Z-30-D1-8U213C
 | Resource Type               | Used | Available | Ratio(%) |
 +-----------------------------+------+-----------+----------+
 | PIO                         |    4 |       175 |      2 % |
-| LUT                         |   19 |     20416 |      1 % |
-| FF/LATCH                    |   17 |     40832 |      1 % |
+| LUT                         |   22 |     20416 |      1 % |
+| FF/LATCH                    |   16 |     40832 |      1 % |
 | ----                        | ---- |      ---- |     ---- |
 | IO-Register                 |    0 |       700 |      0 % |
 | BLOCK-RAM(9K-Based)         |    0 |       138 |      0 % |

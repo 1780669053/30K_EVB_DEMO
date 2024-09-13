@@ -3,11 +3,11 @@ Info:   加载功能信息....
 Info:   加载时序信息....
 Info:   加载物理信息....
 Info: 器件加载成功.
-
 #=============oOOOo================oOOOo=============
 # 设计分析
 #====================================================
 Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_led_demo\prj\hq\uart_led_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_led_demo\prj\hq\uart_led_demo\..\..\..\user\src\uart_tx.v.
 ####
 Info: 设计分析执行时间 : 0 秒.
 ####
@@ -18,14 +18,14 @@ Info: 开始MUX优化.
 Info: 完成MUX优化.
 Info: 设计顶层模块设置为 "baud_pulse_gen".
 Info: 开始逻辑优化.
-Info:     Total number of literals before LO: 283.
+Info:     Total number of literals before LO: 317.
 Info:   正在优化 view : baud_pulse_gen.
-Info:     逻辑优化前literals数 : 197.
-Info:     LO 循环 1 : literal数 从 197 到 167.
-Info:     逻辑优化后literals数 : 167.
+Info:     逻辑优化前literals数 : 215.
+Info:     LO 循环 1 : literal数 从 215 到 175.
+Info:     逻辑优化后literals数 : 175.
 Info: 完成逻辑优化.
 ####
-Info: RTL综合执行时间 : 0 秒.
+Info: RTL综合执行时间 : 1 秒.
 ####
 #=============oOOOo================oOOOo=============
 # 时序驱动优化与映射
@@ -40,6 +40,7 @@ Info:   计算锥(Cone)....
 Info:   计算覆盖(Cover)....
 Info:   生成LUT网表..
 Info:   网表后处理....
+Info: Decomposed 1 wide-input NOR gate(s)
 Info: 完成工艺映射.
 Info: 开始网表校正.
 Info: 完成网表校正.

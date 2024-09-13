@@ -33,7 +33,7 @@
 | CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
 | clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
 | clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
-| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 16   |
 | cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
 | --                     |       --       |   -- |      --       | --   | --        | --   |
 | cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
@@ -64,10 +64,10 @@
 | cnt/bitAdd_13/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_23 |      |
 | cnt/bitAdd_13/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_25 | 2    |
 | cnt/bitAdd_14/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_25 |      |
-| cnt/bitAdd_14/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[14]  | 1    |
-| _i_39/_i_19/I2         |    xsLUTSA3    |    0 |      net      |      | n_23[14]  |      |
-| _i_39/_i_19/O          |    xsLUTSA3    |   81 |     cell      |      | n_19      | 1    |
-| cnt_reg[14]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_19      |      |
+| cnt/bitAdd_14/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_24[14]  | 1    |
+| _i_44/_i_23/I3         |    xsLUTSA4    |    0 |      net      |      | n_24[14]  |      |
+| _i_44/_i_23/O          |    xsLUTSA4    |   81 |     cell      |      | n_21      | 1    |
+| cnt_reg[14]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_21      |      |
 ============================================================================================
 Ê±ÖÓÂ·¾¶ÑÓ³Ù         = 990       
 Êý¾ÝÂ·¾¶ÑÓ³Ù         = 2968       (Tdatp)
@@ -83,7 +83,7 @@
 | CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
 | clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
 | clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
-| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 16   |
 | cnt_reg[14]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
 ===============================================================================
 
@@ -114,7 +114,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
 | clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
 | clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
-| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 16   |
 | cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
 | --                     |       --       |   -- |      --       | --   | --        | --   |
 | cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
@@ -146,9 +146,9 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | cnt/bitAdd_13/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_25 | 2    |
 | cnt/bitAdd_14/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_25 |      |
 | cnt/bitAdd_14/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_27 | 1    |
-| _i_39/_i_20/I3         |    xsLUTSA4    |    0 |      net      |      | cnt/_n_27 |      |
-| _i_39/_i_20/O          |    xsLUTSA4    |   81 |     cell      |      | n_20      | 1    |
-| cnt_reg[15]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_20      |      |
+| _i_2/I2                |    xsLUTSA5    |    0 |      net      |      | cnt/_n_27 |      |
+| _i_2/O                 |    xsLUTSA5    |   81 |     cell      |      | n_22      | 1    |
+| cnt_reg[15]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_22      |      |
 ============================================================================================
 Ê±ÖÓÂ·¾¶ÑÓ³Ù         = 990       
 Êý¾ÝÂ·¾¶ÑÓ³Ù         = 2873       (Tdatp)
@@ -164,7 +164,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
 | clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
 | clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
-| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 16   |
 | cnt_reg[15]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
 ===============================================================================
 
@@ -195,7 +195,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
 | clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
 | clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
-| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 16   |
 | cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
 | --                     |       --       |   -- |      --       | --   | --        | --   |
 | cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
@@ -224,10 +224,10 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | cnt/bitAdd_12/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_21 |      |
 | cnt/bitAdd_12/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_23 | 2    |
 | cnt/bitAdd_13/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_23 |      |
-| cnt/bitAdd_13/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[13]  | 1    |
-| _i_39/_i_18/I2         |    xsLUTSA3    |    0 |      net      |      | n_23[13]  |      |
-| _i_39/_i_18/O          |    xsLUTSA3    |   81 |     cell      |      | n_18      | 1    |
-| cnt_reg[13]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_18      |      |
+| cnt/bitAdd_13/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_24[13]  | 1    |
+| _i_44/_i_22/I3         |    xsLUTSA4    |    0 |      net      |      | n_24[13]  |      |
+| _i_44/_i_22/O          |    xsLUTSA4    |   81 |     cell      |      | n_20      | 1    |
+| cnt_reg[13]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_20      |      |
 ============================================================================================
 Ê±ÖÓÂ·¾¶ÑÓ³Ù         = 990       
 Êý¾ÝÂ·¾¶ÑÓ³Ù         = 2800       (Tdatp)
@@ -243,7 +243,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
 | clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
 | clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
-| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 16   |
 | cnt_reg[13]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
 ===============================================================================
 
@@ -274,7 +274,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
 | clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
 | clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
-| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 16   |
 | cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
 | --                     |       --       |   -- |      --       | --   | --        | --   |
 | cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
@@ -301,10 +301,10 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | cnt/bitAdd_11/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_19 |      |
 | cnt/bitAdd_11/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_21 | 2    |
 | cnt/bitAdd_12/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_21 |      |
-| cnt/bitAdd_12/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[12]  | 1    |
-| _i_39/_i_17/I2         |    xsLUTSA3    |    0 |      net      |      | n_23[12]  |      |
-| _i_39/_i_17/O          |    xsLUTSA3    |   81 |     cell      |      | n_17      | 1    |
-| cnt_reg[12]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_17      |      |
+| cnt/bitAdd_12/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_24[12]  | 1    |
+| _i_44/_i_21/I3         |    xsLUTSA4    |    0 |      net      |      | n_24[12]  |      |
+| _i_44/_i_21/O          |    xsLUTSA4    |   81 |     cell      |      | n_19      | 1    |
+| cnt_reg[12]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_19      |      |
 ============================================================================================
 Ê±ÖÓÂ·¾¶ÑÓ³Ù         = 990       
 Êý¾ÝÂ·¾¶ÑÓ³Ù         = 2632       (Tdatp)
@@ -320,7 +320,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
 | clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
 | clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
-| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 16   |
 | cnt_reg[12]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
 ===============================================================================
 
@@ -351,7 +351,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
 | clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
 | clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
-| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 16   |
 | cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
 | --                     |       --       |   -- |      --       | --   | --        | --   |
 | cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
@@ -376,10 +376,10 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | cnt/bitAdd_10/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_17 |      |
 | cnt/bitAdd_10/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_19 | 2    |
 | cnt/bitAdd_11/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_19 |      |
-| cnt/bitAdd_11/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[11]  | 1    |
-| _i_39/_i_16/I2         |    xsLUTSA3    |    0 |      net      |      | n_23[11]  |      |
-| _i_39/_i_16/O          |    xsLUTSA3    |   81 |     cell      |      | n_16      | 1    |
-| cnt_reg[11]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_16      |      |
+| cnt/bitAdd_11/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_24[11]  | 1    |
+| _i_44/_i_20/I3         |    xsLUTSA4    |    0 |      net      |      | n_24[11]  |      |
+| _i_44/_i_20/O          |    xsLUTSA4    |   81 |     cell      |      | n_18      | 1    |
+| cnt_reg[11]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_18      |      |
 ============================================================================================
 Ê±ÖÓÂ·¾¶ÑÓ³Ù         = 990       
 Êý¾ÝÂ·¾¶ÑÓ³Ù         = 2464       (Tdatp)
@@ -395,7 +395,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
 | clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
 | clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
-| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 16   |
 | cnt_reg[11]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
 ===============================================================================
 
@@ -426,7 +426,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk              |      N/A       |    0 |               |      | N/A       |      |
 | clk                    | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
 | clk_pad/I              |     xsIOBI     |    0 |      net      |      | clk       |      |
-| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| clk_pad/O              |     xsIOBI     |  990 |     cell      |      | clk_c     | 16   |
 | cnt_reg[1]/C           |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
 | --                     |       --       |   -- |      --       | --   | --        | --   |
 | cnt_reg[1]/Q           |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
@@ -449,10 +449,10 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | cnt/bitAdd_9/muxcy/CI  |    xsMUXCY     |    0 |      net      |      | cnt/_n_15 |      |
 | cnt/bitAdd_9/muxcy/O   |    xsMUXCY     |  168 |     cell      |      | cnt/_n_17 | 2    |
 | cnt/bitAdd_10/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_17 |      |
-| cnt/bitAdd_10/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[10]  | 1    |
-| _i_39/_i_15/I2         |    xsLUTSA3    |    0 |      net      |      | n_23[10]  |      |
-| _i_39/_i_15/O          |    xsLUTSA3    |   81 |     cell      |      | n_15      | 1    |
-| cnt_reg[10]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_15      |      |
+| cnt/bitAdd_10/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_24[10]  | 1    |
+| _i_44/_i_19/I3         |    xsLUTSA4    |    0 |      net      |      | n_24[10]  |      |
+| _i_44/_i_19/O          |    xsLUTSA4    |   81 |     cell      |      | n_17      | 1    |
+| cnt_reg[10]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_17      |      |
 ============================================================================================
 Ê±ÖÓÂ·¾¶ÑÓ³Ù         = 990       
 Êý¾ÝÂ·¾¶ÑÓ³Ù         = 2296       (Tdatp)
@@ -468,7 +468,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk     |      N/A       |    0 |               |      | N/A   |      |
 | clk           | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
 | clk_pad/I     |     xsIOBI     |    0 |      net      |      | clk   |      |
-| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| clk_pad/O     |     xsIOBI     |  990 |     cell      |      | clk_c | 16   |
 | cnt_reg[10]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
 ===============================================================================
 
@@ -499,7 +499,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk             |      N/A       |    0 |               |      | N/A       |      |
 | clk                   | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
 | clk_pad/I             |     xsIOBI     |    0 |      net      |      | clk       |      |
-| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c     | 16   |
 | cnt_reg[1]/C          |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
 | --                    |       --       |   -- |      --       | --   | --        | --   |
 | cnt_reg[1]/Q          |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
@@ -520,10 +520,10 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | cnt/bitAdd_8/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_13 |      |
 | cnt/bitAdd_8/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_15 | 2    |
 | cnt/bitAdd_9/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_15 |      |
-| cnt/bitAdd_9/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[9]   | 1    |
-| _i_39/_i_14/I2        |    xsLUTSA3    |    0 |      net      |      | n_23[9]   |      |
-| _i_39/_i_14/O         |    xsLUTSA3    |   81 |     cell      |      | n_14      | 1    |
-| cnt_reg[9]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_14      |      |
+| cnt/bitAdd_9/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_24[9]   | 1    |
+| _i_44/_i_18/I3        |    xsLUTSA4    |    0 |      net      |      | n_24[9]   |      |
+| _i_44/_i_18/O         |    xsLUTSA4    |   81 |     cell      |      | n_16      | 1    |
+| cnt_reg[9]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_16      |      |
 ===========================================================================================
 Ê±ÖÓÂ·¾¶ÑÓ³Ù         = 990       
 Êý¾ÝÂ·¾¶ÑÓ³Ù         = 2128       (Tdatp)
@@ -539,7 +539,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk    |      N/A       |    0 |               |      | N/A   |      |
 | clk          | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
 | clk_pad/I    |     xsIOBI     |    0 |      net      |      | clk   |      |
-| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 16   |
 | cnt_reg[9]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
 ==============================================================================
 
@@ -570,7 +570,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk             |      N/A       |    0 |               |      | N/A       |      |
 | clk                   | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
 | clk_pad/I             |     xsIOBI     |    0 |      net      |      | clk       |      |
-| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c     | 16   |
 | cnt_reg[1]/C          |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
 | --                    |       --       |   -- |      --       | --   | --        | --   |
 | cnt_reg[1]/Q          |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
@@ -589,10 +589,10 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | cnt/bitAdd_7/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_11 |      |
 | cnt/bitAdd_7/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_13 | 2    |
 | cnt/bitAdd_8/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_13 |      |
-| cnt/bitAdd_8/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[8]   | 1    |
-| _i_39/_i_13/I2        |    xsLUTSA3    |    0 |      net      |      | n_23[8]   |      |
-| _i_39/_i_13/O         |    xsLUTSA3    |   81 |     cell      |      | n_13      | 1    |
-| cnt_reg[8]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_13      |      |
+| cnt/bitAdd_8/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_24[8]   | 1    |
+| _i_44/_i_17/I3        |    xsLUTSA4    |    0 |      net      |      | n_24[8]   |      |
+| _i_44/_i_17/O         |    xsLUTSA4    |   81 |     cell      |      | n_15      | 1    |
+| cnt_reg[8]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_15      |      |
 ===========================================================================================
 Ê±ÖÓÂ·¾¶ÑÓ³Ù         = 990       
 Êý¾ÝÂ·¾¶ÑÓ³Ù         = 1960       (Tdatp)
@@ -608,7 +608,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk    |      N/A       |    0 |               |      | N/A   |      |
 | clk          | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
 | clk_pad/I    |     xsIOBI     |    0 |      net      |      | clk   |      |
-| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 16   |
 | cnt_reg[8]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
 ==============================================================================
 
@@ -639,7 +639,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk             |      N/A       |    0 |               |      | N/A       |      |
 | clk                   | baud_pulse_gen |    0 | clock_latency |      | clk       | 1    |
 | clk_pad/I             |     xsIOBI     |    0 |      net      |      | clk       |      |
-| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c     | 17   |
+| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c     | 16   |
 | cnt_reg[1]/C          |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c     |      |
 | --                    |       --       |   -- |      --       | --   | --        | --   |
 | cnt_reg[1]/Q          |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]    | 4    |
@@ -656,10 +656,10 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | cnt/bitAdd_6/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_9  |      |
 | cnt/bitAdd_6/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_11 | 2    |
 | cnt/bitAdd_7/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_11 |      |
-| cnt/bitAdd_7/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[7]   | 1    |
-| _i_39/_i_12/I2        |    xsLUTSA3    |    0 |      net      |      | n_23[7]   |      |
-| _i_39/_i_12/O         |    xsLUTSA3    |   81 |     cell      |      | n_12      | 1    |
-| cnt_reg[7]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_12      |      |
+| cnt/bitAdd_7/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_24[7]   | 1    |
+| _i_44/_i_16/I3        |    xsLUTSA4    |    0 |      net      |      | n_24[7]   |      |
+| _i_44/_i_16/O         |    xsLUTSA4    |   81 |     cell      |      | n_14      | 1    |
+| cnt_reg[7]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_14      |      |
 ===========================================================================================
 Ê±ÖÓÂ·¾¶ÑÓ³Ù         = 990       
 Êý¾ÝÂ·¾¶ÑÓ³Ù         = 1792       (Tdatp)
@@ -675,7 +675,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk    |      N/A       |    0 |               |      | N/A   |      |
 | clk          | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
 | clk_pad/I    |     xsIOBI     |    0 |      net      |      | clk   |      |
-| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 16   |
 | cnt_reg[7]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
 ==============================================================================
 
@@ -706,7 +706,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk             |      N/A       |    0 |               |      | N/A      |      |
 | clk                   | baud_pulse_gen |    0 | clock_latency |      | clk      | 1    |
 | clk_pad/I             |     xsIOBI     |    0 |      net      |      | clk      |      |
-| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c    | 17   |
+| clk_pad/O             |     xsIOBI     |  990 |     cell      |      | clk_c    | 16   |
 | cnt_reg[1]/C          |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c    |      |
 | --                    |       --       |   -- |      --       | --   | --       | --   |
 | cnt_reg[1]/Q          |  xsDFFSA_K1C1  |  347 |  rising_edge  |      | cnt[1]   | 4    |
@@ -721,10 +721,10 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | cnt/bitAdd_5/muxcy/CI |    xsMUXCY     |    0 |      net      |      | cnt/_n_7 |      |
 | cnt/bitAdd_5/muxcy/O  |    xsMUXCY     |  168 |     cell      |      | cnt/_n_9 | 2    |
 | cnt/bitAdd_6/xorcy/CI |    xsXORCY     |    0 |      net      |      | cnt/_n_9 |      |
-| cnt/bitAdd_6/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_23[6]  | 1    |
-| _i_39/_i_11/I2        |    xsLUTSA3    |    0 |      net      |      | n_23[6]  |      |
-| _i_39/_i_11/O         |    xsLUTSA3    |   81 |     cell      |      | n_11     | 1    |
-| cnt_reg[6]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_11     |      |
+| cnt/bitAdd_6/xorcy/O  |    xsXORCY     |  263 |     cell      |      | n_24[6]  | 1    |
+| _i_44/_i_15/I3        |    xsLUTSA4    |    0 |      net      |      | n_24[6]  |      |
+| _i_44/_i_15/O         |    xsLUTSA4    |   81 |     cell      |      | n_13     | 1    |
+| cnt_reg[6]/D          |  xsDFFSA_K1C1  |    0 |      net      |      | n_13     |      |
 ==========================================================================================
 Ê±ÖÓÂ·¾¶ÑÓ³Ù         = 990       
 Êý¾ÝÂ·¾¶ÑÓ³Ù         = 1624       (Tdatp)
@@ -740,7 +740,7 @@ Tckpm -- Ê±ÖÓ±¯¹Û²¹³¥
 | CLOCK'clk    |      N/A       |    0 |               |      | N/A   |      |
 | clk          | baud_pulse_gen |    0 | clock_latency |      | clk   | 1    |
 | clk_pad/I    |     xsIOBI     |    0 |      net      |      | clk   |      |
-| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 17   |
+| clk_pad/O    |     xsIOBI     |  990 |     cell      |      | clk_c | 16   |
 | cnt_reg[6]/C |  xsDFFSA_K1C1  |    0 |      net      |      | clk_c |      |
 ==============================================================================
 
