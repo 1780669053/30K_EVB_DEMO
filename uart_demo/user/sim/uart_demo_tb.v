@@ -88,7 +88,7 @@ module uart_demo_tb;
 			byte_in <= 0;
             bx_req(8'b1010_1010);
             bx_req($random % 2**8);
-        #10000
+        #100000
             $stop;
     end
 

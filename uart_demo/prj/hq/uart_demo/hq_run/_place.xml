@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpt>
+	<heads>
+		<h><![CDATA[HqFpga(TM) Release V3.0.5 (Summer 2024) Build FT091024]]></h>
+		<h><![CDATA[[Resource Location Report]]]></h>
+	</heads>
+	<subheads>
+		<sh name="Date">Sat Sep 14 10:00:19 2024</sh>
+		<sh name="Device">SA5Z-30-D1-8U213C</sh>
+	</subheads>
+	<sec title="IO端口位置" >
+		<tbl>
+			<cols>
+				<c>端口名</c>
+				<c>方向</c>
+				<c>位置</c>
+				<c>IO标准</c>
+				<c>Bank</c>
+				<c>VCCIO</c>
+				<c>DRIVE</c>
+				<c>SLEWRATE</c>
+				<c>PULLMODE</c>
+			</cols>
+
+			<r>
+				<v>clk</v> <v>INPUT</v> <v>A4</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>rst_n</v> <v>INPUT</v> <v>L15</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>uart_rx</v> <v>INPUT</v> <v>P12</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>uart_tx</v> <v>OUTPUT</v> <v>R12</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+		</tbl>
+	</sec>
+	<sec title="单元位置" >
+		<tbl>
+			<cols>
+				<c>元件</c>
+				<c>元件类型</c>
+				<c>位置</c>
+			</cols>
+
+			<r>
+				<v>uart_rx_MGIOL</v> <v>IOLOGIC</v> <v>IOL_B76B</v>
+			</r>
+			<r>
+				<v>uart_tx_MGIOL</v> <v>IOLOGIC</v> <v>IOL_B76D</v>
+			</r>
+			<r>
+				<v>u_baud_pulse_gen/n_22[1]</v> <v>SLICEL</v> <v>R32C101M</v>
+			</r>
+			<r>
+				<v>u_baud_pulse_gen/n_22[5]</v> <v>SLICEL</v> <v>R32C102M</v>
+			</r>
+			<r>
+				<v>u_baud_pulse_gen/n_22[9]</v> <v>SLICEL</v> <v>R32C103M</v>
+			</r>
+			<r>
+				<v>u_baud_pulse_gen/n_22[13]</v> <v>SLICEL</v> <v>R32C104M</v>
+			</r>
+			<r>
+				<v>u_uart_tx/n_45</v> <v>SLICEL</v> <v>R33C102L</v>
+			</r>
+			<r>
+				<v>u_uart_tx/byte_in_reg[7]</v> <v>SLICEL</v> <v>R33C101M</v>
+			</r>
+			<r>
+				<v>u_uart_tx/n_29</v> <v>SLICEL</v> <v>R33C103L</v>
+			</r>
+			<r>
+				<v>u_baud_pulse_gen/cnt[4]</v> <v>SLICEL</v> <v>R32C102L</v>
+			</r>
+			<r>
+				<v>u_baud_pulse_gen/cnt[12]</v> <v>SLICEL</v> <v>R32C103L</v>
+			</r>
+			<r>
+				<v>u_baud_pulse_gen/cnt[13]</v> <v>SLICEL</v> <v>R33C103M</v>
+			</r>
+			<r>
+				<v>u_baud_pulse_gen/cnt[14]</v> <v>SLICEL</v> <v>R32C101L</v>
+			</r>
+			<r>
+				<v>rx_valid</v> <v>SLICEL</v> <v>R32C100M</v>
+			</r>
+			<r>
+				<v>u_baud_pulse_gen/n_0</v> <v>SLICEL</v> <v>R32C100L</v>
+			</r>
+			<r>
+				<v>u_uart_tx/data_baud_cnt[0]</v> <v>SLICEL</v> <v>R33C102M</v>
+			</r>
+			<r>
+				<v>rx_byte[4]</v> <v>SLICEL</v> <v>R32C99M</v>
+			</r>
+			<r>
+				<v>rx_byte[5]</v> <v>SLICEL</v> <v>R32C99L</v>
+			</r>
+			<r>
+				<v>rx_byte[7]</v> <v>SLICEL</v> <v>R33C100M</v>
+			</r>
+			<r>
+				<v>tx_byte[6]</v> <v>SLICEL</v> <v>R33C101L</v>
+			</r>
+			<r>
+				<v>tx_byte[4]</v> <v>SLICEL</v> <v>R33C99L</v>
+			</r>
+			<r>
+				<v>tx_byte[2]</v> <v>SLICEL</v> <v>R33C100L</v>
+			</r>
+			<r>
+				<v>tx_byte[0]</v> <v>SLICEL</v> <v>R33C99M</v>
+			</r>
+		</tbl>
+	</sec>
+</rpt>

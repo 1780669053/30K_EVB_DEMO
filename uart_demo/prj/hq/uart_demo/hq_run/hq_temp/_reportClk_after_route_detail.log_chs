@@ -1,0 +1,772 @@
+
+#########################################################################
+#
+# 最大时钟频率(FMAX)报告
+#
+#########################################################################
+#
+# 注意: FMAX 的计算仅针对在同一时钟域内的寄存器到寄存器路径，
+# 多周期路径、跨时钟域路径(包括主时钟及其生成时钟之间的路径)都将
+# 被忽略。对于一个时钟及其反向时钟之间的路径， FMAX的计算通过按
+# 频宽比(duty cycle)等比例扩展路径延迟得到。例如，假设有一
+# 条路径的起点由时钟上升沿驱动而终点由同一时钟的下降沿驱动，
+# 如果该时钟的频宽比为50，则计算FMAX时，路径延迟将乘以2(即
+# 除以50%)。
+#
+
+
+# ***********************************************************************
+# 时钟         : clk
+# 最小时钟周期 : 4383.8 ps
+# ***********************************************************************
+
+********************
+* 路径 1
+********************
+起点     : u_baud_pulse_gen/cnt[14]/AQ [激发时钟: clk, 上升沿1]
+终点     : uart_tx_MGIOL/TXDATA0       [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================================================
+|               节点                |     单元      |  延迟  |     类型      |   位置   |           连线            | 扇出 |
+============================================================================================================================
+| CLOCK'clk                         |      N/A      |      0 |               |          | N/A                       |      |
+| clk                               |   uart_demo   |      0 | clock_latency |          | clk                       | 1    |
+| clk/PAD#bidir_in                  |      PIO      |      0 |      net      | PT31D    | clk                       | 1    |
+|    clk_pad/I                      |    xsIOBI     |        |               |          |                           |      |
+|    clk_pad/O                      |    xsIOBI     |        |               |          |                           |      |
+| clk/PADDI                         |      PIO      |   1091 |   PADI_DEL    |          | clk_c                     | 19   |
+| u_baud_pulse_gen/cnt[14]/CLK      |    SLICEL     | 1735.4 |      net      | R32C101L | clk_c                     |      |
+| --                                |      --       |     -- |      --       | --       | --                        | --   |
+|    u_baud_pulse_gen/cnt_reg[14]/C | xsDFFSA_K1C1  |        |               |          |                           |      |
+|    u_baud_pulse_gen/cnt_reg[14]/Q | xsDFFSA_K1C1  |        |               |          |                           |      |
+| u_baud_pulse_gen/cnt[14]/AQ       |    SLICEL     |   30.5 |     Tcko      |          | u_baud_pulse_gen/cnt[14]  | 2    |
+| u_baud_pulse_gen/cnt[12]/D5       |    SLICEL     |  751.3 |      net      | R32C103L | u_baud_pulse_gen/cnt[14]  |      |
+|    _i_1/I4                        |   xsLUTSA6    |        |               |          |                           |      |
+|    _i_1/O                         |   xsLUTSA6    |        |               |          |                           |      |
+| u_baud_pulse_gen/cnt[12]/D        |    SLICEL     |   75.1 |     Tilo      |          | _n_1                      | 2    |
+| u_baud_pulse_gen/cnt[4]/C3        |    SLICEL     |  504.1 |      net      | R32C102L | _n_1                      |      |
+|    _i_2/I2                        |   xsLUTSA6    |        |               |          |                           |      |
+|    _i_2/O                         |   xsLUTSA6    |        |               |          |                           |      |
+| u_baud_pulse_gen/cnt[4]/C         |    SLICEL     |   75.1 |     Tilo      |          | _i_3/n106                 | 20   |
+| u_baud_pulse_gen/cnt[13]/C1       |    SLICEL     |  648.9 |      net      | R33C103M | _i_3/n106                 |      |
+|    _i_5/I0                        |   xsLUTSA6    |        |               |          |                           |      |
+|    _i_5/O                         |   xsLUTSA6    |        |               |          |                           |      |
+| u_baud_pulse_gen/cnt[13]/C        |    SLICEL     |   75.1 |     Tilo      |          | u_uart_tx/tx_reg_ctrl_din | 1    |
+| uart_tx_MGIOL/TXDATA0             |    IOLOGIC    | 1858.7 |      net      | IOL_B76D | u_uart_tx/tx_reg_ctrl_din |      |
+|    u_uart_tx/tx_reg_dup1/D        | xsODFF_K1P1E1 |        |               |          |                           |      |
+============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 4018.7     (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 225.3 
+        总的连线延迟 = 3762.9 
+        逻辑级数     = 3 
+
+[数据捕获路径]
+===========================================================================================================
+|                 节点                 |     单元      |  延迟  |     类型      |   位置   | 连线  | 扇出 |
+===========================================================================================================
+| CLOCK'clk                            |      N/A      |      0 |               |          | N/A   |      |
+| clk                                  |   uart_demo   |      0 | clock_latency |          | clk   | 1    |
+| clk/PAD#bidir_in                     |      PIO      |      0 |      net      | PT31D    | clk   | 1    |
+|    /U_ARCH/IOLOGIC/IOLOGIC:3/TXDATA0 |    IOLOGIC    |        |               |          |       |      |
+|    u_uart_tx/tx_reg_dup1/D           | xsODFF_K1P1E1 |        |               |          |       |      |
+|    clk_pad/I                         |    xsIOBI     |        |               |          |       |      |
+|    clk_pad/O                         |    xsIOBI     |        |               |          |       |      |
+| clk/PADDI                            |      PIO      |   1091 |   PADI_DEL    |          | clk_c | 19   |
+| uart_tx_MGIOL/CLK                    |    IOLOGIC    | 1672.4 |      net      | IOL_B76D | clk_c |      |
+|    u_uart_tx/tx_reg_dup1/D           | xsODFF_K1P1E1 |        |               |          |       |      |
+|    u_uart_tx/tx_reg_dup1/SCLK        | xsODFF_K1P1E1 |        |               |          |       |      |
+===========================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 4018.7     + 302        - 0          - -63        
+       = 4383.7
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 2
+********************
+起点     : u_baud_pulse_gen/cnt[14]/AQ [激发时钟: clk, 上升沿1]
+终点     : uart_rx_MGIOL/CE            [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+===========================================================================================================================
+|               节点                |     单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+===========================================================================================================================
+| CLOCK'clk                         |      N/A      |      0 |               |          | N/A                      |      |
+| clk                               |   uart_demo   |      0 | clock_latency |          | clk                      | 1    |
+| clk/PAD#bidir_in                  |      PIO      |      0 |      net      | PT31D    | clk                      | 1    |
+|    clk_pad/I                      |    xsIOBI     |        |               |          |                          |      |
+|    clk_pad/O                      |    xsIOBI     |        |               |          |                          |      |
+| clk/PADDI                         |      PIO      |   1091 |   PADI_DEL    |          | clk_c                    | 19   |
+| u_baud_pulse_gen/cnt[14]/CLK      |    SLICEL     | 1735.4 |      net      | R32C101L | clk_c                    |      |
+| --                                |      --       |     -- |      --       | --       | --                       | --   |
+|    u_baud_pulse_gen/cnt_reg[14]/C | xsDFFSA_K1C1  |        |               |          |                          |      |
+|    u_baud_pulse_gen/cnt_reg[14]/Q | xsDFFSA_K1C1  |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[14]/AQ       |    SLICEL     |   30.5 |     Tcko      |          | u_baud_pulse_gen/cnt[14] | 2    |
+| u_baud_pulse_gen/cnt[12]/D5       |    SLICEL     |  751.3 |      net      | R32C103L | u_baud_pulse_gen/cnt[14] |      |
+|    _i_1/I4                        |   xsLUTSA6    |        |               |          |                          |      |
+|    _i_1/O                         |   xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[12]/D        |    SLICEL     |   75.1 |     Tilo      |          | _n_1                     | 2    |
+| u_baud_pulse_gen/cnt[4]/C3        |    SLICEL     |  504.1 |      net      | R32C102L | _n_1                     |      |
+|    _i_2/I2                        |   xsLUTSA6    |        |               |          |                          |      |
+|    _i_2/O                         |   xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[4]/C         |    SLICEL     |   75.1 |     Tilo      |          | _i_3/n106                | 20   |
+| rx_valid/B5                       |    SLICEL     |  885.8 |      net      | R32C100M | _i_3/n106                |      |
+|    _i_3/_i_15/I4                  |   xsLUTSA6    |        |               |          |                          |      |
+|    _i_3/_i_15/O                   |   xsLUTSA6    |        |               |          |                          |      |
+| rx_valid/B                        |    SLICEL     |   75.1 |     Tilo      |          | u_uart_rx/n_73           | 5    |
+| uart_rx_MGIOL/CE                  |    IOLOGIC    | 1734.8 |      net      | IOL_B76B | u_uart_rx/n_73           |      |
+|    u_uart_rx/byte_out_reg[0]/SP   | xsIDFF_K1C1E1 |        |               |          |                          |      |
+===========================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 4131.7     (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 225.3 
+        总的连线延迟 = 3875.9 
+        逻辑级数     = 3 
+
+[数据捕获路径]
+========================================================================================================
+|               节点                |     单元      |  延迟  |     类型      |   位置   | 连线  | 扇出 |
+========================================================================================================
+| CLOCK'clk                         |      N/A      |      0 |               |          | N/A   |      |
+| clk                               |   uart_demo   |      0 | clock_latency |          | clk   | 1    |
+| clk/PAD#bidir_in                  |      PIO      |      0 |      net      | PT31D    | clk   | 1    |
+|    /U_ARCH/IOLOGIC/IOLOGIC:2/CE   |    IOLOGIC    |        |               |          |       |      |
+|    u_uart_rx/byte_out_reg[0]/SP   | xsIDFF_K1C1E1 |        |               |          |       |      |
+|    clk_pad/I                      |    xsIOBI     |        |               |          |       |      |
+|    clk_pad/O                      |    xsIOBI     |        |               |          |       |      |
+| clk/PADDI                         |      PIO      |   1091 |   PADI_DEL    |          | clk_c | 19   |
+| uart_rx_MGIOL/CLK                 |    IOLOGIC    | 1672.4 |      net      | IOL_B76B | clk_c |      |
+|    u_uart_rx/byte_out_reg[0]/SP   | xsIDFF_K1C1E1 |        |               |          |       |      |
+|    u_uart_rx/byte_out_reg[0]/SCLK | xsIDFF_K1C1E1 |        |               |          |       |      |
+========================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 4131.7     + 63         - 0          - -63        
+       = 4257.7
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 3
+********************
+起点     : u_baud_pulse_gen/cnt[14]/AQ [激发时钟: clk, 上升沿1]
+终点     : rx_byte[4]/CE               [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================================================
+|               节点                |      单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+============================================================================================================================
+| CLOCK'clk                         |      N/A       |      0 |               |          | N/A                      |      |
+| clk                               |   uart_demo    |      0 | clock_latency |          | clk                      | 1    |
+| clk/PAD#bidir_in                  |      PIO       |      0 |      net      | PT31D    | clk                      | 1    |
+|    clk_pad/I                      |     xsIOBI     |        |               |          |                          |      |
+|    clk_pad/O                      |     xsIOBI     |        |               |          |                          |      |
+| clk/PADDI                         |      PIO       |   1091 |   PADI_DEL    |          | clk_c                    | 19   |
+| u_baud_pulse_gen/cnt[14]/CLK      |     SLICEL     | 1735.4 |      net      | R32C101L | clk_c                    |      |
+| --                                |       --       |     -- |      --       | --       | --                       | --   |
+|    u_baud_pulse_gen/cnt_reg[14]/C |  xsDFFSA_K1C1  |        |               |          |                          |      |
+|    u_baud_pulse_gen/cnt_reg[14]/Q |  xsDFFSA_K1C1  |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[14]/AQ       |     SLICEL     |   30.5 |     Tcko      |          | u_baud_pulse_gen/cnt[14] | 2    |
+| u_baud_pulse_gen/cnt[12]/D5       |     SLICEL     |  751.3 |      net      | R32C103L | u_baud_pulse_gen/cnt[14] |      |
+|    _i_1/I4                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_1/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[12]/D        |     SLICEL     |   75.1 |     Tilo      |          | _n_1                     | 2    |
+| u_baud_pulse_gen/cnt[4]/C3        |     SLICEL     |  504.1 |      net      | R32C102L | _n_1                     |      |
+|    _i_2/I2                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_2/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[4]/C         |     SLICEL     |   75.1 |     Tilo      |          | _i_3/n106                | 20   |
+| rx_valid/B5                       |     SLICEL     |  885.8 |      net      | R32C100M | _i_3/n106                |      |
+|    _i_3/_i_15/I4                  |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_3/_i_15/O                   |    xsLUTSA6    |        |               |          |                          |      |
+| rx_valid/B                        |     SLICEL     |   75.1 |     Tilo      |          | u_uart_rx/n_73           | 5    |
+| rx_byte[4]/CE                     |     SLICEL     |  747.9 |      net      | R32C99M  | u_uart_rx/n_73           |      |
+|    u_uart_rx/byte_out_reg[1]/CE   | xsDFFSA_K1C1E1 |        |               |          |                          |      |
+============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 3144.8     (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 225.3 
+        总的连线延迟 = 2889 
+        逻辑级数     = 3 
+
+[数据捕获路径]
+======================================================================================================
+|              节点               |      单元      |  延迟  |     类型      |  位置   | 连线  | 扇出 |
+======================================================================================================
+| CLOCK'clk                       |      N/A       |      0 |               |         | N/A   |      |
+| clk                             |   uart_demo    |      0 | clock_latency |         | clk   | 1    |
+| clk/PAD#bidir_in                |      PIO       |      0 |      net      | PT31D   | clk   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:16/CE  |     SLICEL     |        |               |         |       |      |
+|    u_uart_rx/byte_out_reg[1]/CE | xsDFFSA_K1C1E1 |        |               |         |       |      |
+|    clk_pad/I                    |     xsIOBI     |        |               |         |       |      |
+|    clk_pad/O                    |     xsIOBI     |        |               |         |       |      |
+| clk/PADDI                       |      PIO       |   1091 |   PADI_DEL    |         | clk_c | 19   |
+| rx_byte[4]/CLK                  |     SLICEL     | 1672.4 |      net      | R32C99M | clk_c |      |
+|    u_uart_rx/byte_out_reg[1]/CE | xsDFFSA_K1C1E1 |        |               |         |       |      |
+|    u_uart_rx/byte_out_reg[1]/C  | xsDFFSA_K1C1E1 |        |               |         |       |      |
+======================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3144.8     + 47.5       - 0          - -63        
+       = 3255.3
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 4
+********************
+起点     : u_baud_pulse_gen/cnt[14]/AQ [激发时钟: clk, 上升沿1]
+终点     : tx_byte[6]/CE               [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================================================
+|               节点                |      单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+============================================================================================================================
+| CLOCK'clk                         |      N/A       |      0 |               |          | N/A                      |      |
+| clk                               |   uart_demo    |      0 | clock_latency |          | clk                      | 1    |
+| clk/PAD#bidir_in                  |      PIO       |      0 |      net      | PT31D    | clk                      | 1    |
+|    clk_pad/I                      |     xsIOBI     |        |               |          |                          |      |
+|    clk_pad/O                      |     xsIOBI     |        |               |          |                          |      |
+| clk/PADDI                         |      PIO       |   1091 |   PADI_DEL    |          | clk_c                    | 19   |
+| u_baud_pulse_gen/cnt[14]/CLK      |     SLICEL     | 1735.4 |      net      | R32C101L | clk_c                    |      |
+| --                                |       --       |     -- |      --       | --       | --                       | --   |
+|    u_baud_pulse_gen/cnt_reg[14]/C |  xsDFFSA_K1C1  |        |               |          |                          |      |
+|    u_baud_pulse_gen/cnt_reg[14]/Q |  xsDFFSA_K1C1  |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[14]/AQ       |     SLICEL     |   30.5 |     Tcko      |          | u_baud_pulse_gen/cnt[14] | 2    |
+| u_baud_pulse_gen/cnt[12]/D5       |     SLICEL     |  751.3 |      net      | R32C103L | u_baud_pulse_gen/cnt[14] |      |
+|    _i_1/I4                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_1/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[12]/D        |     SLICEL     |   75.1 |     Tilo      |          | _n_1                     | 2    |
+| u_baud_pulse_gen/cnt[4]/C3        |     SLICEL     |  504.1 |      net      | R32C102L | _n_1                     |      |
+|    _i_2/I2                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_2/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[4]/C         |     SLICEL     |   75.1 |     Tilo      |          | _i_3/n106                | 20   |
+| rx_valid/A6                       |     SLICEL     |  777.2 |      net      | R32C100M | _i_3/n106                |      |
+|    _i_3/_i_9/I5                   |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_3/_i_9/O                    |    xsLUTSA6    |        |               |          |                          |      |
+| rx_valid/A                        |     SLICEL     |   75.1 |     Tilo      |          | rx_valid                 | 4    |
+| tx_byte[6]/CE                     |     SLICEL     |  774.6 |      net      | R33C101L | rx_valid                 |      |
+|    u_loop_ctrl/byte_out_reg[7]/CE | xsDFFSA_K1C1E1 |        |               |          |                          |      |
+============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 3063       (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 225.3 
+        总的连线延迟 = 2807.2 
+        逻辑级数     = 3 
+
+[数据捕获路径]
+=========================================================================================================
+|               节点                |      单元      |  延迟  |     类型      |   位置   | 连线  | 扇出 |
+=========================================================================================================
+| CLOCK'clk                         |      N/A       |      0 |               |          | N/A   |      |
+| clk                               |   uart_demo    |      0 | clock_latency |          | clk   | 1    |
+| clk/PAD#bidir_in                  |      PIO       |      0 |      net      | PT31D    | clk   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:19/CE    |     SLICEL     |        |               |          |       |      |
+|    u_loop_ctrl/byte_out_reg[7]/CE | xsDFFSA_K1C1E1 |        |               |          |       |      |
+|    clk_pad/I                      |     xsIOBI     |        |               |          |       |      |
+|    clk_pad/O                      |     xsIOBI     |        |               |          |       |      |
+| clk/PADDI                         |      PIO       |   1091 |   PADI_DEL    |          | clk_c | 19   |
+| tx_byte[6]/CLK                    |     SLICEL     | 1672.4 |      net      | R33C101L | clk_c |      |
+|    u_loop_ctrl/byte_out_reg[7]/CE | xsDFFSA_K1C1E1 |        |               |          |       |      |
+|    u_loop_ctrl/byte_out_reg[7]/C  | xsDFFSA_K1C1E1 |        |               |          |       |      |
+=========================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3063       + 47.5       - 0          - -63        
+       = 3173.5
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 5
+********************
+起点     : u_baud_pulse_gen/cnt[14]/AQ   [激发时钟: clk, 上升沿1]
+终点     : u_uart_tx/data_baud_cnt[0]/CE [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+===============================================================================================================================
+|                 节点                 |      单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+===============================================================================================================================
+| CLOCK'clk                            |      N/A       |      0 |               |          | N/A                      |      |
+| clk                                  |   uart_demo    |      0 | clock_latency |          | clk                      | 1    |
+| clk/PAD#bidir_in                     |      PIO       |      0 |      net      | PT31D    | clk                      | 1    |
+|    clk_pad/I                         |     xsIOBI     |        |               |          |                          |      |
+|    clk_pad/O                         |     xsIOBI     |        |               |          |                          |      |
+| clk/PADDI                            |      PIO       |   1091 |   PADI_DEL    |          | clk_c                    | 19   |
+| u_baud_pulse_gen/cnt[14]/CLK         |     SLICEL     | 1735.4 |      net      | R32C101L | clk_c                    |      |
+| --                                   |       --       |     -- |      --       | --       | --                       | --   |
+|    u_baud_pulse_gen/cnt_reg[14]/C    |  xsDFFSA_K1C1  |        |               |          |                          |      |
+|    u_baud_pulse_gen/cnt_reg[14]/Q    |  xsDFFSA_K1C1  |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[14]/AQ          |     SLICEL     |   30.5 |     Tcko      |          | u_baud_pulse_gen/cnt[14] | 2    |
+| u_baud_pulse_gen/cnt[12]/D5          |     SLICEL     |  751.3 |      net      | R32C103L | u_baud_pulse_gen/cnt[14] |      |
+|    _i_1/I4                           |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_1/O                            |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[12]/D           |     SLICEL     |   75.1 |     Tilo      |          | _n_1                     | 2    |
+| u_baud_pulse_gen/cnt[4]/C3           |     SLICEL     |  504.1 |      net      | R32C102L | _n_1                     |      |
+|    _i_2/I2                           |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_2/O                            |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[4]/C            |     SLICEL     |   75.1 |     Tilo      |          | _i_3/n106                | 20   |
+| u_uart_tx/n_29/D3                    |     SLICEL     |  814.5 |      net      | R33C103L | _i_3/n106                |      |
+|    _i_3/_i_37/I2                     |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_3/_i_37/O                      |    xsLUTSA6    |        |               |          |                          |      |
+| u_uart_tx/n_29/D                     |     SLICEL     |   75.1 |     Tilo      |          | u_uart_tx/n_40           | 2    |
+| u_uart_tx/data_baud_cnt[0]/CE        |     SLICEL     |  637.6 |      net      | R33C102M | u_uart_tx/n_40           |      |
+|    u_uart_tx/data_baud_cnt_reg[0]/CE | xsDFFSA_K1P1E1 |        |               |          |                          |      |
+===============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 2963.3     (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 225.3 
+        总的连线延迟 = 2707.5 
+        逻辑级数     = 3 
+
+[数据捕获路径]
+============================================================================================================
+|                 节点                 |      单元      |  延迟  |     类型      |   位置   | 连线  | 扇出 |
+============================================================================================================
+| CLOCK'clk                            |      N/A       |      0 |               |          | N/A   |      |
+| clk                                  |   uart_demo    |      0 | clock_latency |          | clk   | 1    |
+| clk/PAD#bidir_in                     |      PIO       |      0 |      net      | PT31D    | clk   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:15/CE       |     SLICEL     |        |               |          |       |      |
+|    u_uart_tx/data_baud_cnt_reg[0]/CE | xsDFFSA_K1P1E1 |        |               |          |       |      |
+|    clk_pad/I                         |     xsIOBI     |        |               |          |       |      |
+|    clk_pad/O                         |     xsIOBI     |        |               |          |       |      |
+| clk/PADDI                            |      PIO       |   1091 |   PADI_DEL    |          | clk_c | 19   |
+| u_uart_tx/data_baud_cnt[0]/CLK       |     SLICEL     | 1672.4 |      net      | R33C102M | clk_c |      |
+|    u_uart_tx/data_baud_cnt_reg[0]/CE | xsDFFSA_K1P1E1 |        |               |          |       |      |
+|    u_uart_tx/data_baud_cnt_reg[0]/C  | xsDFFSA_K1P1E1 |        |               |          |       |      |
+============================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2963.3     + 47.5       - 0          - -63        
+       = 3073.8
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 6
+********************
+起点     : u_baud_pulse_gen/cnt[14]/AQ [激发时钟: clk, 上升沿1]
+终点     : tx_byte[4]/CE               [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================================================
+|               节点                |      单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+============================================================================================================================
+| CLOCK'clk                         |      N/A       |      0 |               |          | N/A                      |      |
+| clk                               |   uart_demo    |      0 | clock_latency |          | clk                      | 1    |
+| clk/PAD#bidir_in                  |      PIO       |      0 |      net      | PT31D    | clk                      | 1    |
+|    clk_pad/I                      |     xsIOBI     |        |               |          |                          |      |
+|    clk_pad/O                      |     xsIOBI     |        |               |          |                          |      |
+| clk/PADDI                         |      PIO       |   1091 |   PADI_DEL    |          | clk_c                    | 19   |
+| u_baud_pulse_gen/cnt[14]/CLK      |     SLICEL     | 1735.4 |      net      | R32C101L | clk_c                    |      |
+| --                                |       --       |     -- |      --       | --       | --                       | --   |
+|    u_baud_pulse_gen/cnt_reg[14]/C |  xsDFFSA_K1C1  |        |               |          |                          |      |
+|    u_baud_pulse_gen/cnt_reg[14]/Q |  xsDFFSA_K1C1  |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[14]/AQ       |     SLICEL     |   30.5 |     Tcko      |          | u_baud_pulse_gen/cnt[14] | 2    |
+| u_baud_pulse_gen/cnt[12]/D5       |     SLICEL     |  751.3 |      net      | R32C103L | u_baud_pulse_gen/cnt[14] |      |
+|    _i_1/I4                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_1/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[12]/D        |     SLICEL     |   75.1 |     Tilo      |          | _n_1                     | 2    |
+| u_baud_pulse_gen/cnt[4]/C3        |     SLICEL     |  504.1 |      net      | R32C102L | _n_1                     |      |
+|    _i_2/I2                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_2/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[4]/C         |     SLICEL     |   75.1 |     Tilo      |          | _i_3/n106                | 20   |
+| rx_valid/A6                       |     SLICEL     |  777.2 |      net      | R32C100M | _i_3/n106                |      |
+|    _i_3/_i_9/I5                   |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_3/_i_9/O                    |    xsLUTSA6    |        |               |          |                          |      |
+| rx_valid/A                        |     SLICEL     |   75.1 |     Tilo      |          | rx_valid                 | 4    |
+| tx_byte[4]/CE                     |     SLICEL     |  632.6 |      net      | R33C99L  | rx_valid                 |      |
+|    u_loop_ctrl/byte_out_reg[5]/CE | xsDFFSA_K1C1E1 |        |               |          |                          |      |
+============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 2921       (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 225.3 
+        总的连线延迟 = 2665.2 
+        逻辑级数     = 3 
+
+[数据捕获路径]
+========================================================================================================
+|               节点                |      单元      |  延迟  |     类型      |  位置   | 连线  | 扇出 |
+========================================================================================================
+| CLOCK'clk                         |      N/A       |      0 |               |         | N/A   |      |
+| clk                               |   uart_demo    |      0 | clock_latency |         | clk   | 1    |
+| clk/PAD#bidir_in                  |      PIO       |      0 |      net      | PT31D   | clk   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:20/CE    |     SLICEL     |        |               |         |       |      |
+|    u_loop_ctrl/byte_out_reg[5]/CE | xsDFFSA_K1C1E1 |        |               |         |       |      |
+|    clk_pad/I                      |     xsIOBI     |        |               |         |       |      |
+|    clk_pad/O                      |     xsIOBI     |        |               |         |       |      |
+| clk/PADDI                         |      PIO       |   1091 |   PADI_DEL    |         | clk_c | 19   |
+| tx_byte[4]/CLK                    |     SLICEL     | 1672.4 |      net      | R33C99L | clk_c |      |
+|    u_loop_ctrl/byte_out_reg[5]/CE | xsDFFSA_K1C1E1 |        |               |         |       |      |
+|    u_loop_ctrl/byte_out_reg[5]/C  | xsDFFSA_K1C1E1 |        |               |         |       |      |
+========================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2921       + 47.5       - 0          - -63        
+       = 3031.5
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 7
+********************
+起点     : u_baud_pulse_gen/cnt[14]/AQ [激发时钟: clk, 上升沿1]
+终点     : rx_byte[7]/CE               [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================================================
+|               节点                |      单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+============================================================================================================================
+| CLOCK'clk                         |      N/A       |      0 |               |          | N/A                      |      |
+| clk                               |   uart_demo    |      0 | clock_latency |          | clk                      | 1    |
+| clk/PAD#bidir_in                  |      PIO       |      0 |      net      | PT31D    | clk                      | 1    |
+|    clk_pad/I                      |     xsIOBI     |        |               |          |                          |      |
+|    clk_pad/O                      |     xsIOBI     |        |               |          |                          |      |
+| clk/PADDI                         |      PIO       |   1091 |   PADI_DEL    |          | clk_c                    | 19   |
+| u_baud_pulse_gen/cnt[14]/CLK      |     SLICEL     | 1735.4 |      net      | R32C101L | clk_c                    |      |
+| --                                |       --       |     -- |      --       | --       | --                       | --   |
+|    u_baud_pulse_gen/cnt_reg[14]/C |  xsDFFSA_K1C1  |        |               |          |                          |      |
+|    u_baud_pulse_gen/cnt_reg[14]/Q |  xsDFFSA_K1C1  |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[14]/AQ       |     SLICEL     |   30.5 |     Tcko      |          | u_baud_pulse_gen/cnt[14] | 2    |
+| u_baud_pulse_gen/cnt[12]/D5       |     SLICEL     |  751.3 |      net      | R32C103L | u_baud_pulse_gen/cnt[14] |      |
+|    _i_1/I4                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_1/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[12]/D        |     SLICEL     |   75.1 |     Tilo      |          | _n_1                     | 2    |
+| u_baud_pulse_gen/cnt[4]/C3        |     SLICEL     |  504.1 |      net      | R32C102L | _n_1                     |      |
+|    _i_2/I2                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_2/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[4]/C         |     SLICEL     |   75.1 |     Tilo      |          | _i_3/n106                | 20   |
+| rx_valid/B5                       |     SLICEL     |  885.8 |      net      | R32C100M | _i_3/n106                |      |
+|    _i_3/_i_15/I4                  |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_3/_i_15/O                   |    xsLUTSA6    |        |               |          |                          |      |
+| rx_valid/B                        |     SLICEL     |   75.1 |     Tilo      |          | u_uart_rx/n_73           | 5    |
+| rx_byte[7]/CE                     |     SLICEL     |  493.5 |      net      | R33C100M | u_uart_rx/n_73           |      |
+|    u_uart_rx/byte_out_reg[6]/CE   | xsDFFSA_K1C1E1 |        |               |          |                          |      |
+============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 2890.5     (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 225.3 
+        总的连线延迟 = 2634.7 
+        逻辑级数     = 3 
+
+[数据捕获路径]
+=======================================================================================================
+|              节点               |      单元      |  延迟  |     类型      |   位置   | 连线  | 扇出 |
+=======================================================================================================
+| CLOCK'clk                       |      N/A       |      0 |               |          | N/A   |      |
+| clk                             |   uart_demo    |      0 | clock_latency |          | clk   | 1    |
+| clk/PAD#bidir_in                |      PIO       |      0 |      net      | PT31D    | clk   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:18/CE  |     SLICEL     |        |               |          |       |      |
+|    u_uart_rx/byte_out_reg[6]/CE | xsDFFSA_K1C1E1 |        |               |          |       |      |
+|    clk_pad/I                    |     xsIOBI     |        |               |          |       |      |
+|    clk_pad/O                    |     xsIOBI     |        |               |          |       |      |
+| clk/PADDI                       |      PIO       |   1091 |   PADI_DEL    |          | clk_c | 19   |
+| rx_byte[7]/CLK                  |     SLICEL     | 1672.4 |      net      | R33C100M | clk_c |      |
+|    u_uart_rx/byte_out_reg[6]/CE | xsDFFSA_K1C1E1 |        |               |          |       |      |
+|    u_uart_rx/byte_out_reg[6]/C  | xsDFFSA_K1C1E1 |        |               |          |       |      |
+=======================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2890.5     + 47.5       - 0          - -63        
+       = 3001
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 8
+********************
+起点     : u_baud_pulse_gen/cnt[14]/AQ [激发时钟: clk, 上升沿1]
+终点     : rx_byte[5]/CE               [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================================================
+|               节点                |      单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+============================================================================================================================
+| CLOCK'clk                         |      N/A       |      0 |               |          | N/A                      |      |
+| clk                               |   uart_demo    |      0 | clock_latency |          | clk                      | 1    |
+| clk/PAD#bidir_in                  |      PIO       |      0 |      net      | PT31D    | clk                      | 1    |
+|    clk_pad/I                      |     xsIOBI     |        |               |          |                          |      |
+|    clk_pad/O                      |     xsIOBI     |        |               |          |                          |      |
+| clk/PADDI                         |      PIO       |   1091 |   PADI_DEL    |          | clk_c                    | 19   |
+| u_baud_pulse_gen/cnt[14]/CLK      |     SLICEL     | 1735.4 |      net      | R32C101L | clk_c                    |      |
+| --                                |       --       |     -- |      --       | --       | --                       | --   |
+|    u_baud_pulse_gen/cnt_reg[14]/C |  xsDFFSA_K1C1  |        |               |          |                          |      |
+|    u_baud_pulse_gen/cnt_reg[14]/Q |  xsDFFSA_K1C1  |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[14]/AQ       |     SLICEL     |   30.5 |     Tcko      |          | u_baud_pulse_gen/cnt[14] | 2    |
+| u_baud_pulse_gen/cnt[12]/D5       |     SLICEL     |  751.3 |      net      | R32C103L | u_baud_pulse_gen/cnt[14] |      |
+|    _i_1/I4                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_1/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[12]/D        |     SLICEL     |   75.1 |     Tilo      |          | _n_1                     | 2    |
+| u_baud_pulse_gen/cnt[4]/C3        |     SLICEL     |  504.1 |      net      | R32C102L | _n_1                     |      |
+|    _i_2/I2                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_2/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[4]/C         |     SLICEL     |   75.1 |     Tilo      |          | _i_3/n106                | 20   |
+| rx_valid/B5                       |     SLICEL     |  885.8 |      net      | R32C100M | _i_3/n106                |      |
+|    _i_3/_i_15/I4                  |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_3/_i_15/O                   |    xsLUTSA6    |        |               |          |                          |      |
+| rx_valid/B                        |     SLICEL     |   75.1 |     Tilo      |          | u_uart_rx/n_73           | 5    |
+| rx_byte[5]/CE                     |     SLICEL     |  493.4 |      net      | R32C99L  | u_uart_rx/n_73           |      |
+|    u_uart_rx/byte_out_reg[2]/CE   | xsDFFSA_K1C1E1 |        |               |          |                          |      |
+============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 2890.3     (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 225.3 
+        总的连线延迟 = 2634.5 
+        逻辑级数     = 3 
+
+[数据捕获路径]
+======================================================================================================
+|              节点               |      单元      |  延迟  |     类型      |  位置   | 连线  | 扇出 |
+======================================================================================================
+| CLOCK'clk                       |      N/A       |      0 |               |         | N/A   |      |
+| clk                             |   uart_demo    |      0 | clock_latency |         | clk   | 1    |
+| clk/PAD#bidir_in                |      PIO       |      0 |      net      | PT31D   | clk   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:17/CE  |     SLICEL     |        |               |         |       |      |
+|    u_uart_rx/byte_out_reg[2]/CE | xsDFFSA_K1C1E1 |        |               |         |       |      |
+|    clk_pad/I                    |     xsIOBI     |        |               |         |       |      |
+|    clk_pad/O                    |     xsIOBI     |        |               |         |       |      |
+| clk/PADDI                       |      PIO       |   1091 |   PADI_DEL    |         | clk_c | 19   |
+| rx_byte[5]/CLK                  |     SLICEL     | 1672.4 |      net      | R32C99L | clk_c |      |
+|    u_uart_rx/byte_out_reg[2]/CE | xsDFFSA_K1C1E1 |        |               |         |       |      |
+|    u_uart_rx/byte_out_reg[2]/C  | xsDFFSA_K1C1E1 |        |               |         |       |      |
+======================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2890.3     + 47.5       - 0          - -63        
+       = 3000.8
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 9
+********************
+起点     : u_baud_pulse_gen/cnt[14]/AQ [激发时钟: clk, 上升沿1]
+终点     : tx_byte[2]/CE               [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================================================
+|               节点                |      单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+============================================================================================================================
+| CLOCK'clk                         |      N/A       |      0 |               |          | N/A                      |      |
+| clk                               |   uart_demo    |      0 | clock_latency |          | clk                      | 1    |
+| clk/PAD#bidir_in                  |      PIO       |      0 |      net      | PT31D    | clk                      | 1    |
+|    clk_pad/I                      |     xsIOBI     |        |               |          |                          |      |
+|    clk_pad/O                      |     xsIOBI     |        |               |          |                          |      |
+| clk/PADDI                         |      PIO       |   1091 |   PADI_DEL    |          | clk_c                    | 19   |
+| u_baud_pulse_gen/cnt[14]/CLK      |     SLICEL     | 1735.4 |      net      | R32C101L | clk_c                    |      |
+| --                                |       --       |     -- |      --       | --       | --                       | --   |
+|    u_baud_pulse_gen/cnt_reg[14]/C |  xsDFFSA_K1C1  |        |               |          |                          |      |
+|    u_baud_pulse_gen/cnt_reg[14]/Q |  xsDFFSA_K1C1  |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[14]/AQ       |     SLICEL     |   30.5 |     Tcko      |          | u_baud_pulse_gen/cnt[14] | 2    |
+| u_baud_pulse_gen/cnt[12]/D5       |     SLICEL     |  751.3 |      net      | R32C103L | u_baud_pulse_gen/cnt[14] |      |
+|    _i_1/I4                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_1/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[12]/D        |     SLICEL     |   75.1 |     Tilo      |          | _n_1                     | 2    |
+| u_baud_pulse_gen/cnt[4]/C3        |     SLICEL     |  504.1 |      net      | R32C102L | _n_1                     |      |
+|    _i_2/I2                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_2/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[4]/C         |     SLICEL     |   75.1 |     Tilo      |          | _i_3/n106                | 20   |
+| rx_valid/A6                       |     SLICEL     |  777.2 |      net      | R32C100M | _i_3/n106                |      |
+|    _i_3/_i_9/I5                   |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_3/_i_9/O                    |    xsLUTSA6    |        |               |          |                          |      |
+| rx_valid/A                        |     SLICEL     |   75.1 |     Tilo      |          | rx_valid                 | 4    |
+| tx_byte[2]/CE                     |     SLICEL     |  522.7 |      net      | R33C100L | rx_valid                 |      |
+|    u_loop_ctrl/byte_out_reg[3]/CE | xsDFFSA_K1C1E1 |        |               |          |                          |      |
+============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 2811.1     (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 225.3 
+        总的连线延迟 = 2555.3 
+        逻辑级数     = 3 
+
+[数据捕获路径]
+=========================================================================================================
+|               节点                |      单元      |  延迟  |     类型      |   位置   | 连线  | 扇出 |
+=========================================================================================================
+| CLOCK'clk                         |      N/A       |      0 |               |          | N/A   |      |
+| clk                               |   uart_demo    |      0 | clock_latency |          | clk   | 1    |
+| clk/PAD#bidir_in                  |      PIO       |      0 |      net      | PT31D    | clk   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:21/CE    |     SLICEL     |        |               |          |       |      |
+|    u_loop_ctrl/byte_out_reg[3]/CE | xsDFFSA_K1C1E1 |        |               |          |       |      |
+|    clk_pad/I                      |     xsIOBI     |        |               |          |       |      |
+|    clk_pad/O                      |     xsIOBI     |        |               |          |       |      |
+| clk/PADDI                         |      PIO       |   1091 |   PADI_DEL    |          | clk_c | 19   |
+| tx_byte[2]/CLK                    |     SLICEL     | 1672.4 |      net      | R33C100L | clk_c |      |
+|    u_loop_ctrl/byte_out_reg[3]/CE | xsDFFSA_K1C1E1 |        |               |          |       |      |
+|    u_loop_ctrl/byte_out_reg[3]/C  | xsDFFSA_K1C1E1 |        |               |          |       |      |
+=========================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2811.1     + 47.5       - 0          - -63        
+       = 2921.6
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 10
+********************
+起点     : u_baud_pulse_gen/cnt[14]/AQ [激发时钟: clk, 上升沿1]
+终点     : tx_byte[0]/CE               [捕获时钟: clk, 上升沿2] 
+
+数据产生路径
+============================================================================================================================
+|               节点                |      单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+============================================================================================================================
+| CLOCK'clk                         |      N/A       |      0 |               |          | N/A                      |      |
+| clk                               |   uart_demo    |      0 | clock_latency |          | clk                      | 1    |
+| clk/PAD#bidir_in                  |      PIO       |      0 |      net      | PT31D    | clk                      | 1    |
+|    clk_pad/I                      |     xsIOBI     |        |               |          |                          |      |
+|    clk_pad/O                      |     xsIOBI     |        |               |          |                          |      |
+| clk/PADDI                         |      PIO       |   1091 |   PADI_DEL    |          | clk_c                    | 19   |
+| u_baud_pulse_gen/cnt[14]/CLK      |     SLICEL     | 1735.4 |      net      | R32C101L | clk_c                    |      |
+| --                                |       --       |     -- |      --       | --       | --                       | --   |
+|    u_baud_pulse_gen/cnt_reg[14]/C |  xsDFFSA_K1C1  |        |               |          |                          |      |
+|    u_baud_pulse_gen/cnt_reg[14]/Q |  xsDFFSA_K1C1  |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[14]/AQ       |     SLICEL     |   30.5 |     Tcko      |          | u_baud_pulse_gen/cnt[14] | 2    |
+| u_baud_pulse_gen/cnt[12]/D5       |     SLICEL     |  751.3 |      net      | R32C103L | u_baud_pulse_gen/cnt[14] |      |
+|    _i_1/I4                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_1/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[12]/D        |     SLICEL     |   75.1 |     Tilo      |          | _n_1                     | 2    |
+| u_baud_pulse_gen/cnt[4]/C3        |     SLICEL     |  504.1 |      net      | R32C102L | _n_1                     |      |
+|    _i_2/I2                        |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_2/O                         |    xsLUTSA6    |        |               |          |                          |      |
+| u_baud_pulse_gen/cnt[4]/C         |     SLICEL     |   75.1 |     Tilo      |          | _i_3/n106                | 20   |
+| rx_valid/A6                       |     SLICEL     |  777.2 |      net      | R32C100M | _i_3/n106                |      |
+|    _i_3/_i_9/I5                   |    xsLUTSA6    |        |               |          |                          |      |
+|    _i_3/_i_9/O                    |    xsLUTSA6    |        |               |          |                          |      |
+| rx_valid/A                        |     SLICEL     |   75.1 |     Tilo      |          | rx_valid                 | 4    |
+| tx_byte[0]/CE                     |     SLICEL     |  496.2 |      net      | R33C99M  | rx_valid                 |      |
+|    u_loop_ctrl/byte_out_reg[1]/CE | xsDFFSA_K1C1E1 |        |               |          |                          |      |
+============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 2784.6     (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 225.3 
+        总的连线延迟 = 2528.8 
+        逻辑级数     = 3 
+
+[数据捕获路径]
+========================================================================================================
+|               节点                |      单元      |  延迟  |     类型      |  位置   | 连线  | 扇出 |
+========================================================================================================
+| CLOCK'clk                         |      N/A       |      0 |               |         | N/A   |      |
+| clk                               |   uart_demo    |      0 | clock_latency |         | clk   | 1    |
+| clk/PAD#bidir_in                  |      PIO       |      0 |      net      | PT31D   | clk   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:22/CE    |     SLICEL     |        |               |         |       |      |
+|    u_loop_ctrl/byte_out_reg[1]/CE | xsDFFSA_K1C1E1 |        |               |         |       |      |
+|    clk_pad/I                      |     xsIOBI     |        |               |         |       |      |
+|    clk_pad/O                      |     xsIOBI     |        |               |         |       |      |
+| clk/PADDI                         |      PIO       |   1091 |   PADI_DEL    |         | clk_c | 19   |
+| tx_byte[0]/CLK                    |     SLICEL     | 1672.4 |      net      | R33C99M | clk_c |      |
+|    u_loop_ctrl/byte_out_reg[1]/CE | xsDFFSA_K1C1E1 |        |               |         |       |      |
+|    u_loop_ctrl/byte_out_reg[1]/C  | xsDFFSA_K1C1E1 |        |               |         |       |      |
+========================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2784.6     + 47.5       - 0          - -63        
+       = 2895.1
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+#########################################################################
+# 时钟频率总结
+#########################################################################
+最慢时钟     : clk
+最小时钟周期 : 4383.8 ps
+最大时钟频率 : 228.1 MHz
+#########################################################################
+clk : 228.1 Mhz
+
+

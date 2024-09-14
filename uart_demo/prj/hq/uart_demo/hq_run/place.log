@@ -1,0 +1,126 @@
+Info: 检查物理约束 ....
+Info: 已完成.
+Info: 网表整理(nl.sweep) 开始 ....
+Info: 共有 0 个节点被 nl.sweep 删除.
+Info: 网表整理(nl.sweep) 结束.
+#=============oOOOo================oOOOo=============
+# 组装(Packing)
+#====================================================
+Info: 开始组装(packing).
+Info: 将 u_uart_rx/byte_out_reg[0] 吸收到 IREG.
+Info: 将 u_uart_tx/tx_reg_dup1 吸收到 OREG.
+Info: 开始组装预处理.
+Info: 完成组装预处理.
+Info: IOLOGIC                     2.
+Info:     IREG_OREG               2.
+Info: PIO                         4.
+Info: SLICEL                      4.
+Info:     CARRY                   4.
+Info: SLICEL(LE)                 64.
+Info:     LUT                    12.
+Info:     LUT REG                37.
+Info:     REG                    15.
+Info: 完成组装.
+
+Info: Start gpack.
+Info: Done gpack.
+Info: 开始建立物理网表.
+Info:   为 4    个 PIO        建立了物理网表 .
+Info:   为 2    个 IOLOGIC    建立了物理网表 .
+Info:   为 21   个 SLICEL     建立了物理网表 .
+Info: 完成建立物理网表.
+Info: IOLOGIC                     2.
+Info:     IREG_OREG               2.
+Info: PIO                         4.
+Info: SLICEL                     21.
+Info:     CARRY                   4.
+Info:     LOGIC                  17.
+####
+Info: 组装执行时间 : 4 秒.
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_map.rpt中.
+#=============oOOOo================oOOOo=============
+# 布局(Placement)
+#====================================================
+Info: 开始布局(placement).
+Info: 布局模式: 时序优化.
+Info: 时序优化强度: 标准.
+Info: CE/SR NET max fanout = 2000.
+Info: Best achievable WNS = 10000
+Info: 设置延迟系数: 1.33333.
+[V]: Identify CE/SR net...
+Info: 元件实例 uart_rx_MGIOL 已固定于 IOL_B76B.
+Info: 元件实例 uart_tx_MGIOL 已固定于 IOL_B76D.
+Info: 元件实例 clk 已固定于 A4.
+Info: 元件实例 rst_n 已固定于 L15.
+Info: 元件实例 uart_rx 已固定于 P12.
+Info: 元件实例 uart_tx 已固定于 R12.
+----
+Info: 布局第1阶段(总共3阶段) (签名=784,60,1).
+----
+Info: 进度   3%, WNS =  21163.
+Info: 进度   7%, WNS =  22363.
+Info: 进度  10%, WNS =  27990.
+Info: 进度  13%, WNS =  26243.
+Info: 进度  17%, WNS =  27603.
+Info: 进度  20%, WNS =  30150.
+Info: 进度  23%, WNS =  26950.
+Info: 进度  27%, WNS =  27337.
+Info: 进度  30%, WNS =  23417.
+Info: 进度  33%, WNS =  30417.
+Info: 进度  37%, WNS =  28550.
+Info: 进度  40%, WNS =  31443.
+Info: 进度  43%, WNS =  30883.
+Info: 进度  47%, WNS =  32403.
+Info: 进度  50%, WNS =  34602.
+Info: 进度  53%, WNS =  32616.
+Info: 进度  55%, WNS =  33976.
+Info: 进度  57%, WNS =  29670.
+Info: 进度  58%, WNS =  34990.
+Info: 进度  60%, WNS =  32069.
+Info: 进度  63%, WNS =  33016.
+Info: 进度  65%, WNS =  34735.
+Info: 进度  67%, WNS =  34335.
+Info: 进度  70%, WNS =  35055.
+Info: 进度  73%, WNS =  34577.
+Info: 进度  77%, WNS =  32842.
+Info: 进度  80%, WNS =  34389.
+Info: 进度  83%, WNS =  34895.
+Info: 进度  85%, WNS =  34736.
+Info: 进度  87%, WNS =  34509.
+Info: 进度  90%, WNS =  34976.
+Info: 进度  92%, WNS =  35548.
+Info: 进度  93%, WNS =  35309.
+Info: 进度  95%, WNS =  35041.
+Info: 进度  97%, WNS =  34722.
+Info: 进度  99%, WNS =  34868.
+Info: 进度 100%, WNS =  35041.
+----
+Info: 布局第2阶段(总共3阶段) (签名=5,10,1).
+----
+Info: 进度   0%, WNS =  35468.
+Info: 进度  10%, WNS =  35816.
+Info: 进度  30%, WNS =  35816.
+Info: 进度  50%, WNS =  35816.
+Info: 进度  70%, WNS =  35816.
+Info: 进度  90%, WNS =  35816.
+Info: 进度 100%, WNS =  35816.
+----
+Info: 布局第3阶段(总共3阶段) (签名=48,10,1).
+----
+Info: 进度  10%, WNS =  35816.
+Info: 进度  30%, WNS =  35816.
+Info: 进度  50%, WNS =  35816.
+Info: 进度  70%, WNS =  35816.
+Info: 进度  90%, WNS =  35816.
+Info: 进度 100%, WNS =  35816.
+----
+Info: 布局结果最终WNS = 36722.
+----
+Info: 完成布局.
+Info: 开始网表校正.
+Info: 完成网表校正.
+####
+Info: 布局执行时间 : 1 秒.
+####
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\ratio.rpt_chs中.
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_place.rpt_chs中.

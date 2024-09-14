@@ -1,43 +1,64 @@
-C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_rx.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_rx.v
+C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_rx.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_rx.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
 -- Compiling module uart_rx
 
 Top level modules:
 	uart_rx
 
-} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/baud_pulse_gen.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/baud_pulse_gen.v
+} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/baud_pulse_gen.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/baud_pulse_gen.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
 -- Compiling module baud_pulse_gen
 
 Top level modules:
 	baud_pulse_gen
 
-} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_tx_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_tx_tb.v
+} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_tx_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_tx_tb.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
 -- Compiling module uart_tx_tb
 
 Top level modules:
 	uart_tx_tb
 
-} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_rx_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_rx_tb.v
+} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/loop_ctrl.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/loop_ctrl.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
--- Compiling module uart_rx_tb
+-- Compiling module loop_ctrl
 
 Top level modules:
-	uart_rx_tb
+	loop_ctrl
 
-} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_tx.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_tx.v
+} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_demo_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_demo_tb.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module uart_demo_tb
+
+Top level modules:
+	uart_demo_tb
+
+} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_tx.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_tx.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
 -- Compiling module uart_tx
 
 Top level modules:
 	uart_tx
 
-} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v
+} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_rx_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_rx_tb.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module uart_rx_tb
+
+Top level modules:
+	uart_rx_tb
+
+} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/baud_pulse_gen_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/baud_pulse_gen_tb.v
 Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
 -- Compiling module baud_pulse_gen_tb
 
 Top level modules:
 	baud_pulse_gen_tb
+
+} {} {}} C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_demo.v {1 {vlog -work work -vopt -stats=none C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_demo.v
+Model Technology ModelSim SE-64 vlog 2019.2 Compiler 2019.04 Apr 17 2019
+-- Compiling module uart_demo
+
+Top level modules:
+	uart_demo
 
 } {} {}}

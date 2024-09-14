@@ -20,7 +20,7 @@ module loop_ctrl(
     always@(posedge clk or negedge rst_n)begin
         if(!rst_n)
             tx_req <= 1'b0;
-        else if(valid_in && !tx_busy)
+        else if(valid_in)
             tx_req <= 1'b1;
         else if(tx_busy)
             tx_req <= 1'b0;

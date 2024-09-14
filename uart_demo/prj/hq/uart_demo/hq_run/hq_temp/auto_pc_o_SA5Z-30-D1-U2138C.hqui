@@ -1,0 +1,4 @@
+recid:clk	Status:true	Ports:clk	Location:A4 bank1	disableIOType:false	
+recid:rst_n	Status:true	Ports:rst_n	Location:L15 bank3	disableIOType:false	
+recid:uart_rx	Status:true	Ports:uart_rx	Location:P12 bank3	disableIOType:false	
+recid:uart_tx	Status:true	Ports:uart_tx	Location:R12 bank3	disableIOType:false	

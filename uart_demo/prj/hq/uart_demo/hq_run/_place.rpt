@@ -1,0 +1,81 @@
+
+######################oOOOo###########oOOOo##########################
+#  HqFpga(TM) Release V3.0.5 (Summer 2024) Build FT091024
+#  [Netlist Report]
+#####################################################################
+Date   : Sat Sep 14 10:00:19 2024
+
+Library U_ARCH
++-----------+-------+
+| Cell Name | Count |
++-----------+-------+
+| PIO       |     4 |
+| IOLOGIC   |     2 |
+| SLICEL    |    21 |
++-----------+-------+
+| Sum       |    27 |
++-----------+-------+
+
+Library work
++-----------+-------+
+| Cell Name | Count |
++-----------+-------+
+| uart_demo |     1 |
++-----------+-------+
+| Sum       |     1 |
++-----------+-------+
+
+######################oOOOo###########oOOOo##########################
+#  HqFpga(TM) Release V3.0.5 (Summer 2024) Build FT091024
+#  [Resource Location Report]
+#####################################################################
+Date   : Sat Sep 14 10:00:19 2024
+Device : SA5Z-30-D1-8U213C
+
+** Bank Voltage Available **
++------+-------+
+| Bank | VCCIO |
++------+-------+
+| 0    |  2.5  |
+| 1    |  3.3  |
+| 2    |  3.3  |
+| 3    |  3.3  |
+| 5    |  3.3  |
++------+-------+
+** IO Pin Assignment **
++-----------+-----------+--------------+-------------+------+-------+-------+----------+----------+
+| Port Name | Direction | Pin Location | IO Standard | Bank | VCCIO | DRIVE | SLEWRATE | PULLMODE |
++-----------+-----------+--------------+-------------+------+-------+-------+----------+----------+
+| clk       |   INPUT   |      A4      |  LVCMOS33   |  1   |  3.3  |       |          |   DOWN   |
+| rst_n     |   INPUT   |     L15      |  LVCMOS33   |  3   |  3.3  |       |          |   DOWN   |
+| uart_rx   |   INPUT   |     P12      |  LVCMOS33   |  3   |  3.3  |       |          |   DOWN   |
+| uart_tx   |  OUTPUT   |     R12      |  LVCMOS33   |  3   |  3.3  |   8   |   SLOW   |          |
++-----------+-----------+--------------+-------------+------+-------+-------+----------+----------+
+** Instance Locations **
++----------------------------+---------------+----------+
+| Instance Name              | Instance Type | Location |
++----------------------------+---------------+----------+
+| uart_rx_MGIOL              |    IOLOGIC    | IOL_B76B |
+| uart_tx_MGIOL              |    IOLOGIC    | IOL_B76D |
+| u_baud_pulse_gen/n_22[1]   |    SLICEL     | R32C101M |
+| u_baud_pulse_gen/n_22[5]   |    SLICEL     | R32C102M |
+| u_baud_pulse_gen/n_22[9]   |    SLICEL     | R32C103M |
+| u_baud_pulse_gen/n_22[13]  |    SLICEL     | R32C104M |
+| u_uart_tx/n_45             |    SLICEL     | R33C102L |
+| u_uart_tx/byte_in_reg[7]   |    SLICEL     | R33C101M |
+| u_uart_tx/n_29             |    SLICEL     | R33C103L |
+| u_baud_pulse_gen/cnt[4]    |    SLICEL     | R32C102L |
+| u_baud_pulse_gen/cnt[12]   |    SLICEL     | R32C103L |
+| u_baud_pulse_gen/cnt[13]   |    SLICEL     | R33C103M |
+| u_baud_pulse_gen/cnt[14]   |    SLICEL     | R32C101L |
+| rx_valid                   |    SLICEL     | R32C100M |
+| u_baud_pulse_gen/n_0       |    SLICEL     | R32C100L |
+| u_uart_tx/data_baud_cnt[0] |    SLICEL     | R33C102M |
+| rx_byte[4]                 |    SLICEL     | R32C99M  |
+| rx_byte[5]                 |    SLICEL     | R32C99L  |
+| rx_byte[7]                 |    SLICEL     | R33C100M |
+| tx_byte[6]                 |    SLICEL     | R33C101L |
+| tx_byte[4]                 |    SLICEL     | R33C99L  |
+| tx_byte[2]                 |    SLICEL     | R33C100L |
+| tx_byte[0]                 |    SLICEL     | R33C99M  |
++----------------------------+---------------+----------+

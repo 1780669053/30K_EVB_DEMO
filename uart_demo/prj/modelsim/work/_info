@@ -10,25 +10,24 @@ z2
 cModel Technology
 Z0 dC:/hqws/D_MEMORYs/prj/simulation
 T_opt
-!s110 1726133275
-VVT@jSM_[KP^Cf=JK2LR6W0
+!s110 1726276126
+V@GfFVon=BFLi`i^A<b0K71
 04 17 4 work baud_pulse_gen_tb fast 0
-=5-c4d0e30420bd-66e2b41b-55-2490
+=1-c4d0e30420bd-66e4e21e-284-5bc0
 Z1 o-quiet -auto_acc_if_foreign -work work -L XiST -Lf XiST +acc
 Z2 tCvgOpt 0
 n@_opt
 Z3 OL;O;2019.2;69
 R0
 T_opt1
-!s110 1726211039
-VUU1;Y?Zn`3BdW?MkR4TGC2
-04 10 4 work uart_tx_tb fast 0
-=5-c4d0e30420bd-66e3e3df-27a-122c
+!s110 1726279191
+VIAbP9bW7o;7SF>RWf0Cka2
+04 12 4 work uart_demo_tb fast 0
+=13-c4d0e30420bd-66e4ee17-18e-534c
 R1
 R2
 n@_opt1
 R3
-R0
 T_opt2
 !s110 1726221614
 Vg7ha`@BcAYNgb=Qi8R3Ez1
@@ -38,135 +37,202 @@ R1
 R2
 n@_opt2
 R3
+R0
 vbaud_pulse_gen
-Z4 !s110 1726211032
+Z4 !s110 1726276120
 !i10b 1
 !s100 oafRC:kgd<en<VFJn<b;D0
 !s11b lm8jBVPT45d4<?YL;Zd9F3
-IW5ljdoDiU7Tk`l?>VBX_;0
+Ig>_bOzG?KXWPA;8SX?Kc;3
 Z5 VDg1SIo80bB@j0V0VzS_@n1
-Z6 dC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/prj/modelsim
-w1726211025
-8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/baud_pulse_gen.v
-FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/baud_pulse_gen.v
+Z6 dC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/modelsim
+Z7 w1726275860
+8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/baud_pulse_gen.v
+FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/baud_pulse_gen.v
 L0 1
-Z7 OL;L;2019.2;69
+Z8 OL;L;2019.2;69
 r1
 !s85 0
 31
-Z8 !s108 1726211032.000000
-!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/baud_pulse_gen.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/baud_pulse_gen.v|
+Z9 !s108 1726276120.000000
+!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/baud_pulse_gen.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/baud_pulse_gen.v|
 !i113 0
-Z9 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vbaud_pulse_gen_tb
-!s110 1726208156
+R4
 !i10b 1
 !s100 8l9CP1VgDK1G<jUPNK5PN2
 !s11b 3SIz<^;CTG66LVhoSiQ?20
-IZ0noC4[1W=heH@MjPa@z_0
+IDa0d<;`>Vo5_H4:C`[5Nd3
 R5
 R6
-w1726196029
-8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v
-FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v
-L0 2
 R7
+8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/baud_pulse_gen_tb.v
+FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/baud_pulse_gen_tb.v
+L0 2
+R8
 r1
 !s85 0
 31
-!s108 1726208156.000000
-!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/baud_pulse_gen_tb.v|
-!i113 0
 R9
+!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/baud_pulse_gen_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/baud_pulse_gen_tb.v|
+!i113 0
+R10
+R2
+vloop_ctrl
+!s110 1726279188
+!i10b 1
+!s100 o2^Z9cSS92?h607@_Y4JL2
+!s11b ATMho?m9BP]HfQRHL97g:1
+IccU:1kJRg3?>_8bnF01Zj1
+R5
+R6
+w1726279183
+8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/loop_ctrl.v
+FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/loop_ctrl.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1726279188.000000
+!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/loop_ctrl.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/loop_ctrl.v|
+!i113 0
+R10
+R2
+vuart_demo
+R4
+!i10b 1
+!s100 OW9^l]]N1QmZA=Km`1h=30
+!s11b RR2z04GLMg]^QhLAE]=cA3
+IBl>5K3z75P<>A5c3XDZV11
+R5
+R6
+R7
+8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_demo.v
+FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_demo.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_demo.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_demo.v|
+!i113 0
+R10
+R2
+vuart_demo_tb
+!s110 1726278398
+!i10b 1
+!s100 SLze@gbK;chbU<XTCV^j91
+!s11b KSL2RjmXKL_:74<7oFdQc2
+IoN5ZYAiRh_I<ZRah1XkA^3
+R5
+R6
+w1726278350
+8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_demo_tb.v
+FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_demo_tb.v
+L0 2
+R8
+r1
+!s85 0
+31
+!s108 1726278398.000000
+!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_demo_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_demo_tb.v|
+!i113 0
+R10
 R2
 vuart_rx
-!s110 1726220079
+R4
 !i10b 1
 !s100 g]Mi89=AdCMYB2`ioi`hA2
 !s11b ;0OCb5nBOk9czC:KOkP;^1
-IdCSIcDU]z0>aazi_k84OS0
+I>c>nf3nIV>:I3eM^lfe>m0
 R5
 R6
-w1726220077
-8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_rx.v
-FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_rx.v
-L0 1
 R7
+8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_rx.v
+FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_rx.v
+L0 1
+R8
 r1
 !s85 0
 31
-!s108 1726220079.000000
-!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_rx.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_rx.v|
-!i113 0
 R9
+!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_rx.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_rx.v|
+!i113 0
+R10
 R2
 vuart_rx_tb
-!s110 1726221609
+R4
 !i10b 1
 !s100 ^NKITXZ>G@JDGj<43l6]23
 !s11b ^G>N0D_Mh1[c6=c5If6@`0
-Iz`?ebOS0o2;@hG@>d>9GM2
+IQOcnQf3P2OA:Xi<cn33nI2
 R5
 R6
-w1726221605
-8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_rx_tb.v
-FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_rx_tb.v
-L0 2
 R7
+8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_rx_tb.v
+FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_rx_tb.v
+L0 2
+R8
 r1
 !s85 0
 31
-!s108 1726221609.000000
-!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_rx_tb.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_rx_tb.v|
-!i113 0
 R9
+!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_rx_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_rx_tb.v|
+!i113 0
+R10
 R2
 vuart_tx
-R4
+!s110 1726277368
 !i10b 1
-!s100 LN28b<f9X3LXAf[fV7S>[1
-!s11b k7j[;l=_7[QbLThTXzn@72
-I9P^m984VEXL@zlcElimKK1
+!s100 7H?cncm];9]]YF@VUoEnO3
+!s11b WS==]9^cCQ<ZMV@J<6Sab3
+I<H0CoacInBdoGjbo68O;i1
 R5
 R6
-w1726210846
-8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_tx.v
-FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_tx.v
+w1726277364
+8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_tx.v
+FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_tx.v
 L0 1
-R7
+R8
 r1
 !s85 0
 31
-R8
-!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_tx.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/src/uart_tx.v|
+!s108 1726277368.000000
+!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_tx.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_tx.v|
 !i113 0
-R9
+R10
 R2
 vuart_tx_tb
-!s110 1726208592
+R4
 !i10b 1
 !s100 5Q0DGlDZG`EV3GJW>41hN1
 !s11b zPc<Qd`]c5nOin8hZXT9a0
-ImagT[VIO;77@Q>hZA8L0R0
+IDJ]o6Vdc4CBNYk9b@BIb40
 R5
 R6
-w1726208582
-8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_tx_tb.v
-FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_tx_tb.v
-L0 2
 R7
+8C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_tx_tb.v
+FC:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_tx_tb.v
+L0 2
+R8
 r1
 !s85 0
 31
-!s108 1726208592.000000
-!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_tx_tb.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_led_demo/user/sim/uart_tx_tb.v|
-!i113 0
 R9
+!s107 C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_tx_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/sim/uart_tx_tb.v|
+!i113 0
+R10
 R2

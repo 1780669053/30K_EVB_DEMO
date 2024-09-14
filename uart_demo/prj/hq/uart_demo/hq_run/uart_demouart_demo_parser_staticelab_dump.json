@@ -1,0 +1,1723 @@
+{
+"modules": [
+{
+"module": {
+"name": "loop_ctrl",
+"file": "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/loop_ctrl.v",
+"level": "2",
+"first_line": "1",
+"last_line": "31",
+"inst_mod": [
+]
+},
+"always": [
+{
+"start_line": "11",
+"end_line": "18"
+},
+{
+"start_line": "20",
+"end_line": "29"
+}
+],
+"params": [
+],
+"params_override": [
+],
+"signals": [
+{
+"type": "Port",
+"name": "clk",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "2",
+"col_num": "25"
+},
+{
+"row_num": "2",
+"col_num": "25"
+},
+{
+"row_num": "11",
+"col_num": "21"
+},
+{
+"row_num": "20",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "rst_n",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "3",
+"col_num": "25"
+},
+{
+"row_num": "3",
+"col_num": "25"
+},
+{
+"row_num": "11",
+"col_num": "36"
+},
+{
+"row_num": "12",
+"col_num": "13"
+},
+{
+"row_num": "20",
+"col_num": "36"
+},
+{
+"row_num": "21",
+"col_num": "13"
+}
+]
+},
+{
+"type": "Port",
+"name": "byte_in",
+"range": [
+{
+"start": "7",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "4",
+"col_num": "25"
+},
+{
+"row_num": "4",
+"col_num": "25"
+},
+{
+"row_num": "15",
+"col_num": "25"
+}
+]
+},
+{
+"type": "Port",
+"name": "valid_in",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "5",
+"col_num": "25"
+},
+{
+"row_num": "5",
+"col_num": "25"
+},
+{
+"row_num": "14",
+"col_num": "17"
+},
+{
+"row_num": "23",
+"col_num": "17"
+}
+]
+},
+{
+"type": "Port",
+"name": "tx_busy",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "6",
+"col_num": "25"
+},
+{
+"row_num": "6",
+"col_num": "25"
+},
+{
+"row_num": "25",
+"col_num": "17"
+}
+]
+},
+{
+"type": "Port",
+"name": "tx_req",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "7",
+"col_num": "25"
+},
+{
+"row_num": "7",
+"col_num": "25"
+},
+{
+"row_num": "22",
+"col_num": "13"
+},
+{
+"row_num": "24",
+"col_num": "13"
+},
+{
+"row_num": "26",
+"col_num": "13"
+},
+{
+"row_num": "28",
+"col_num": "13"
+},
+{
+"row_num": "28",
+"col_num": "23"
+}
+]
+},
+{
+"type": "Port",
+"name": "byte_out",
+"range": [
+{
+"start": "7",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "8",
+"col_num": "25"
+},
+{
+"row_num": "8",
+"col_num": "25"
+},
+{
+"row_num": "13",
+"col_num": "13"
+},
+{
+"row_num": "15",
+"col_num": "13"
+},
+{
+"row_num": "17",
+"col_num": "13"
+},
+{
+"row_num": "17",
+"col_num": "25"
+}
+]
+}
+]
+},
+{
+"module": {
+"name": "uart_demo",
+"file": "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_demo.v",
+"level": "3",
+"first_line": "1",
+"last_line": "67",
+"inst_mod": [
+{
+"mod_name": "baud_pulse_gen[1]",
+"mod_property": "real_module",
+"inst_name": "u_baud_pulse_gen",
+"first_line": "25",
+"last_line": "36"
+},
+{
+"mod_name": "uart_tx",
+"mod_property": "real_module",
+"inst_name": "u_uart_tx",
+"first_line": "38",
+"last_line": "46"
+},
+{
+"mod_name": "uart_rx",
+"mod_property": "real_module",
+"inst_name": "u_uart_rx",
+"first_line": "48",
+"last_line": "55"
+},
+{
+"mod_name": "loop_ctrl",
+"mod_property": "real_module",
+"inst_name": "u_loop_ctrl",
+"first_line": "57",
+"last_line": "65"
+}
+]
+},
+"always": [
+],
+"params": [
+{
+"name": " CLK_FREQ",
+"value": "32'Sb00000001011111010111100001000000"
+},
+{
+"name": " CYCLE",
+"value": "40.000000"
+}
+],
+"params_override": [
+],
+"signals": [
+{
+"type": "Port",
+"name": "clk",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "2",
+"col_num": "10"
+},
+{
+"row_num": "2",
+"col_num": "10"
+},
+{
+"row_num": "32",
+"col_num": "23"
+},
+{
+"row_num": "39",
+"col_num": "11"
+},
+{
+"row_num": "49",
+"col_num": "26"
+},
+{
+"row_num": "58",
+"col_num": "11"
+}
+]
+},
+{
+"type": "Port",
+"name": "rst_n",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "3",
+"col_num": "10"
+},
+{
+"row_num": "3",
+"col_num": "10"
+},
+{
+"row_num": "33",
+"col_num": "23"
+},
+{
+"row_num": "40",
+"col_num": "13"
+},
+{
+"row_num": "50",
+"col_num": "26"
+},
+{
+"row_num": "59",
+"col_num": "13"
+}
+]
+},
+{
+"type": "Port",
+"name": "uart_rx",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "4",
+"col_num": "10"
+},
+{
+"row_num": "4",
+"col_num": "10"
+},
+{
+"row_num": "51",
+"col_num": "26"
+}
+]
+},
+{
+"type": "Port",
+"name": "uart_tx",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "5",
+"col_num": "11"
+},
+{
+"row_num": "5",
+"col_num": "11"
+},
+{
+"row_num": "45",
+"col_num": "20"
+}
+]
+},
+{
+"type": "Net",
+"name": "baud_pulse",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "18",
+"col_num": "9"
+},
+{
+"row_num": "35",
+"col_num": "23"
+},
+{
+"row_num": "41",
+"col_num": "17"
+},
+{
+"row_num": "52",
+"col_num": "26"
+}
+]
+},
+{
+"type": "Net",
+"name": "tx_req",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "19",
+"col_num": "9"
+},
+{
+"row_num": "42",
+"col_num": "11"
+},
+{
+"row_num": "63",
+"col_num": "14"
+}
+]
+},
+{
+"type": "Net",
+"name": "tx_byte",
+"range": [
+{
+"start": "7",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "20",
+"col_num": "13"
+},
+{
+"row_num": "43",
+"col_num": "14"
+},
+{
+"row_num": "64",
+"col_num": "15"
+}
+]
+},
+{
+"type": "Net",
+"name": "tx_busy",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "21",
+"col_num": "9"
+},
+{
+"row_num": "44",
+"col_num": "12"
+},
+{
+"row_num": "62",
+"col_num": "14"
+}
+]
+},
+{
+"type": "Net",
+"name": "rx_byte",
+"range": [
+{
+"start": "7",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "22",
+"col_num": "13"
+},
+{
+"row_num": "53",
+"col_num": "26"
+},
+{
+"row_num": "60",
+"col_num": "14"
+}
+]
+},
+{
+"type": "Net",
+"name": "rx_valid",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "23",
+"col_num": "9"
+},
+{
+"row_num": "54",
+"col_num": "26"
+},
+{
+"row_num": "61",
+"col_num": "15"
+}
+]
+}
+]
+},
+{
+"module": {
+"name": "uart_rx",
+"file": "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_rx.v",
+"level": "4",
+"first_line": "1",
+"last_line": "68",
+"inst_mod": [
+]
+},
+"always": [
+{
+"start_line": "18",
+"end_line": "23"
+},
+{
+"start_line": "25",
+"end_line": "46"
+},
+{
+"start_line": "48",
+"end_line": "55"
+},
+{
+"start_line": "57",
+"end_line": "64"
+}
+],
+"params": [
+{
+"name": " S_IDLE",
+"value": "2'b00"
+},
+{
+"name": " S_START",
+"value": "2'b01"
+},
+{
+"name": " S_DATA",
+"value": "2'b11"
+},
+{
+"name": " S_STOP",
+"value": "2'b10"
+}
+],
+"params_override": [
+],
+"signals": [
+{
+"type": "Port",
+"name": "clk",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "2",
+"col_num": "25"
+},
+{
+"row_num": "2",
+"col_num": "25"
+},
+{
+"row_num": "18",
+"col_num": "21"
+},
+{
+"row_num": "48",
+"col_num": "21"
+},
+{
+"row_num": "57",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "rst_n",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "3",
+"col_num": "25"
+},
+{
+"row_num": "3",
+"col_num": "25"
+},
+{
+"row_num": "18",
+"col_num": "36"
+},
+{
+"row_num": "19",
+"col_num": "13"
+},
+{
+"row_num": "48",
+"col_num": "36"
+},
+{
+"row_num": "49",
+"col_num": "13"
+},
+{
+"row_num": "57",
+"col_num": "36"
+},
+{
+"row_num": "58",
+"col_num": "13"
+}
+]
+},
+{
+"type": "Port",
+"name": "rx",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "4",
+"col_num": "25"
+},
+{
+"row_num": "4",
+"col_num": "25"
+},
+{
+"row_num": "27",
+"col_num": "30"
+},
+{
+"row_num": "61",
+"col_num": "41"
+}
+]
+},
+{
+"type": "Port",
+"name": "baud_pulse",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "5",
+"col_num": "25"
+},
+{
+"row_num": "5",
+"col_num": "25"
+},
+{
+"row_num": "27",
+"col_num": "16"
+},
+{
+"row_num": "32",
+"col_num": "16"
+},
+{
+"row_num": "37",
+"col_num": "41"
+},
+{
+"row_num": "42",
+"col_num": "16"
+},
+{
+"row_num": "51",
+"col_num": "41"
+},
+{
+"row_num": "60",
+"col_num": "41"
+}
+]
+},
+{
+"type": "Port",
+"name": "byte_out",
+"range": [
+{
+"start": "7",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "6",
+"col_num": "25"
+},
+{
+"row_num": "6",
+"col_num": "25"
+},
+{
+"row_num": "59",
+"col_num": "13"
+},
+{
+"row_num": "61",
+"col_num": "13"
+},
+{
+"row_num": "61",
+"col_num": "26"
+},
+{
+"row_num": "63",
+"col_num": "13"
+},
+{
+"row_num": "63",
+"col_num": "25"
+}
+]
+},
+{
+"type": "Port",
+"name": "valid_out",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "7",
+"col_num": "25"
+},
+{
+"row_num": "7",
+"col_num": "25"
+},
+{
+"row_num": "66",
+"col_num": "12"
+}
+]
+},
+{
+"type": "Reg",
+"name": "curr_state",
+"range": [
+{
+"start": "1",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "15",
+"col_num": "21"
+},
+{
+"row_num": "20",
+"col_num": "13"
+},
+{
+"row_num": "22",
+"col_num": "13"
+},
+{
+"row_num": "25",
+"col_num": "20"
+},
+{
+"row_num": "66",
+"col_num": "25"
+}
+]
+},
+{
+"type": "Reg",
+"name": "next_state",
+"range": [
+{
+"start": "1",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "15",
+"col_num": "33"
+},
+{
+"row_num": "22",
+"col_num": "27"
+},
+{
+"row_num": "28",
+"col_num": "17"
+},
+{
+"row_num": "30",
+"col_num": "17"
+},
+{
+"row_num": "33",
+"col_num": "17"
+},
+{
+"row_num": "35",
+"col_num": "17"
+},
+{
+"row_num": "38",
+"col_num": "17"
+},
+{
+"row_num": "40",
+"col_num": "17"
+},
+{
+"row_num": "43",
+"col_num": "17"
+},
+{
+"row_num": "45",
+"col_num": "17"
+},
+{
+"row_num": "51",
+"col_num": "17"
+},
+{
+"row_num": "60",
+"col_num": "17"
+},
+{
+"row_num": "66",
+"col_num": "49"
+}
+]
+},
+{
+"type": "Reg",
+"name": "data_baud_cnt",
+"range": [
+{
+"start": "2",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "16",
+"col_num": "21"
+},
+{
+"row_num": "37",
+"col_num": "16"
+},
+{
+"row_num": "50",
+"col_num": "13"
+},
+{
+"row_num": "52",
+"col_num": "13"
+},
+{
+"row_num": "52",
+"col_num": "30"
+},
+{
+"row_num": "54",
+"col_num": "13"
+},
+{
+"row_num": "54",
+"col_num": "30"
+}
+]
+}
+]
+},
+{
+"module": {
+"name": "uart_tx",
+"file": "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/uart_tx.v",
+"level": "5",
+"first_line": "1",
+"last_line": "109",
+"inst_mod": [
+]
+},
+"always": [
+{
+"start_line": "33",
+"end_line": "38"
+},
+{
+"start_line": "40",
+"end_line": "61"
+},
+{
+"start_line": "63",
+"end_line": "72"
+},
+{
+"start_line": "76",
+"end_line": "83"
+},
+{
+"start_line": "85",
+"end_line": "94"
+},
+{
+"start_line": "96",
+"end_line": "107"
+}
+],
+"params": [
+{
+"name": " S_IDLE",
+"value": "2'b00"
+},
+{
+"name": " S_START",
+"value": "2'b01"
+},
+{
+"name": " S_DATA",
+"value": "2'b11"
+},
+{
+"name": " S_STOP",
+"value": "2'b10"
+}
+],
+"params_override": [
+],
+"signals": [
+{
+"type": "Port",
+"name": "clk",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "2",
+"col_num": "25"
+},
+{
+"row_num": "2",
+"col_num": "25"
+},
+{
+"row_num": "33",
+"col_num": "21"
+},
+{
+"row_num": "63",
+"col_num": "21"
+},
+{
+"row_num": "76",
+"col_num": "21"
+},
+{
+"row_num": "85",
+"col_num": "21"
+},
+{
+"row_num": "96",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "rst_n",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "3",
+"col_num": "25"
+},
+{
+"row_num": "3",
+"col_num": "25"
+},
+{
+"row_num": "33",
+"col_num": "36"
+},
+{
+"row_num": "34",
+"col_num": "13"
+},
+{
+"row_num": "63",
+"col_num": "36"
+},
+{
+"row_num": "64",
+"col_num": "13"
+},
+{
+"row_num": "76",
+"col_num": "36"
+},
+{
+"row_num": "77",
+"col_num": "13"
+},
+{
+"row_num": "85",
+"col_num": "36"
+},
+{
+"row_num": "86",
+"col_num": "13"
+},
+{
+"row_num": "96",
+"col_num": "36"
+},
+{
+"row_num": "97",
+"col_num": "13"
+}
+]
+},
+{
+"type": "Port",
+"name": "baud_pulse",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "4",
+"col_num": "25"
+},
+{
+"row_num": "4",
+"col_num": "25"
+},
+{
+"row_num": "42",
+"col_num": "16"
+},
+{
+"row_num": "47",
+"col_num": "16"
+},
+{
+"row_num": "52",
+"col_num": "41"
+},
+{
+"row_num": "57",
+"col_num": "16"
+},
+{
+"row_num": "66",
+"col_num": "24"
+},
+{
+"row_num": "79",
+"col_num": "41"
+},
+{
+"row_num": "90",
+"col_num": "41"
+},
+{
+"row_num": "99",
+"col_num": "42"
+},
+{
+"row_num": "101",
+"col_num": "41"
+},
+{
+"row_num": "103",
+"col_num": "41"
+}
+]
+},
+{
+"type": "Port",
+"name": "req",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "5",
+"col_num": "25"
+},
+{
+"row_num": "5",
+"col_num": "25"
+},
+{
+"row_num": "42",
+"col_num": "30"
+},
+{
+"row_num": "66",
+"col_num": "17"
+},
+{
+"row_num": "88",
+"col_num": "17"
+}
+]
+},
+{
+"type": "Port",
+"name": "byte_in",
+"range": [
+{
+"start": "7",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "6",
+"col_num": "25"
+},
+{
+"row_num": "6",
+"col_num": "25"
+},
+{
+"row_num": "89",
+"col_num": "28"
+}
+]
+},
+{
+"type": "Port",
+"name": "busy",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "7",
+"col_num": "25"
+},
+{
+"row_num": "7",
+"col_num": "25"
+},
+{
+"row_num": "65",
+"col_num": "13"
+},
+{
+"row_num": "67",
+"col_num": "13"
+},
+{
+"row_num": "69",
+"col_num": "13"
+},
+{
+"row_num": "71",
+"col_num": "13"
+},
+{
+"row_num": "71",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "tx",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "8",
+"col_num": "25"
+},
+{
+"row_num": "8",
+"col_num": "25"
+},
+{
+"row_num": "98",
+"col_num": "13"
+},
+{
+"row_num": "100",
+"col_num": "13"
+},
+{
+"row_num": "102",
+"col_num": "13"
+},
+{
+"row_num": "104",
+"col_num": "13"
+},
+{
+"row_num": "106",
+"col_num": "13"
+},
+{
+"row_num": "106",
+"col_num": "19"
+}
+]
+},
+{
+"type": "Reg",
+"name": "curr_state",
+"range": [
+{
+"start": "1",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "16",
+"col_num": "21"
+},
+{
+"row_num": "35",
+"col_num": "13"
+},
+{
+"row_num": "37",
+"col_num": "13"
+},
+{
+"row_num": "40",
+"col_num": "20"
+},
+{
+"row_num": "74",
+"col_num": "23"
+}
+]
+},
+{
+"type": "Reg",
+"name": "next_state",
+"range": [
+{
+"start": "1",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "16",
+"col_num": "33"
+},
+{
+"row_num": "37",
+"col_num": "27"
+},
+{
+"row_num": "43",
+"col_num": "17"
+},
+{
+"row_num": "45",
+"col_num": "17"
+},
+{
+"row_num": "48",
+"col_num": "17"
+},
+{
+"row_num": "50",
+"col_num": "17"
+},
+{
+"row_num": "53",
+"col_num": "17"
+},
+{
+"row_num": "55",
+"col_num": "17"
+},
+{
+"row_num": "58",
+"col_num": "17"
+},
+{
+"row_num": "60",
+"col_num": "17"
+},
+{
+"row_num": "74",
+"col_num": "47"
+},
+{
+"row_num": "79",
+"col_num": "17"
+},
+{
+"row_num": "90",
+"col_num": "17"
+},
+{
+"row_num": "99",
+"col_num": "17"
+},
+{
+"row_num": "101",
+"col_num": "17"
+},
+{
+"row_num": "103",
+"col_num": "17"
+}
+]
+},
+{
+"type": "Reg",
+"name": "data_baud_cnt",
+"range": [
+{
+"start": "2",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "17",
+"col_num": "21"
+},
+{
+"row_num": "52",
+"col_num": "16"
+},
+{
+"row_num": "78",
+"col_num": "13"
+},
+{
+"row_num": "80",
+"col_num": "13"
+},
+{
+"row_num": "80",
+"col_num": "30"
+},
+{
+"row_num": "82",
+"col_num": "13"
+},
+{
+"row_num": "82",
+"col_num": "30"
+}
+]
+},
+{
+"type": "Net",
+"name": "tx_done",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "18",
+"col_num": "21"
+},
+{
+"row_num": "68",
+"col_num": "17"
+},
+{
+"row_num": "74",
+"col_num": "12"
+}
+]
+},
+{
+"type": "Reg",
+"name": "byte_in_reg",
+"range": [
+{
+"start": "7",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "19",
+"col_num": "21"
+},
+{
+"row_num": "87",
+"col_num": "13"
+},
+{
+"row_num": "89",
+"col_num": "13"
+},
+{
+"row_num": "91",
+"col_num": "13"
+},
+{
+"row_num": "91",
+"col_num": "28"
+},
+{
+"row_num": "93",
+"col_num": "13"
+},
+{
+"row_num": "93",
+"col_num": "28"
+},
+{
+"row_num": "102",
+"col_num": "19"
+}
+]
+}
+]
+},
+{
+"module": {
+"name": "baud_pulse_gen[1]",
+"file": "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/user/src/baud_pulse_gen.v",
+"level": "6",
+"first_line": "1",
+"last_line": "35",
+"inst_mod": [
+]
+},
+"always": [
+{
+"start_line": "21",
+"end_line": "31"
+}
+],
+"params": [
+{
+"name": " CLK_FREQ",
+"value": "32'Sb00000001011111010111100001000000"
+},
+{
+"name": " BAUD_RATE",
+"value": "32'Sb00000000000000011100001000000000"
+},
+{
+"name": " CYCLE_PER_BAUD",
+"value": "32'Sb00000000000000000000000011011001"
+}
+],
+"params_override": [
+],
+"signals": [
+{
+"type": "Port",
+"name": "clk",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "7",
+"col_num": "17"
+},
+{
+"row_num": "7",
+"col_num": "17"
+},
+{
+"row_num": "21",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "rst_n",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "8",
+"col_num": "17"
+},
+{
+"row_num": "8",
+"col_num": "17"
+},
+{
+"row_num": "21",
+"col_num": "36"
+},
+{
+"row_num": "22",
+"col_num": "13"
+}
+]
+},
+{
+"type": "Port",
+"name": "en",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "9",
+"col_num": "17"
+},
+{
+"row_num": "9",
+"col_num": "17"
+},
+{
+"row_num": "24",
+"col_num": "17"
+}
+]
+},
+{
+"type": "Port",
+"name": "baud_pulse",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "10",
+"col_num": "17"
+},
+{
+"row_num": "10",
+"col_num": "17"
+},
+{
+"row_num": "25",
+"col_num": "16"
+},
+{
+"row_num": "33",
+"col_num": "12"
+}
+]
+},
+{
+"type": "Reg",
+"name": "cnt",
+"range": [
+{
+"start": "15",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "19",
+"col_num": "17"
+},
+{
+"row_num": "23",
+"col_num": "13"
+},
+{
+"row_num": "26",
+"col_num": "17"
+},
+{
+"row_num": "28",
+"col_num": "17"
+},
+{
+"row_num": "28",
+"col_num": "24"
+},
+{
+"row_num": "30",
+"col_num": "13"
+},
+{
+"row_num": "33",
+"col_num": "26"
+}
+]
+}
+]
+}
+]
+}

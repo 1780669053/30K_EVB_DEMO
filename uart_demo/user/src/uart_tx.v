@@ -39,7 +39,7 @@ module uart_tx(
 
     always@(*)case(curr_state)
         S_IDLE:
-            if(baud_pulse)
+            if(baud_pulse && req)
                 next_state = S_START;
             else
                 next_state = S_IDLE;
@@ -63,7 +63,7 @@ module uart_tx(
     always@(posedge clk or negedge rst_n)begin
         if(!rst_n)
             busy <= 1'b0;
-        else if(req)
+        else if(req && baud_pulse)
             busy <= 1'b1;
         else if(tx_done)
             busy <= 1'b0;

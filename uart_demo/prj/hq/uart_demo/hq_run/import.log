@@ -1,0 +1,65 @@
+Info: 加载器件信息(SA5Z-30-D1-8U213C)....
+Info:   加载功能信息....
+Info:   加载时序信息....
+Info:   加载物理信息....
+Info: 器件加载成功.
+#=============oOOOo================oOOOo=============
+# 设计分析
+#====================================================
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+####
+Info: 设计分析执行时间 : 0 秒.
+####
+#=============oOOOo================oOOOo=============
+# 寄存器传输级综合(RTL Synthesis)
+#====================================================
+Info: C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v(18), 优化FSM.
+Info:      状态寄存器 : curr_state_reg.
+Info:        状态编码 : AUTO.
+Info:    优化前状态数 : 4.
+Info:    优化后状态数 : 4.
+Info: C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v(33), 优化FSM.
+Info:      状态寄存器 : curr_state_reg.
+Info:        状态编码 : AUTO.
+Info:    优化前状态数 : 4.
+Info:    优化后状态数 : 4.
+Info: 开始MUX优化.
+Info: 完成MUX优化.
+Info: 设计顶层模块设置为 "uart_demo".
+Info: 开始逻辑优化.
+Info:     Total number of literals before LO: 458.
+Info:   正在优化 view : uart_demo.
+Info:     逻辑优化前literals数 : 296.
+Info:     LO 循环 1 : literal数 从 296 到 272.
+Info:     逻辑优化后literals数 : 272.
+Info: Degraded fragmented CE control logic for 5 DFFs.
+Info: Degraded fragmented control logic for 5 DFFs, totally
+Info: 完成逻辑优化.
+####
+Info: RTL综合执行时间 : 0 秒.
+####
+
+#=============oOOOo================oOOOo=============
+# 时序驱动优化与映射
+#====================================================
+Info: 开始时序驱动优化.
+Info:   未发现时序约束，跳过本优化.
+Info: 完成时序驱动优化.
+Info: 插入了 4 个输入/输出单元.
+Info: 开始工艺映射.
+Info:   网表预处理....
+Info:   计算锥(Cone)....
+Info:   计算覆盖(Cover)....
+Info:   生成LUT网表..
+Info:   网表后处理....
+Info: 完成工艺映射.
+Info: 开始网表校正.
+Info: 完成网表校正.
+####
+Info: 时序驱动优化及映射执行时间 : 0 秒.
+####
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_import.rpt_chs中.

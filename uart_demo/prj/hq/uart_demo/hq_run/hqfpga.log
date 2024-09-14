@@ -1,0 +1,897 @@
+
+==========oOOOo===========================================oOOOo==========
+=  HqFpga(TM) 版本3.0.5 (Summer 2024) Build FT091024
+=  SEALION系列FPGA开发软件
+=  西安智多晶微电子有限公司 (isilicontech.com)             _@)
+ _________________________________________________________/ (
+<_________________________________________________________  {}@8@@8@(*)
+                                                          \_(
+=  版权所有 (c) 2020-2025 XiST 智多晶                      @)
+=  保留一切权利.
+=========================================================================
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:checkConstraintsSilent:END
+[> runSynthesisCmdPublic "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj"
+logSeg:import:Begin
+Info: 加载器件信息(SA5Z-30-D1-8U213C)....
+Info:   加载功能信息....
+Info:   加载时序信息....
+Info:   加载物理信息....
+Info: 器件加载成功.
+
+#=============oOOOo================oOOOo=============
+# 设计分析
+#====================================================
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+####
+Info: 设计分析执行时间 : 0 秒.
+####
+
+#=============oOOOo================oOOOo=============
+# 寄存器传输级综合(RTL Synthesis)
+#====================================================
+Info: C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v(18), 优化FSM.
+Info:      状态寄存器 : curr_state_reg.
+Info:        状态编码 : AUTO.
+Info:    优化前状态数 : 4.
+Info:    优化后状态数 : 4.
+Info: C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v(33), 优化FSM.
+Info:      状态寄存器 : curr_state_reg.
+Info:        状态编码 : AUTO.
+Info:    优化前状态数 : 4.
+Info:    优化后状态数 : 4.
+Info: 开始MUX优化.
+Info: 完成MUX优化.
+Info: 设计顶层模块设置为 "uart_demo".
+Info: 开始逻辑优化.
+Info:     Total number of literals before LO: 461.
+Info:   正在优化 view : uart_demo.
+Info:     逻辑优化前literals数 : 298.
+Info:     LO 循环 1 : literal数 从 298 到 274.
+Info:     逻辑优化后literals数 : 274.
+Info: Degraded fragmented CE control logic for 5 DFFs.
+Info: Degraded fragmented control logic for 5 DFFs, totally
+Info: 完成逻辑优化.
+####
+Info: RTL综合执行时间 : 1 秒.
+####
+
+#=============oOOOo================oOOOo=============
+# 时序驱动优化与映射
+#====================================================
+Info: 开始时序驱动优化.
+Info:   未发现时序约束，跳过本优化.
+Info: 完成时序驱动优化.
+Info: 插入了 4 个输入/输出单元.
+Info: 开始工艺映射.
+Info:   网表预处理....
+Info:   计算锥(Cone)....
+Info:   计算覆盖(Cover)....
+Info:   生成LUT网表..
+Info:   网表后处理....
+Info: 完成工艺映射.
+Info: 开始网表校正.
+Info: 完成网表校正.
+####
+Info: 时序驱动优化及映射执行时间 : 0 秒.
+####
+FLAG:SETVAR:TOP_MODULE:uart_demo:SILENT
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_import.rpt_chs中.
+logSeg:import:End
+FLAG:synthesisDone
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:SETVAR:TOP_MODULE:uart_demo:SILENT
+FLAG:checkConstraintsSilent:END
+[> sdcClockDetect "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj"
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG00::sdcClockDetect::Begin
+FLAG0::CLOCK_ITEMS::clk
+FLAG00::sdcClockDetect::End
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+[> reloadTimingConstraintV3 "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj"
+FLAG:SDCUPC:READ:START
+Info: 检查时序约束 ....
+Info: 已完成.
+FLAG:SDCUPC:READ:END
+[> generalIoAttrInfo "" ""
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG00::generalIoAttrInfo::Begin
+FLAG0::IOATTR_FIELDS::!ioh.get_attrs
+str::ioh.get_attrs
+FLAG0::IOATTR_NAMES::IO_TYPE PULLMODE CLAMP HYSTERESIS DRIVE SLEWRATE DIFFDRIVE OPENDRAIN DIFFRESISTOR BANK_VCCIO VREF ODT
+FLAG0::IOATTR_AFFECT::IO_TYPE ::!ioh.get_iostd %PORT_NAME% -loc "%PIN_LOC%"
+str::!ioh.get_iostd %PORT_NAME% -loc {"%PIN_LOC%"} :: !ioh.get_iostd %PORT_NAME% -loc {"%PIN_LOC%"}
+str::ioh.get_iostd
+FLAG0::IOPORTS::DIR_I:: clk rst_n uart_rx ::DIR_O:: uart_tx ::DIR_B::
+FLAG0::IOPORTS::DIR_::clk::IO_TYPE ::LVCMOS33 LVCMOS25 LVCMOS12 LVCMOS15 LVCMOS18 MDDR18 PCI33 LVTTL33 POD12 SSTL12 SSTL135 SSTL135_R SSTL15 SSTL15_R SSTL18_I SSTL18_II SSTL25_I SSTL25_II HSTL12 HSTL15_I HSTL15_II HSTL18_I HSTL18_II HSUL12 LVCMOS33D LVCMOS25D LVCMOS12D LVCMOS15D LVCMOS18D MDDR18D LVTTL33D POD12D SSTL12D SSTL135D SSTL135D_R SSTL15D SSTL15D_R SSTL18D_I SSTL18D_II SSTL25D_I SSTL25D_II HSTL12D HSTL15D_I HSTL15D_II HSTL18D_I HSTL18D_II HSUL12D LVCMOS25R33 LVCMOS15R33 LVCMOS18R33 LVCMOS15R25 LVCMOS18R25 LVDS25 LVDS18 TMDS33 M_LVDS25 PPDS25 BLVDS25 MLVDS25 RSDS25 LVPECL33::PULLMODE ::DOWN UP KEEPER NONE::CLAMP ::ON OFF::HYSTERESIS ::SMALL LARGE NA::DRIVE ::NA::SLEWRATE ::NA::DIFFDRIVE ::NA::OPENDRAIN ::OFF::DIFFRESISTOR ::OFF::BANK_VCCIO ::3.3::VREF ::OFF::ODT ::DISABLED
+FLAG0::IOPORTS::DIR_::rst_n::IO_TYPE ::LVCMOS33 LVCMOS25 LVCMOS12 LVCMOS15 LVCMOS18 MDDR18 PCI33 LVTTL33 POD12 SSTL12 SSTL135 SSTL135_R SSTL15 SSTL15_R SSTL18_I SSTL18_II SSTL25_I SSTL25_II HSTL12 HSTL15_I HSTL15_II HSTL18_I HSTL18_II HSUL12 LVCMOS33D LVCMOS25D LVCMOS12D LVCMOS15D LVCMOS18D MDDR18D LVTTL33D POD12D SSTL12D SSTL135D SSTL135D_R SSTL15D SSTL15D_R SSTL18D_I SSTL18D_II SSTL25D_I SSTL25D_II HSTL12D HSTL15D_I HSTL15D_II HSTL18D_I HSTL18D_II HSUL12D LVCMOS25R33 LVCMOS15R33 LVCMOS18R33 LVCMOS15R25 LVCMOS18R25 LVDS25 LVDS18 TMDS33 M_LVDS25 PPDS25 BLVDS25 MLVDS25 RSDS25 LVPECL33::PULLMODE ::DOWN UP KEEPER NONE::CLAMP ::ON OFF::HYSTERESIS ::SMALL LARGE NA::DRIVE ::NA::SLEWRATE ::NA::DIFFDRIVE ::NA::OPENDRAIN ::OFF::DIFFRESISTOR ::OFF::BANK_VCCIO ::3.3::VREF ::OFF::ODT ::DISABLED
+FLAG0::IOPORTS::DIR_::uart_rx::IO_TYPE ::LVCMOS33 LVCMOS25 LVCMOS12 LVCMOS15 LVCMOS18 MDDR18 PCI33 LVTTL33 POD12 SSTL12 SSTL135 SSTL135_R SSTL15 SSTL15_R SSTL18_I SSTL18_II SSTL25_I SSTL25_II HSTL12 HSTL15_I HSTL15_II HSTL18_I HSTL18_II HSUL12 LVCMOS33D LVCMOS25D LVCMOS12D LVCMOS15D LVCMOS18D MDDR18D LVTTL33D POD12D SSTL12D SSTL135D SSTL135D_R SSTL15D SSTL15D_R SSTL18D_I SSTL18D_II SSTL25D_I SSTL25D_II HSTL12D HSTL15D_I HSTL15D_II HSTL18D_I HSTL18D_II HSUL12D LVCMOS25R33 LVCMOS15R33 LVCMOS18R33 LVCMOS15R25 LVCMOS18R25 LVDS25 LVDS18 TMDS33 M_LVDS25 PPDS25 BLVDS25 MLVDS25 RSDS25 LVPECL33::PULLMODE ::DOWN UP KEEPER NONE::CLAMP ::ON OFF::HYSTERESIS ::SMALL LARGE NA::DRIVE ::NA::SLEWRATE ::NA::DIFFDRIVE ::NA::OPENDRAIN ::OFF::DIFFRESISTOR ::OFF::BANK_VCCIO ::3.3::VREF ::OFF::ODT ::DISABLED
+FLAG0::IOPORTS::DIR_::uart_tx::IO_TYPE ::LVCMOS33 LVCMOS25 LVCMOS12 LVCMOS15 LVCMOS18 MDDR18 PCI33 LVTTL33 POD12 SSTL12 SSTL135 SSTL135_R SSTL15 SSTL15_R SSTL18_I SSTL18_II SSTL25_I SSTL25_II HSTL12 HSTL15_I HSTL15_II HSTL18_I HSTL18_II HSUL12 LVCMOS33D LVCMOS25D LVCMOS12D LVCMOS15D LVCMOS18D MDDR18D LVTTL33D POD12D SSTL12D SSTL135D SSTL135D_R SSTL15D SSTL15D_R SSTL18D_I SSTL18D_II SSTL25D_I SSTL25D_II HSTL12D HSTL15D_I HSTL15D_II HSTL18D_I HSTL18D_II HSUL12D LVDS25 LVDS18 TMDS33 M_LVDS25 PPDS25 LVDS25E BLVDS25E MLVDS25E RSDS25E LVPECL33E::PULLMODE ::NONE DOWN UP KEEPER::CLAMP ::OFF ON::HYSTERESIS ::NA::DRIVE ::8 4 12 16::SLEWRATE ::SLOW FAST::DIFFDRIVE ::NA::OPENDRAIN ::OFF ON::DIFFRESISTOR ::OFF::BANK_VCCIO ::3.3::VREF ::OFF::ODT ::DISABLED
+FLAG00::generalIoAttrInfo::End
+[> checkUPCEditRecordChange "Location" {"-loc A4"} "clk" "undefined" "IO_TYPE PULLMODE CLAMP HYSTERESIS DRIVE SLEWRATE DIFFDRIVE OPENDRAIN DIFFRESISTOR BANK_VCCIO VREF ODT"
+FLAG0::IOPORTS::DIR_::clk::IO_TYPE ::LVCMOS33 PCI33 LVTTL33 LVCMOS25R33 LVCMOS18R33::PULLMODE ::DOWN UP KEEPER NONE::CLAMP ::ON OFF::HYSTERESIS ::SMALL LARGE NA::DRIVE ::NA::SLEWRATE ::NA::DIFFDRIVE ::NA::OPENDRAIN ::OFF::DIFFRESISTOR ::OFF::BANK_VCCIO ::3.3::VREF ::OFF::ODT ::DISABLED
+[> checkUPCEditRecordChange "Location" {"-loc L15"} "rst_n" "undefined" "IO_TYPE PULLMODE CLAMP HYSTERESIS DRIVE SLEWRATE DIFFDRIVE OPENDRAIN DIFFRESISTOR BANK_VCCIO VREF ODT"
+FLAG0::IOPORTS::DIR_::rst_n::IO_TYPE ::LVCMOS33 PCI33 LVTTL33 LVCMOS25 LVCMOS18 LVCMOS25R33 LVCMOS18R33 LVCMOS18R25 SSTL25_I::PULLMODE ::DOWN UP KEEPER NONE::CLAMP ::ON OFF::HYSTERESIS ::SMALL LARGE NA::DRIVE ::NA::SLEWRATE ::NA::DIFFDRIVE ::NA::OPENDRAIN ::OFF::DIFFRESISTOR ::OFF::BANK_VCCIO ::3.3::VREF ::OFF::ODT ::DISABLED
+[> checkUPCEditRecordChange "Location" {"-loc P11"} "rst_n" "undefined" "IO_TYPE PULLMODE CLAMP HYSTERESIS DRIVE SLEWRATE DIFFDRIVE OPENDRAIN DIFFRESISTOR BANK_VCCIO VREF ODT"
+FLAG0::IOPORTS::DIR_::rst_n::IO_TYPE ::LVCMOS33 PCI33 LVTTL33 LVCMOS25 LVCMOS18 LVCMOS25R33 LVCMOS18R33 LVCMOS18R25 SSTL25_I LVTTL33D LVCMOS33D LVPECL33::PULLMODE ::DOWN UP KEEPER NONE::CLAMP ::ON OFF::HYSTERESIS ::SMALL LARGE NA::DRIVE ::NA::SLEWRATE ::NA::DIFFDRIVE ::NA::OPENDRAIN ::OFF::DIFFRESISTOR ::OFF::BANK_VCCIO ::3.3::VREF ::OFF::ODT ::DISABLED
+[> checkUPCEditRecordChange "Location" {"-loc L15"} "rst_n" "undefined" "IO_TYPE PULLMODE CLAMP HYSTERESIS DRIVE SLEWRATE DIFFDRIVE OPENDRAIN DIFFRESISTOR BANK_VCCIO VREF ODT"
+FLAG0::IOPORTS::DIR_::rst_n::IO_TYPE ::LVCMOS33 PCI33 LVTTL33 LVCMOS25 LVCMOS18 LVCMOS25R33 LVCMOS18R33 LVCMOS18R25 SSTL25_I::PULLMODE ::DOWN UP KEEPER NONE::CLAMP ::ON OFF::HYSTERESIS ::SMALL LARGE NA::DRIVE ::NA::SLEWRATE ::NA::DIFFDRIVE ::NA::OPENDRAIN ::OFF::DIFFRESISTOR ::OFF::BANK_VCCIO ::3.3::VREF ::OFF::ODT ::DISABLED
+[> checkUPCEditRecordChange "Location" {"-loc P12"} "uart_rx" "undefined" "IO_TYPE PULLMODE CLAMP HYSTERESIS DRIVE SLEWRATE DIFFDRIVE OPENDRAIN DIFFRESISTOR BANK_VCCIO VREF ODT"
+FLAG0::IOPORTS::DIR_::uart_rx::IO_TYPE ::LVCMOS33 PCI33 LVTTL33 LVCMOS25 LVCMOS18 LVCMOS25R33 LVCMOS18R33 LVCMOS18R25 SSTL25_I::PULLMODE ::DOWN UP KEEPER NONE::CLAMP ::ON OFF::HYSTERESIS ::SMALL LARGE NA::DRIVE ::NA::SLEWRATE ::NA::DIFFDRIVE ::NA::OPENDRAIN ::OFF::DIFFRESISTOR ::OFF::BANK_VCCIO ::3.3::VREF ::OFF::ODT ::DISABLED
+[> checkUPCEditRecordChange "Location" {"-loc R12"} "uart_tx" "undefined" "IO_TYPE PULLMODE CLAMP HYSTERESIS DRIVE SLEWRATE DIFFDRIVE OPENDRAIN DIFFRESISTOR BANK_VCCIO VREF ODT"
+FLAG0::IOPORTS::DIR_::uart_tx::IO_TYPE ::LVCMOS33 PCI33 LVTTL33::PULLMODE ::NONE DOWN UP KEEPER::CLAMP ::OFF ON::HYSTERESIS ::NA::DRIVE ::8 4 12 16::SLEWRATE ::SLOW FAST::DIFFDRIVE ::NA::OPENDRAIN ::OFF ON::DIFFRESISTOR ::OFF::BANK_VCCIO ::3.3::VREF ::OFF::ODT ::DISABLED
+[> run "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "unknown"
+logSeg:import:Begin
+Info: 加载器件信息(SA5Z-30-D1-8U213C)....
+Info:   加载功能信息....
+Info:   加载时序信息....
+Info:   加载物理信息....
+Info: 器件加载成功.
+
+#=============oOOOo================oOOOo=============
+# 设计分析
+#====================================================
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+####
+Info: 设计分析执行时间 : 0 秒.
+####
+
+#=============oOOOo================oOOOo=============
+# 寄存器传输级综合(RTL Synthesis)
+#====================================================
+Info: C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v(18), 优化FSM.
+Info:      状态寄存器 : curr_state_reg.
+Info:        状态编码 : AUTO.
+Info:    优化前状态数 : 4.
+Info:    优化后状态数 : 4.
+Info: C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v(33), 优化FSM.
+Info:      状态寄存器 : curr_state_reg.
+Info:        状态编码 : AUTO.
+Info:    优化前状态数 : 4.
+Info:    优化后状态数 : 4.
+Info: 开始MUX优化.
+Info: 完成MUX优化.
+Info: 设计顶层模块设置为 "uart_demo".
+Info: 开始逻辑优化.
+Info:     Total number of literals before LO: 461.
+Info:   正在优化 view : uart_demo.
+Info:     逻辑优化前literals数 : 298.
+Info:     LO 循环 1 : literal数 从 298 到 274.
+Info:     逻辑优化后literals数 : 274.
+Info: Degraded fragmented CE control logic for 5 DFFs.
+Info: Degraded fragmented control logic for 5 DFFs, totally
+Info: 完成逻辑优化.
+####
+Info: RTL综合执行时间 : 0 秒.
+####
+
+#=============oOOOo================oOOOo=============
+# 时序驱动优化与映射
+#====================================================
+Info: 开始时序驱动优化.
+Info:   未发现时序约束，跳过本优化.
+Info: 完成时序驱动优化.
+Info: 插入了 4 个输入/输出单元.
+Info: 开始工艺映射.
+Info:   网表预处理....
+Info:   计算锥(Cone)....
+Info:   计算覆盖(Cover)....
+Info:   生成LUT网表..
+Info:   网表后处理....
+Info: 完成工艺映射.
+Info: 开始网表校正.
+Info: 完成网表校正.
+####
+Info: 时序驱动优化及映射执行时间 : 0 秒.
+####
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_import.rpt_chs中.
+logSeg:import:End
+FLAG:synthesisDone
+FLAG:SDCUPC:READ:START
+Info: 检查时序约束 ....
+Info: 已完成.
+FLAG:SDCUPC:READ:END
+logSeg:place:Begin
+FLAG:SDCUPC:READ:START
+Info: 检查物理约束 ....
+Info: 已完成.
+FLAG:SDCUPC:READ:END
+Info: 网表整理(nl.sweep) 开始 ....
+Info: 共有 0 个节点被 nl.sweep 删除.
+Info: 网表整理(nl.sweep) 结束.
+
+#=============oOOOo================oOOOo=============
+# 组装(Packing)
+#====================================================
+Info: 开始组装(packing).
+Info: 将 u_uart_rx/byte_out_reg[0] 吸收到 IREG.
+Info: 将 u_uart_tx/tx_reg_dup1 吸收到 OREG.
+Info: 开始组装预处理.
+Info: 完成组装预处理.
+Info: IOLOGIC                     2.
+Info:     IREG_OREG               2.
+Info: PIO                         4.
+Info: SLICEL                      4.
+Info:     CARRY                   4.
+Info: SLICEL(LE)                 64.
+Info:     LUT                    12.
+Info:     LUT REG                37.
+Info:     REG                    15.
+Info: 完成组装.
+
+Info: Start gpack.
+Info: Done gpack.
+Info: 开始建立物理网表.
+Info:   为 4    个 PIO        建立了物理网表 .
+Info:   为 2    个 IOLOGIC    建立了物理网表 .
+Info:   为 20   个 SLICEL     建立了物理网表 .
+Info: 完成建立物理网表.
+Info: IOLOGIC                     2.
+Info:     IREG_OREG               2.
+Info: PIO                         4.
+Info: SLICEL                     20.
+Info:     CARRY                   4.
+Info:     LOGIC                  16.
+####
+Info: 组装执行时间 : 4 秒.
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_map.rpt中.
+
+#=============oOOOo================oOOOo=============
+# 布局(Placement)
+#====================================================
+Info: 开始布局(placement).
+Info: 布局模式: 时序优化.
+Info: 时序优化强度: 标准.
+Info: CE/SR NET max fanout = 2000.
+Info: Best achievable WNS = 10000
+Info: 设置延迟系数: 1.33333.
+[V]: Identify CE/SR net...
+Info: 元件实例 uart_rx_MGIOL 已固定于 IOL_B76B.
+Info: 元件实例 uart_tx_MGIOL 已固定于 IOL_B76D.
+Info: 元件实例 clk 已固定于 A4.
+Info: 元件实例 rst_n 已固定于 L15.
+Info: 元件实例 uart_rx 已固定于 P12.
+Info: 元件实例 uart_tx 已固定于 R12.
+----
+Info: 布局第1阶段(总共3阶段) (签名=815,60,1).
+----
+Info: 进度   3%, WNS =  20257.
+Info: 进度   7%, WNS =  20977.
+Info: 进度  10%, WNS =  28563.
+Info: 进度  13%, WNS =  25350.
+Info: 进度  17%, WNS =  24643.
+Info: 进度  20%, WNS =  26537.
+Info: 进度  23%, WNS =  32430.
+Info: 进度  27%, WNS =  30003.
+Info: 进度  30%, WNS =  29430.
+Info: 进度  33%, WNS =  33215.
+Info: 进度  37%, WNS =  33146.
+Info: 进度  40%, WNS =  31257.
+Info: 进度  43%, WNS =  35028.
+Info: 进度  47%, WNS =  34416.
+Info: 进度  48%, WNS =  33656.
+Info: 进度  50%, WNS =  34282.
+Info: 进度  52%, WNS =  34721.
+Info: 进度  53%, WNS =  34229.
+Info: 进度  57%, WNS =  34670.
+Info: 进度  60%, WNS =  34575.
+Info: 进度  62%, WNS =  34962.
+Info: 进度  63%, WNS =  35602.
+Info: 进度  65%, WNS =  35216.
+Info: 进度  67%, WNS =  34976.
+Info: 进度  68%, WNS =  35215.
+Info: 进度  70%, WNS =  35229.
+Info: 进度  73%, WNS =  35229.
+Info: 进度  75%, WNS =  34976.
+Info: 进度  77%, WNS =  35482.
+Info: 进度  80%, WNS =  35042.
+Info: 进度  83%, WNS =  35816.
+Info: 进度  85%, WNS =  35269.
+Info: 进度  87%, WNS =  35508.
+Info: 进度  88%, WNS =  35522.
+Info: 进度  90%, WNS =  35837.
+Info: 进度  93%, WNS =  35096.
+Info: 进度  95%, WNS =  35736.
+Info: 进度  97%, WNS =  35641.
+Info: 进度  99%, WNS =  34642.
+Info: 进度 100%, WNS =  35641.
+----
+Info: 布局第2阶段(总共3阶段) (签名=2,10,1).
+----
+Info: 进度   0%, WNS =  35641.
+Info: 进度  10%, WNS =  35656.
+Info: 进度  30%, WNS =  35656.
+Info: 进度  50%, WNS =  35656.
+Info: 进度  70%, WNS =  35656.
+Info: 进度  90%, WNS =  35656.
+Info: 进度 100%, WNS =  35656.
+----
+Info: 布局第3阶段(总共3阶段) (签名=44,10,1).
+----
+Info: 进度  10%, WNS =  35656.
+Info: 进度  30%, WNS =  35656.
+Info: 进度  50%, WNS =  35656.
+Info: 进度  70%, WNS =  35656.
+Info: 进度  90%, WNS =  35656.
+Info: 进度 100%, WNS =  35656.
+----
+Info: 布局结果最终WNS = 36602.
+----
+Info: 完成布局.
+
+Info: 开始网表校正.
+Info: 完成网表校正.
+####
+Info: 布局执行时间 : 1 秒.
+####
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\ratio.rpt_chs中.
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_place.rpt_chs中.
+logSeg:place:End
+logSeg:route:Begin
+
+#=============oOOOo================oOOOo=============
+# 布线(Routing)
+#====================================================
+Info: 布线模式 : timing.
+Info: 优化强度 : std.
+Info: 读入布线资源并检查网表 ....
+Info: 当前网表中有 28 个元件例示(instance).
+Info: 总共需要对 90 条连线 (247 连接点) 进行布线.
+Info: 连线 clk_c 指定为 PCLK (由 placer).
+Info: 开始布线(routing).
+
+Info: set customeized options 
+
+| X1/X2 | X2H | X12D | X4/X6 |  XL |  LH |  LV | LVB | BNC | GFAN | X120 | X0-X0 | X1-X2 | X4-X6 
+|   5   |   5 |   5  |   2   |   3 |   6 |   6 |   6 |   6 |   6  |  50  |   3   |   4   |   7   
+
+| MALL | MLONG | MX0  | X12RAM | X46RAM | X12VIQ | X46VIQ | X12CLKV | PLO | CLO | X-LOCAL | CLKV+ | GFANn | GNDfo | GNDlut 
+|   1  |   1   |   1  |    2   |    2   |    3   |    2   |     5   |  10 |   5 |    0    |   1   |   2   |    0  |    0   
+
+Info: 第  0 轮 : 还需要对 58    条连线 (83    连接点)进行布线.
+Info: 第  1 轮 : 还需要对 2     条连线 (1     连接点)进行布线.
+Info: 第  2 轮 : 还需要对 0     条连线 (0     连接点)进行布线.
+
+Info: 完成布线.
+
+Info: 开始更新物理网表.
+Info:   为 13   个 SLICEL     建立了物理网表 .
+Info:   为 6    个 TIEOFF     建立了物理网表 .
+Info: 完成更新物理网表.
+####
+Info: 布线执行时间 : 1 秒.
+####
+ 
+Info: 生成最差时序余量(WNS)报告 ...
+=============================================
+Clock Name   Req Period  Setup WNS   Hold WNS
+---------------------------------------------
+clk               40000      35445        286
+=============================================
+【汇总】
+Info(wns-ok): Setup WNS = 35445, 满足时序目标.
+Info(wns-ok): Hold  WNS = 286, 满足时序目标.
+====
+Info: 完成WNS报告.
+Info:   (可在文件 "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/hq_run/uart_demo_slack.rpt" 中检查更详细信息).
+====
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_route.rpt_chs中.
+logSeg:route:End
+FLAG:routingDone
+logSeg:bitGen:Begin
+
+#=============oOOOo================oOOOo=============
+# 位流生成
+#====================================================
+Info: 载入器件信息 ....
+Info: 载入设计 ....
+Info: 输出位流文件 uart_demo.bit ....
+Info: 完成.
+####
+Info: 位流生成执行时间 : 1 秒.
+####
+logSeg:bitGen:End
+FLAG:bitGenDone
+[> downloadBit "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj"
+FLAG:bitsDownloadDialogProgressBegin
+Info: 启动比特流下载器 ....
+C:/hqv3_xist_3.0.5_FT091024_win64/build/hqdnload/hqdnload.exe -f uart_demo.bit -family seal30k -lang chs
+FLAG:downloadBit:C:/hqv3_xist_3.0.5_FT091024_win64/build/hqdnload/hqdnload.exe -f uart_demo.bit -family seal30k -lang chs
+----
+FLAG:bitsDownloadDialogProgressEnd
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+ERROR(SFE-E-21): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v(35), 语法错误, 遇到不期望的 end, 原本期望 case 或 casex 或 casez 或 if.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+ERROR(SFE-E-50): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v(57), module "loop_ctrl" 未定义，实例 "u_loop_ctrl" 不能确定module.
+    rtl.elaborate -top uart_demo -json uart_demo
+ERROR(DSGN005): 前面流程中发生错误，请搜索ERROR字样信息并复查.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+ERROR(SFE-E-21): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v(35), 语法错误, 遇到不期望的 ).
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+ERROR(SFE-E-50): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v(57), module "loop_ctrl" 未定义，实例 "u_loop_ctrl" 不能确定module.
+    rtl.elaborate -top uart_demo -json uart_demo
+ERROR(DSGN005): 前面流程中发生错误，请搜索ERROR字样信息并复查.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+ERROR(SFE-E-21): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v(37), 语法错误, 遇到不期望的 end, 原本期望 case 或 casex 或 casez 或 if.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+ERROR(SFE-E-50): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v(57), module "loop_ctrl" 未定义，实例 "u_loop_ctrl" 不能确定module.
+    rtl.elaborate -top uart_demo -json uart_demo
+ERROR(DSGN005): 前面流程中发生错误，请搜索ERROR字样信息并复查.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+ERROR(SFE-E-21): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v(37), 语法错误, 遇到不期望的 end, 原本期望 case 或 casex 或 casez 或 if.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+ERROR(SFE-E-50): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v(57), module "loop_ctrl" 未定义，实例 "u_loop_ctrl" 不能确定module.
+    rtl.elaborate -top uart_demo -json uart_demo
+ERROR(DSGN005): 前面流程中发生错误，请搜索ERROR字样信息并复查.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+ERROR(SFE-E-21): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v(37), 语法错误, 遇到不期望的 ).
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+ERROR(SFE-E-50): C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v(57), module "loop_ctrl" 未定义，实例 "u_loop_ctrl" 不能确定module.
+    rtl.elaborate -top uart_demo -json uart_demo
+ERROR(DSGN005): 前面流程中发生错误，请搜索ERROR字样信息并复查.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> analysisToplevel "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "true"
+FLAG:TOPJSON:BEGIN
+Info: 加载器件信息(SEAL)....
+Info:   加载功能信息....
+Info: 器件加载成功.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+FLAG:TOPJSON:DONE
+FLAG:checkConstraintsSilent:BEGIN
+FLAG:SDCUPC:READ:START
+FLAG:SDCUPC:READ:END
+FLAG:checkConstraintsSilent:END
+[> run "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo" "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/uart_demo.hqprj" "unknown"
+logSeg:import:Begin
+Info: 加载器件信息(SA5Z-30-D1-8U213C)....
+Info:   加载功能信息....
+Info:   加载时序信息....
+Info:   加载物理信息....
+Info: 器件加载成功.
+
+#=============oOOOo================oOOOo=============
+# 设计分析
+#====================================================
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\baud_pulse_gen.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\loop_ctrl.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_demo.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v.
+Info: 分析verilog文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v.
+####
+Info: 设计分析执行时间 : 0 秒.
+####
+
+#=============oOOOo================oOOOo=============
+# 寄存器传输级综合(RTL Synthesis)
+#====================================================
+Info: C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_rx.v(18), 优化FSM.
+Info:      状态寄存器 : curr_state_reg.
+Info:        状态编码 : AUTO.
+Info:    优化前状态数 : 4.
+Info:    优化后状态数 : 4.
+Info: C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\..\..\..\user\src\uart_tx.v(33), 优化FSM.
+Info:      状态寄存器 : curr_state_reg.
+Info:        状态编码 : AUTO.
+Info:    优化前状态数 : 4.
+Info:    优化后状态数 : 4.
+Info: 开始MUX优化.
+Info: 完成MUX优化.
+Info: 设计顶层模块设置为 "uart_demo".
+Info: 开始逻辑优化.
+Info:     Total number of literals before LO: 458.
+Info:   正在优化 view : uart_demo.
+Info:     逻辑优化前literals数 : 296.
+Info:     LO 循环 1 : literal数 从 296 到 272.
+Info:     逻辑优化后literals数 : 272.
+Info: Degraded fragmented CE control logic for 5 DFFs.
+Info: Degraded fragmented control logic for 5 DFFs, totally
+Info: 完成逻辑优化.
+####
+Info: RTL综合执行时间 : 0 秒.
+####
+
+#=============oOOOo================oOOOo=============
+# 时序驱动优化与映射
+#====================================================
+Info: 开始时序驱动优化.
+Info:   未发现时序约束，跳过本优化.
+Info: 完成时序驱动优化.
+Info: 插入了 4 个输入/输出单元.
+Info: 开始工艺映射.
+Info:   网表预处理....
+Info:   计算锥(Cone)....
+Info:   计算覆盖(Cover)....
+Info:   生成LUT网表..
+Info:   网表后处理....
+Info: 完成工艺映射.
+Info: 开始网表校正.
+Info: 完成网表校正.
+####
+Info: 时序驱动优化及映射执行时间 : 0 秒.
+####
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_import.rpt_chs中.
+logSeg:import:End
+FLAG:synthesisDone
+FLAG:SDCUPC:READ:START
+Info: 检查时序约束 ....
+Info: 已完成.
+FLAG:SDCUPC:READ:END
+logSeg:place:Begin
+FLAG:SDCUPC:READ:START
+Info: 检查物理约束 ....
+Info: 已完成.
+FLAG:SDCUPC:READ:END
+Info: 网表整理(nl.sweep) 开始 ....
+Info: 共有 0 个节点被 nl.sweep 删除.
+Info: 网表整理(nl.sweep) 结束.
+
+#=============oOOOo================oOOOo=============
+# 组装(Packing)
+#====================================================
+Info: 开始组装(packing).
+Info: 将 u_uart_rx/byte_out_reg[0] 吸收到 IREG.
+Info: 将 u_uart_tx/tx_reg_dup1 吸收到 OREG.
+Info: 开始组装预处理.
+Info: 完成组装预处理.
+Info: IOLOGIC                     2.
+Info:     IREG_OREG               2.
+Info: PIO                         4.
+Info: SLICEL                      4.
+Info:     CARRY                   4.
+Info: SLICEL(LE)                 64.
+Info:     LUT                    12.
+Info:     LUT REG                37.
+Info:     REG                    15.
+Info: 完成组装.
+
+Info: Start gpack.
+Info: Done gpack.
+Info: 开始建立物理网表.
+Info:   为 4    个 PIO        建立了物理网表 .
+Info:   为 2    个 IOLOGIC    建立了物理网表 .
+Info:   为 21   个 SLICEL     建立了物理网表 .
+Info: 完成建立物理网表.
+Info: IOLOGIC                     2.
+Info:     IREG_OREG               2.
+Info: PIO                         4.
+Info: SLICEL                     21.
+Info:     CARRY                   4.
+Info:     LOGIC                  17.
+####
+Info: 组装执行时间 : 4 秒.
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_map.rpt中.
+
+#=============oOOOo================oOOOo=============
+# 布局(Placement)
+#====================================================
+Info: 开始布局(placement).
+Info: 布局模式: 时序优化.
+Info: 时序优化强度: 标准.
+Info: CE/SR NET max fanout = 2000.
+Info: Best achievable WNS = 10000
+Info: 设置延迟系数: 1.33333.
+[V]: Identify CE/SR net...
+Info: 元件实例 uart_rx_MGIOL 已固定于 IOL_B76B.
+Info: 元件实例 uart_tx_MGIOL 已固定于 IOL_B76D.
+Info: 元件实例 clk 已固定于 A4.
+Info: 元件实例 rst_n 已固定于 L15.
+Info: 元件实例 uart_rx 已固定于 P12.
+Info: 元件实例 uart_tx 已固定于 R12.
+----
+Info: 布局第1阶段(总共3阶段) (签名=784,60,1).
+----
+Info: 进度   3%, WNS =  21163.
+Info: 进度   7%, WNS =  22363.
+Info: 进度  10%, WNS =  27990.
+Info: 进度  13%, WNS =  26243.
+Info: 进度  17%, WNS =  27603.
+Info: 进度  20%, WNS =  30150.
+Info: 进度  23%, WNS =  26950.
+Info: 进度  27%, WNS =  27337.
+Info: 进度  30%, WNS =  23417.
+Info: 进度  33%, WNS =  30417.
+Info: 进度  37%, WNS =  28550.
+Info: 进度  40%, WNS =  31443.
+Info: 进度  43%, WNS =  30883.
+Info: 进度  47%, WNS =  32403.
+Info: 进度  50%, WNS =  34602.
+Info: 进度  53%, WNS =  32616.
+Info: 进度  55%, WNS =  33976.
+Info: 进度  57%, WNS =  29670.
+Info: 进度  58%, WNS =  34990.
+Info: 进度  60%, WNS =  32069.
+Info: 进度  63%, WNS =  33016.
+Info: 进度  65%, WNS =  34735.
+Info: 进度  67%, WNS =  34335.
+Info: 进度  70%, WNS =  35055.
+Info: 进度  73%, WNS =  34577.
+Info: 进度  77%, WNS =  32842.
+Info: 进度  80%, WNS =  34389.
+Info: 进度  83%, WNS =  34895.
+Info: 进度  85%, WNS =  34736.
+Info: 进度  87%, WNS =  34509.
+Info: 进度  90%, WNS =  34976.
+Info: 进度  92%, WNS =  35548.
+Info: 进度  93%, WNS =  35309.
+Info: 进度  95%, WNS =  35041.
+Info: 进度  97%, WNS =  34722.
+Info: 进度  99%, WNS =  34868.
+Info: 进度 100%, WNS =  35041.
+----
+Info: 布局第2阶段(总共3阶段) (签名=5,10,1).
+----
+Info: 进度   0%, WNS =  35468.
+Info: 进度  10%, WNS =  35816.
+Info: 进度  30%, WNS =  35816.
+Info: 进度  50%, WNS =  35816.
+Info: 进度  70%, WNS =  35816.
+Info: 进度  90%, WNS =  35816.
+Info: 进度 100%, WNS =  35816.
+----
+Info: 布局第3阶段(总共3阶段) (签名=48,10,1).
+----
+Info: 进度  10%, WNS =  35816.
+Info: 进度  30%, WNS =  35816.
+Info: 进度  50%, WNS =  35816.
+Info: 进度  70%, WNS =  35816.
+Info: 进度  90%, WNS =  35816.
+Info: 进度 100%, WNS =  35816.
+----
+Info: 布局结果最终WNS = 36722.
+----
+Info: 完成布局.
+
+Info: 开始网表校正.
+Info: 完成网表校正.
+####
+Info: 布局执行时间 : 1 秒.
+####
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\ratio.rpt_chs中.
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_place.rpt_chs中.
+logSeg:place:End
+logSeg:route:Begin
+
+#=============oOOOo================oOOOo=============
+# 布线(Routing)
+#====================================================
+Info: 布线模式 : timing.
+Info: 优化强度 : std.
+Info: 读入布线资源并检查网表 ....
+Info: 当前网表中有 29 个元件例示(instance).
+Info: 总共需要对 90 条连线 (260 连接点) 进行布线.
+Info: 连线 clk_c 指定为 PCLK (由 placer).
+Info: 开始布线(routing).
+
+Info: set customeized options 
+
+| X1/X2 | X2H | X12D | X4/X6 |  XL |  LH |  LV | LVB | BNC | GFAN | X120 | X0-X0 | X1-X2 | X4-X6 
+|   5   |   5 |   5  |   2   |   3 |   6 |   6 |   6 |   6 |   6  |  50  |   3   |   4   |   7   
+
+| MALL | MLONG | MX0  | X12RAM | X46RAM | X12VIQ | X46VIQ | X12CLKV | PLO | CLO | X-LOCAL | CLKV+ | GFANn | GNDfo | GNDlut 
+|   1  |   1   |   1  |    2   |    2   |    3   |    2   |     5   |  10 |   5 |    0    |   1   |   2   |    0  |    0   
+
+Info: 第  0 轮 : 还需要对 63    条连线 (108   连接点)进行布线.
+Info: 第  1 轮 : 还需要对 0     条连线 (0     连接点)进行布线.
+
+Info: 完成布线.
+
+Info: 开始更新物理网表.
+Info:   为 14   个 SLICEL     建立了物理网表 .
+Info:   为 6    个 TIEOFF     建立了物理网表 .
+Info: 完成更新物理网表.
+####
+Info: 布线执行时间 : 1 秒.
+####
+ 
+Info: 生成最差时序余量(WNS)报告 ...
+=============================================
+Clock Name   Req Period  Setup WNS   Hold WNS
+---------------------------------------------
+clk               40000      35616        281
+=============================================
+【汇总】
+Info(wns-ok): Setup WNS = 35616, 满足时序目标.
+Info(wns-ok): Hold  WNS = 281, 满足时序目标.
+====
+Info: 完成WNS报告.
+Info:   (可在文件 "C:/Users/17806/Desktop/Git/30K_EVB_DEMO/uart_demo/prj/hq/uart_demo/hq_run/uart_demo_slack.rpt" 中检查更详细信息).
+====
+Info: 输出网表报告到文件C:\Users\17806\Desktop\Git\30K_EVB_DEMO\uart_demo\prj\hq\uart_demo\hq_run\_route.rpt_chs中.
+logSeg:route:End
+FLAG:routingDone
+logSeg:bitGen:Begin
+
+#=============oOOOo================oOOOo=============
+# 位流生成
+#====================================================
+Info: 载入器件信息 ....
+Info: 载入设计 ....
+Info: 输出位流文件 uart_demo.bit ....
+Info: 完成.
+####
+Info: 位流生成执行时间 : 1 秒.
+####
+logSeg:bitGen:End
+FLAG:bitGenDone
+[> exit
+Info: 程序结束于 Sat Sep 14 10:02:11 2024.
+Info: 最大内存占用 281.0 M.
+Info: 总运行时间 1468 秒.
